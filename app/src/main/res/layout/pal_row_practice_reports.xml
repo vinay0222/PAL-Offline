@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewdate"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:textColor="@color/text"/>
+
+
+    <LinearLayout
+        android:id="@+id/lll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp">
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_topic"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="false"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="false"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</LinearLayout>

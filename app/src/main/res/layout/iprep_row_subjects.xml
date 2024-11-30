@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center|top"
+    android:background="?selectableItemBackground"
+    android:id="@+id/subjectsLayout"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            shimmer:cardCornerRadius="12dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="0dp"
+            shimmer:cardElevation="0dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/subjectImageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="centerCrop" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewPal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:visibility="gone"
+            android:background="@drawable/pal_text_shape"
+            android:padding="2dp"
+            android:text="Pal"
+            android:textAllCaps="true"
+            android:textColor="#0077FF"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hello"
+        android:textStyle="normal"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="5dp"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="14dp"
+        android:letterSpacing="0"
+        android:textColor="#212121" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        shimmer:duration="500">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#dddddd" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</LinearLayout>

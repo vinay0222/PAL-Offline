@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:id="@+id/reletiveParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_topic"
+    android:orientation="vertical">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_above="@+id/buttonPractice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="30dp"
+
+        android:padding="1dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/reletive"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="@color/green_light"
+        android:outlineSpotShadowColor="@color/green"
+        android:visibility="gone"
+        shimmer:duration="500">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <Button
+        android:id="@+id/buttonPractice"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:text="Practice" />
+
+</RelativeLayout>

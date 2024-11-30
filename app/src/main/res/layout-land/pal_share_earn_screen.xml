@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/screen_line"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#FCFFEE"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/screen_line"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:layout_marginLeft="5dp"
+            android:padding="7dp"
+            android:src="@drawable/icon_arrow" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Share and Earn"
+            android:textColor="@color/tab_color"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_title"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/earn_linear"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+
+                <ImageView
+
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="3dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/earn" />
+
+                <TextView
+                    android:id="@+id/earn_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Earned"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/unselected_tab" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/rupee"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/correct_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:text="320"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/earn_linear"
+                android:background="@color/unselected_tab" />
+
+            <LinearLayout
+                android:id="@+id/invite_linear"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/line"
+                android:orientation="vertical"
+
+                >
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:src="@drawable/invited" />
+
+                <TextView
+                    android:id="@+id/invite_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Friends Invited"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/unselected_tab" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/invited_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/black"
+                        android:text="12"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/line"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/gift" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_descript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/step1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Get your dear ones started on the"
+
+            android:textColor="@color/categories_content"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" iPrep "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/tab_color"
+            android:textSize="18sp" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" App in just"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/categories_content"
+            android:textSize="18sp" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 3 simple steps"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/tab_color"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_descript"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/linear_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/one"
+
+                />
+
+
+            <TextView
+                android:id="@+id/step2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invite your friends to join"
+
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/categories_content"
+                android:textSize="13sp" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" iPrep"
+                android:textColor="@color/tab_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" App"
+                android:textColor="@color/categories_content"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/linear_one"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/two"
+
+                />
+
+
+            <TextView
+                android:id="@+id/step3"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="Your Friends successfully registers on the app"
+                android:textColor="@color/categories_content"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/linear_two"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/three"
+
+                />
+
+
+            <TextView
+                android:id="@+id/step4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You and your friend both get cool rewards!"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/categories_content"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+
+        android:layout_below="@id/relative2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/btn_bg"
+        android:text="Share iPrep"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+</RelativeLayout>

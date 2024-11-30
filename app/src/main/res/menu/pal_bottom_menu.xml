@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_active_home"/>
+    <item
+        android:id="@+id/batches"
+        android:title="Batches"
+        android:icon="@drawable/ic_inactive_batch"/>
+
+</menu>
+

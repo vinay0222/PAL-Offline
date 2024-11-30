@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/animate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/citystate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rollmobilelayout"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewState"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rollnoStudent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@id/textViewtitleCity"
+                    android:gravity="center|left"
+                    android:text="State"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#666666"
+
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewtitleCity"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="5dp"
+                    android:text="District"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Spinner
+                    android:id="@+id/stateAutoComplete"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/gray_iprep"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint=""
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/cityStateAutoComplete"
+                    android:nextFocusUp="@id/emailEditText"
+                    android:nextFocusDown="@id/schoolEditText"
+                    android:singleLine="true"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/selectState"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/gray_iprep"
+                    android:gravity="center_vertical"
+                    android:hint="Select State"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:nextFocusLeft="@id/stateAutoComplete"
+                    android:nextFocusRight="@id/schoolEditText"
+                    android:nextFocusUp="@id/rollnoStudent"
+                    android:nextFocusDown="@id/buttonSignInStudent"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/cityStateAutoComplete"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/gray_iprep"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint=""
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:nextFocusLeft="@id/stateAutoComplete"
+                    android:nextFocusRight="@id/schoolEditText"
+                    android:nextFocusUp="@id/addressEditText"
+                    android:nextFocusDown="@id/schoolEditText"
+                    android:singleLine="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/hint"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/gray_iprep"
+                    android:gravity="center_vertical"
+                    android:hint="Select District"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:nextFocusLeft="@id/stateAutoComplete"
+                    android:nextFocusRight="@id/schoolEditText"
+                    android:nextFocusUp="@id/rollnoStudent"
+                    android:nextFocusDown="@id/buttonSignInStudent"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="#212121"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:padding="10dp"
+                    android:src="@mipmap/idream_logo" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayoutStudent"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="369dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="1.8dp"
+                        android:text="Enter Details"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#F7F9FA" />
+
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="18dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="1.8dp"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.idreameducation.ipreppal.util.EditTextWithFont
+                        android:layout_width="369dp"
+                        android:layout_height="53dp"
+                        android:background="@drawable/three_dp_radius"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:gravity="center"
+                        android:hint="Your name"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/buttonSignip"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/color_cursor" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.idreameducation.ipreppal.util.EditTextWithFont
+                        android:layout_width="369dp"
+                        android:layout_height="53dp"
+                        android:background="@drawable/three_dp_radius"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:gravity="center"
+                        android:hint="Password (Same as your name)"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/buttonSignip"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/color_cursor" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="305dp"
+                        android:layout_height="51dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginVertical="28dp"
+                        android:background="@drawable/white_pressed_25"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusLeft="@id/buttonFacebook"
+                        android:nextFocusRight="@id/buttonGoogle"
+                        android:nextFocusUp="@id/mobileEditText"
+                        android:nextFocusDown="@id/buttonFacebook"
+                        android:text="Login"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reletiveSignUp"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:padding="10dp"
+                    android:src="@mipmap/idream_logo" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="1.8dp"
+                    android:text="Enter your Mobile number"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#F7F9FA" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textInfo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="1.8dp"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/linearMobile"
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/country_flag"
+                        android:layout_width="40dp"
+                        android:layout_height="25dp" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewCountry"
+                        android:layout_width="90dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="(IN) +91 "
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#F7F9FA" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/input_fullName"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="30dp"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:textColorHint="@android:color/white"
+                        android:visibility="gone">
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.idreameducation.ipreppal.util.EditTextWithFont
+                        android:id="@+id/mobileEditText"
+                        android:layout_width="260dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/three_dp_radius"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:gravity="center"
+                        android:hint=" Mobile Number"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/buttonSignip"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                </LinearLayout>
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/textViewForgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/inputMobile"
+                    android:gravity="center|right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="10dp"
+                    android:text="Forgot Password?"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/textViewParterCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/buttonSignip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Do you have partner code?"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="#F7F9FA"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewForgotPassword">
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/buttonSignip"
+                        android:layout_width="260dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginVertical="28dp"
+                        android:layout_marginRight="45dp"
+                        android:background="@drawable/white_pressed_25"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusLeft="@id/buttonFacebook"
+                        android:nextFocusRight="@id/buttonGoogle"
+                        android:nextFocusUp="@id/mobileEditText"
+                        android:nextFocusDown="@id/buttonFacebook"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/or"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/buttonSignip"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="1.8dp"
+                        android:text="OR"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearOr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/or"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="4dp"
+                        android:background="#F7F9FA" />
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewOr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="4dp"
+                        android:background="#F7F9FA" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/socialLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearOr"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/inputConfirmPassword"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/facebook_pressed"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusRight="@id/buttonGoogle"
+                        android:nextFocusUp="@id/buttonSignip"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/buttonFacebook"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="10dp"
+                        android:src="@mipmap/facebook_icon"></ImageView>
+
+
+                    <ImageView
+                        android:id="@+id/buttonGoogle"
+                        android:layout_width="70dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="55dp"
+                        android:padding="10dp"
+                        android:src="@mipmap/gmail_icon"></ImageView>
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/inputConfirmPassword"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/shadow_pressed"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusLeft="@id/buttonFacebook"
+                        android:nextFocusUp="@id/buttonSignip"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/socialLayoutText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/socialLayout"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="20dp"
+                        android:text="Facebook"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/black" />
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:paddingLeft="10dp"
+                        android:text="Gmail       "
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/socialLayoutText"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/buttonAnnonymous"
+                        android:layout_width="235dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginVertical="28dp"
+                        android:layout_marginRight="35dp"
+                        android:background="@drawable/white_pressed_25"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusLeft="@id/buttonFacebook"
+                        android:nextFocusRight="@id/buttonGoogle"
+                        android:nextFocusUp="@id/mobileEditText"
+                        android:nextFocusDown="@id/buttonFacebook"
+                        android:text="Skip Now"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                </LinearLayout>
+
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/textViewAlreadtAccount_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/socialLayout"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewAlreadtAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewAlreadtAccount_"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/signup"
+                    android:elevation="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="10dp"
+                    android:text="Sign in"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/reletiveOtp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/otp_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:src="@mipmap/idream_logo" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textInfoOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/otp_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="1.8dp"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+
+                <com.idreameducation.ipreppal.util.EditTextWithFont
+                    android:id="@+id/otpEditText"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/textInfoOtp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/three_dp_radius"
+                    android:backgroundTint="@color/white"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:hint="Enter OTP"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/resendButton"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputOtp"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textInfoOtp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:visibility="gone">
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/resendButton"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/otpEditText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:elevation="5dp"
+                    android:gravity="center"
+                    android:nextFocusDown="@+id/textViewConfirm"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="0dp"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewConfirm"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/resendButton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/white_pressed_25"
+                    android:elevation="3dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:nextFocusUp="@+id/resendButton"
+                    android:nextFocusDown="@+id/textViewChangeMobileNumber"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewChangeMobileNumber"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/textViewConfirm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/white_pressed_25"
+                    android:elevation="3dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:nextFocusUp="@+id/textViewConfirm"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:padding="10dp"
+                    android:src="@mipmap/idream_logo" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayoutTeacher"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="1.8dp"
+                    android:text="Enter Details"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#F7F9FA" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="1.8dp"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.idreameducation.ipreppal.util.EditTextWithFont
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/three_dp_radius"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:gravity="center"
+                        android:hint="Your name"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/buttonSignip"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.idreameducation.ipreppal.util.EditTextWithFont
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/three_dp_radius"
+                        android:focusable="true"
+                        android:focusedByDefault="true"
+                        android:gravity="center"
+                        android:hint="Password (Same as your name)"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/buttonSignip"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:layout_width="235dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginVertical="28dp"
+                        android:background="@drawable/white_pressed_25"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:nextFocusLeft="@id/buttonFacebook"
+                        android:nextFocusRight="@id/buttonGoogle"
+                        android:nextFocusUp="@id/mobileEditText"
+                        android:nextFocusDown="@id/buttonFacebook"
+                        android:text="Login"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorPrimaryDark" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="180dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_iprep_logo" />
+
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewtitle"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text=""
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#575756" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewtitleName"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewtitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:gravity="center|left"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="#9E9E9E" />
+
+            <AutoCompleteTextView
+                android:id="@+id/nameStudent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="400dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/textViewtitleName"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/gray_iprep"
+                android:cursorVisible="true"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:inputType="textVisiblePassword"
+                android:maxLength="30"
+                android:nextFocusDown="@id/textViewtitlePassword"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:textColor="@color/textcolour"
+                android:textColorHint="@color/edittext_hint_color"
+                android:textSize="16sp"
+                android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined" />
+
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewtitlePassword"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameStudent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center|left"
+                android:text="Password"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/passwordStudent"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/textViewtitlePassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/gray_iprep"
+                android:cursorVisible="true"
+                android:hint="Password is same as your name"
+                android:imeOptions="actionDone"
+                android:nextFocusUp="@id/nameStudent"
+                android:nextFocusDown="@id/rollnoStudent"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:visibility="gone"></EditText>
+
+            <LinearLayout
+                android:id="@+id/rollmobilelayout"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameStudent"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewtitleRollNo"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/passwordStudent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center|left"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#9E9E9E"
+                        android:visibility="visible" />
+
+
+                    <EditText
+                        android:id="@+id/rollnoStudent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="180dp"
+                        android:layout_height="55dp"
+                        android:layout_below="@+id/textViewtitleRollNo"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/gray_iprep"
+                        android:cursorVisible="true"
+                        android:hint=""
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:nextFocusUp="@id/passwordStudent"
+                        android:nextFocusDown="@id/buttonSignInStudent"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/textcolour"
+                        android:textColorHint="@color/edittext_hint_color"
+                        android:textSize="16sp"
+                        android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewtitlemobileNo"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/passwordStudent"
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center|left"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#9E9E9E"
+                        android:visibility="visible" />
+
+
+                    <EditText
+                        android:id="@+id/mobilenoStudent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="180dp"
+                        android:layout_height="55dp"
+                        android:layout_below="@+id/textViewtitleRollNo"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@drawable/gray_iprep"
+                        android:cursorVisible="true"
+                        android:hint=""
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:nextFocusUp="@id/passwordStudent"
+                        android:nextFocusDown="@id/buttonSignInStudent"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/textcolour"
+                        android:textColorHint="@color/edittext_hint_color"
+                        android:textSize="16sp"
+                        android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/buttonSignInStudent"
+                android:layout_width="400dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/citystate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/blue_iprep_button"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/selectProfileText"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tabIDEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="20dp"
+            android:gravity="center"
+            android:text="Select your profile"
+            android:textSize="15dp"
+            android:textColor="@color/blue" />
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/loginwithAPPID"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tabIDEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="20dp"
+                android:gravity="center"
+                android:text="Login with SRN"
+                android:textColor="@color/blue"
+                android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENGLISH" />
+
+        <Switch
+            android:id="@+id/languageSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:textOff="ENG"
+            android:textOn="HI"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="हिंदी" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/languageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:background="?selectableItemBackground"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/languageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_round_background"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/langIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@mipmap/lang" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/languageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/langIcon"
+                android:text="EN"
+                android:textAllCaps="false"
+                android:textColor="#0077FF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/languageDownArrow"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/languageTextView"
+                app:srcCompat="@mipmap/down_arrow" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

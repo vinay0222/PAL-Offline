@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PalMobile.activity.ProjectVideos_topic_Activity">
+
+    <ImageView
+        android:id="@+id/back_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_back_round"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/subj_name"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Math Project"/>
+
+        <ImageView
+            android:id="@+id/sub_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topic_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

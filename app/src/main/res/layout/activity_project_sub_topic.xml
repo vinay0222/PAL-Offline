@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".PalMobile.activity.Project_SubTopic_Activity">
+
+    <LinearLayout
+        android:id="@+id/title_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back_round" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/subj_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Maths"
+                android:textSize="16dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/sub_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/shadow"/>
+
+        <RelativeLayout
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@android:color/black"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imageViewCrossVideo"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@mipmap/cross_icon_video_player"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/fullscreen_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/common_full_open_on_phone"
+                    android:visibility="visible" />
+
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/selected_topic_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="01. Chapter Name"
+                android:textSize="14dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subtopic_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

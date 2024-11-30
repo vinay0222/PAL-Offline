@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pal.activity.SimulationActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:id="@+id/simulation_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructions"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="instruction descriptions"
+                android:textSize="18sp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textStyle="normal"
+                android:layout_marginLeft="11dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/btn_start"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:background="@drawable/blue_iprep_button"
+                android:gravity="center"
+                android:padding="15dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="Lets Start"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="visible">
+
+            <WebView
+                android:id="@+id/custom_WebView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:scrollbars="none"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:background="#FFFFFF"
+                android:id="@+id/logoRelativeLAypout"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/logoIrpep"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:clickable="true"
+                    android:src="@drawable/ipreplogo" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:padding="3dp"
+                android:src="@drawable/cross_icon_video" />
+
+            <ImageView
+                android:id="@+id/iprep_logo"
+                android:layout_width="360dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="138dp"
+                android:clickable="false">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blankScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:visibility="visible">
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/hideLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/loaderlogo"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/progresss"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ipreplogo"
+            android:visibility="gone" />
+
+
+        <ProgressBar
+            android:id="@+id/progresss"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:indeterminateTint="#0077FF"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/loaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progresss"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Please wait, while we load your content"
+            android:textAlignment="center"
+            android:textColor="#898C91"
+            android:textSize="22dp"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/viewMain"
+            android:tag="sw720-land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:ignore="DuplicateIds" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

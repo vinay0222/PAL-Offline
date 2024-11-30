@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite2"
+    tools:context=".pal.activity.AboutPalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/offwhite2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingHorizontal="10dp"
+                android:orientation="horizontal"
+                android:gravity="center|left">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_back_round"/>
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How iPrep PAL Works"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="12sp"
+                        android:text="ENGLISH" />
+
+                    <Switch
+                        android:id="@+id/languageSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:track="@drawable/switch_track" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="12sp"
+                        android:text="हिंदी" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <LinearLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/offwhite2"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/white_background"
+                    android:layout_gravity="center">
+
+                    <EditText
+                        android:id="@+id/searchEdittext"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="12dp"
+                        android:hint="Search"
+                        android:maxLines="2"
+                        android:background="@color/white"/>
+
+                    <ImageView
+                        android:id="@+id/searchBtn"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_search"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:background="@color/offwhite2"
+                android:clipToPadding="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

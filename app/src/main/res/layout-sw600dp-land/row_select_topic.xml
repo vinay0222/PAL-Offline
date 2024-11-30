@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="10dp"
+    android:id="@+id/reletiveParent"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/white_button_pressed"
+    android:elevation="2dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/reltive_layout_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.idreameducation.ipreppal.util.RoundedHorizontalProgressBar
+                android:id="@+id/progress_bar_4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:indeterminate="false"
+                android:progress="0"
+
+                app:backgroundColor="@color/green_light"
+                app:progressColor="@color/green" />
+
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/masteryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|left"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reltive_layout_back"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewTopicName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btnStart"
+                android:layout_alignBottom="@+id/btnStart"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toStartOf="@+id/btnStart"
+                android:layout_toLeftOf="@+id/btnStart"
+                android:padding="10dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTopicName"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/btnStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/submit"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="15dp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/textViewAssigned"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/btnStart"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text=""
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_green_dark"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

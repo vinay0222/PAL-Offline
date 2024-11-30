@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearfirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_toLeftOf="@+id/linearSecond"
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toLeftOf="@+id/fab1"
+            android:src="@drawable/ic_call_inactive"
+            android:visibility="gone"
+            app:maxImageSize="55dp"
+            app:backgroundTint="#FCFCFC"
+            app:elevation="0dp"
+            app:pressedTranslationZ="0dp" />
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/callText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="1dp"
+            android:elevation="0dp"
+            android:gravity="center"
+            android:text="Call us"
+            android:textColor="@color/black"
+            android:visibility="gone">
+
+        </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_toLeftOf="@+id/linearSupport"
+        android:onClick="buttonScreenshot"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:onClick="buttonScreenshot"
+            android:src="@drawable/ic_screenshot_inactive"
+            android:visibility="gone"
+            app:maxImageSize="55dp"
+            app:backgroundTint="#FCFCFC"
+            app:elevation="0dp"
+            app:pressedTranslationZ="0dp" />
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/screenshotText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:elevation="0dp"
+            android:onClick="buttonScreenshot"
+            android:text="Screenshot"
+            android:textColor="@color/black"
+            android:visibility="gone">
+
+        </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/supportText"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="3dp"
+            android:hapticFeedbackEnabled="false"
+            android:src="@drawable/ic_inactive_inner"
+            android:padding="20dp"
+            app:maxImageSize="56dp"
+            android:text="@string/address"
+            app:backgroundTint="#FCFCFC"
+            android:outlineAmbientShadowColor="@color/blue"
+            android:outlineSpotShadowColor="@color/blue"
+            app:elevation="2dp"
+            app:pressedTranslationZ="0dp" />
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/supportText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="Support"
+            android:visibility="invisible"
+            android:textColor="@color/black">
+
+        </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/languageLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center|left"
+                        android:text=""
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/black" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewReadMore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="right"
+                        android:text="ReadMore"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reletiveLayoutImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="visible">
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/NoInternetConnectionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:theme="@style/ProgressTheme2"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/slow_internet_Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/progressBar"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center"
+                        android:text="Slow Internet Connection\nTap to Refresh"
+                        android:textColor="@color/black"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/imageViewCrossVideo2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        android:visibility="visible"
+                        app:srcCompat="@mipmap/cross" />
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/downloadingTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar3"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/questionImageView"
+                        android:layout_width="400dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="#1A0075FF"
+                        android:elevation="10dp"
+                        android:padding="10dp"
+                        android:src="@mipmap/back_iprep"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/zoomImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/questionImageView"
+                        android:background="?selectableItemBackground"
+                        android:padding="10dp"
+                        android:src="@mipmap/zoom"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/linearFullscreen1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_iprep"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:id="@+id/imageViewOption1"
+                                android:layout_width="0dp"
+                                android:layout_height="140dp"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:id="@+id/linearFullImage1"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imageViewOption1FullImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:padding="10dp"
+                                    android:src="@mipmap/fullscreen_icon" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option1NoInternet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center"
+                            android:inputType="textNoSuggestions"
+                            android:padding="5dp"
+                            android:text=""
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone" />
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:drawableLeft="@drawable/a_option_s"
+                            android:drawablePadding="10dp"
+                            android:foreground="?selectableItemBackground"
+                            android:gravity="center|left"
+                            android:minHeight="70dp"
+                            android:padding="18dp"
+                            android:scrollbars="vertical"
+                            android:singleLine="false"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/linearFullscreen2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_iprep"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:id="@+id/imageViewOption2"
+                                android:layout_width="0dp"
+                                android:layout_height="140dp"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:id="@+id/linearFullImage2"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/imageViewOption2FullImage"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:padding="10dp"
+                                    android:src="@mipmap/fullscreen_icon" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option2NoInternet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center"
+                            android:inputType="textCapCharacters"
+                            android:padding="5dp"
+                            android:scrollbars="vertical"
+                            android:text=""
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone" />
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:drawableLeft="@drawable/b_option_s"
+                            android:drawablePadding="10dp"
+                            android:foreground="?selectableItemBackground"
+                            android:gravity="center|left"
+                            android:minHeight="70dp"
+                            android:padding="18dp"
+                            android:scrollbars="vertical"
+                            android:singleLine="false"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/linearFullscreen3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gray_iprep"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:id="@+id/imageViewOption3"
+                                android:layout_width="0dp"
+                                android:layout_height="140dp"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:id="@+id/linearFullImage3"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageViewOption3FullImage"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:padding="10dp"
+
+                                    android:src="@mipmap/fullscreen_icon" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option3NoInternet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center"
+                            android:inputType="textCapCharacters"
+                            android:padding="5dp"
+                            android:text=""
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone" />
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/gray_iprep"
+                            android:drawableLeft="@drawable/c_option_s"
+                            android:drawablePadding="10dp"
+                            android:foreground="?selectableItemBackground"
+                            android:gravity="center|left"
+                            android:minHeight="70dp"
+                            android:padding="18dp"
+                            android:scrollbars="vertical"
+                            android:singleLine="false"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/linearFullscreen4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gray_iprep"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:id="@+id/imageViewOption4"
+                                android:layout_width="0dp"
+                                android:layout_height="140dp"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:scaleType="fitXY" />
+
+                            <LinearLayout
+                                android:id="@+id/linearFullImage4"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageViewOption4FullImage"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:padding="10dp"
+                                    android:src="@mipmap/fullscreen_icon" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option4NoInternet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="3dp"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center"
+                            android:inputType="textCapCharacters"
+                            android:padding="5dp"
+                            android:text=""
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black"
+                            android:visibility="gone" />
+
+                        <com.idreameducation.ipreppal.util.TextViewBodyFont
+                            android:id="@+id/option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="100dp"
+                            android:background="@drawable/gray_iprep"
+                            android:drawableLeft="@drawable/d_option_s"
+                            android:drawablePadding="10dp"
+                            android:foreground="?selectableItemBackground"
+                            android:gravity="center|left"
+                            android:minHeight="70dp"
+                            android:padding="18dp"
+                            android:scrollbars="vertical"
+                            android:singleLine="false"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textViewLastQuestionMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewSubmit"
+            android:layout_below="@+id/parentLayout"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewSubmit"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/blue_pressed_25"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

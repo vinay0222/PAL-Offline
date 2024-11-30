@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_fileName="61314-fireworks.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <ImageView
+        android:id="@+id/imageViewBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/test_badge_icon"/>
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageViewBg"
+        android:text="बधाई हो!"
+        android:textColor="#00B158"
+        android:textSize="20sp"/>
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewTitle"
+        android:text=""
+        android:textSize="16sp"
+        android:textColor="@color/black" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/continueBt"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textViewMessage"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/blue_iprep_button"
+        android:gravity="center"
+        android:text="जारी रखना"
+        android:textSize="16sp"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

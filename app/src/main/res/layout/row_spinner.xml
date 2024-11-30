@@ -1,0 +1,11 @@
+<com.idreameducation.ipreppal.util.TextViewBodyFont xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:ellipsize="marquee"
+    android:gravity="center|left"
+    android:paddingLeft="10dp"
+    android:paddingRight="40dp"
+    android:singleLine="true"
+    android:text=""
+    android:textAppearance="?android:textAppearanceMedium" />

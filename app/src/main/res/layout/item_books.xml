@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:background="?selectableItemBackground"
+    android:layout_margin="3dp"
+    android:layout_gravity="center">
+
+
+        <ImageView
+            android:id="@+id/imageViewThumnail"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/books_stories_1"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter" />
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textViewBooksName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewThumnail"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="4"
+            android:text="hhwfhsdfvhdf"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+</LinearLayout>

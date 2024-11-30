@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pal.activity.PalHomeActivity">
+
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="?selectableItemBackground"
+        android:padding="10dp"
+        android:src="@mipmap/navigation_drawer_iprep" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewDummyText"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_toLeftOf="@+id/reletive_"
+        android:layout_toRightOf="@+id/imageViewBack"
+        android:gravity="center"
+        android:text=""
+        android:textAllCaps="false"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@android:color/black"
+        android:textStyle="normal" />
+
+    <RelativeLayout
+        android:id="@+id/reletive_"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageViewLangaugeSwitch"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?selectableItemBackground"
+            android:padding="10dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/search_iprep" />
+
+
+        <ImageView
+            android:id="@+id/imageViewMessage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="?selectableItemBackground"
+            android:padding="10dp"
+            app:srcCompat="@mipmap/notification_bell" />
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigationView"
+        android:layout_below="@+id/textViewDummyText" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/pal_bottom_menu" />
+
+</RelativeLayout>
+

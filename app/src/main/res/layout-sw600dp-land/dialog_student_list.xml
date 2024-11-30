@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="450dp"
+        android:layout_margin="10dp"
+        android:minHeight="250dp"
+
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:elevation="3dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="140dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+
+                android:weightSum="3">
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center|left"
+                    android:text="Cancel"
+                    android:textAppearance="?android:textAppearanceMedium"
+
+                    android:textColor="@color/blue" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Students"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/gray_oast" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewDone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center|right"
+                    android:text="Done"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/blue" />
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/tabIDEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textViewtitleName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:hint="Search"
+                android:background="@drawable/gray_iprep"
+                android:cursorVisible="false"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/textLine"
+                android:layout_width="match_parent"
+                android:background="@color/gray_oast"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/students_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+    </RelativeLayout>

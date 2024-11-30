@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="#DEDEDE" />
+
+    <ImageView
+        android:id="@+id/imageViewOops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/noAssignmentText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="No Assignment Assigned"
+        android:textColor="#212121" />
+
+</RelativeLayout>

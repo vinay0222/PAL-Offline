@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/relative_physics"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/subject_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/d_test_image"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/linear_physics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/vertical_line"
+            android:layout_toRightOf="@id/subject_icon"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/text_content" />
+
+                <TextView
+                    android:id="@+id/textViewTime"
+                    android:layout_below="@+id/textViewSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/tab_color" />
+
+
+            </RelativeLayout>
+
+            <com.idreameducation.ipreppal.util.RoundedHorizontalProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:indeterminate="false"
+                android:progress="0"
+                app:backgroundColor="@color/green_light"
+                app:progressColor="@color/green" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/vertical_line"
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@color/gray"
+            android:src="@mipmap/right_arrow" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

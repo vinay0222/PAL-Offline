@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:gravity="center|left">
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewNDay"
+        android:layout_width="match_parent"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_height="wrap_content"
+        android:text="Today"/>
+
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Clear"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+    <RelativeLayout
+        android:id="@+id/notif_content"
+        android:layout_below="@+id/textViewNDay"
+        android:background="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewNTitle"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/textViewtime"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_height="wrap_content"
+        android:text="Notification Title"/>
+
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentRight="true"
+        android:text="12.30 pm"
+        android:textSize="11dp"/>
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewNotificationMessage"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textViewNTitle"
+        android:layout_toLeftOf="@+id/textViewtime"
+        android:layout_marginTop="5dp"
+        android:textSize="11dp"
+        android:layout_height="wrap_content"
+        android:text="This is the notification copy. Welcome to this amazing application and explore what you like."/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

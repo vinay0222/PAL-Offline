@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linearLaoutNoBtches"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/noBatchText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="No Batches Joined Yet"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:layout_width="200dp"
+            android:id="@+id/textViewJoinBatch"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/blue_store_button"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:text="Join Batch"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/blue" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBatches"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <RelativeLayout
+            android:id="@+id/reletiveLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".7"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/createClassLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageDrawer"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                            android:id="@+id/classesTextView"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="Classes"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@android:color/black"/>
+
+                        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                            android:id="@+id/joinNewBatch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="Join Batch"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/primary_color"/>
+
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/class_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/createClassLayout"
+                        android:layout_marginTop="10dp"
+                        android:visibility="visible"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                    <LinearLayout
+                        android:id="@+id/newMessageLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/class_recycler_view"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:orientation="horizontal">
+
+                            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                                android:id="@+id/recentMessagesTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="Recent Messages"
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/message_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/newMessageLayout"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                        <TextView
+                            android:id="@+id/noChatText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No Chat found"
+                            android:textColor="#212121"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/assignmentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newMessageLayout"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:orientation="horizontal">
+
+                            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                                android:id="@+id/recentAssignmentTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:text="Recent Assignments"
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/assignment_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/assignmentLayout"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                        <TextView
+                            android:id="@+id/noAssignmentText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="No Assignment Assigned"
+                            android:textColor="#212121"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/inter_medium"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+        <TextView
+
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linear"
+            android:layout_marginLeft="5dp"
+            android:background="@color/gray_toast" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutWeight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/batchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center|left"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabGravity="fill"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="5dp"
+                    app:tabMode="scrollable"
+                    app:tabPaddingEnd="10dp"
+                    app:tabPaddingStart="20dp"
+                    app:tabIndicator="@drawable/tab_indicator"
+                    app:tabRippleColor="@color/blue"
+                    app:tabSelectedTextColor="#212121"
+                    app:tabTextAppearance="?android:textAppearanceLarge"
+                    app:tabTextColor="#C9C9C9" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/langChangeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:gravity="center"
+                android:text="Class not same\nChange your class for view Batch"
+                android:textColor="#212121"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/notConnectedWithInternet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="18dp"
+        android:text="Connect to internet for assessing batch section"/>
+
+
+</RelativeLayout>

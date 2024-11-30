@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootId"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toast_bg"
+        android:orientation="horizontal">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lotie_player"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:lottie_loop="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cong_text"
+                android:textColor="#565657"
+                android:text="Congratulations"
+                android:textSize="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView android:id="@+id/textView"
+                android:textColor="#565657"
+                android:textSize="14dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:text="Level Complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

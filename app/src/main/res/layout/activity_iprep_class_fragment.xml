@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Please select your class"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/black" />
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewtitleName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center|left"
+        android:visibility="gone"
+        android:text="And you study in class?"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#9E9E9E" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:visibility="gone"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:paddingLeft="10dp"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:layout_below="@+id/textViewtitleName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/gray_iprep"
+        android:cursorVisible="false"></EditText>
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewtitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:gravity="center|left"
+        android:text="And you study in class?"
+        android:textSize="14dp"
+        android:textColor="#9E9E9E" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.recyclerview.widget.RecyclerView>
+
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/nextButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/recyclerView"
+        android:layout_margin="10dp"
+        android:background="@drawable/blue_iprep_button"
+        android:gravity="center"
+        android:text="Next"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

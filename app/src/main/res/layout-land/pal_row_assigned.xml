@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/black">
+
+    </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:nestedScrollingEnabled="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

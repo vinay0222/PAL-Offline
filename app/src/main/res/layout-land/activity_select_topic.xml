@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:id="@+id/reletiveParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/reletive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="?selectableItemBackground"
+            android:padding="12dp"
+            app:srcCompat="@mipmap/back_button" />
+
+        <Spinner
+            android:id="@+id/subjectSpinner"
+            android:layout_width="400dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:foreground="?selectableItemBackground"
+            android:background="@drawable/spinner_back"
+            android:elevation="3dp"
+            android:visibility="visible"></Spinner>
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@+id/imageViewBack"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewHome"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="?selectableItemBackground"
+            android:padding="6dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/home" />
+
+
+        <com.idreameducation.ipreppal.util.AutoCompleteTextViewBodyFont
+            android:id="@+id/topicSearchAutocompletetextView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@+id/imageViewBack"
+            android:backgroundTint="@android:color/white"
+            android:focusableInTouchMode="true"
+            android:hint="Search"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/searchImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:padding="0dp"
+            android:src="@mipmap/search"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewGrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reletive"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/reletive"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="@color/green_light"
+        android:outlineSpotShadowColor="@color/green"
+        shimmer:duration="500">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="90dp"
+            android:id="@+id/LinearShimmer"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+<!--            <include layout="@layout/shimmer_layout"></include>-->
+
+<!--            <include layout="@layout/shimmer_layout"></include>-->
+
+<!--            <include layout="@layout/shimmer_layout"></include>-->
+
+<!--            <include layout="@layout/shimmer_layout"></include>-->
+
+<!--            <include layout="@layout/shimmer_layout"></include>-->
+
+
+
+        </LinearLayout>
+
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/reletive"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:padding="1dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <ImageView
+            android:id="@+id/askforhelpImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="12dp"
+            android:background="@drawable/white_solid_shadow"
+            android:elevation="6dp"
+            android:padding="0dp"
+            android:src="@mipmap/askforhelp"
+            android:visibility="gone"
+
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

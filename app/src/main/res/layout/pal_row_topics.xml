@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reletiveParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layerType="hardware"
+    android:animateLayoutChanges= "false">
+
+    <LinearLayout
+        android:id="@+id/linearTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_background_white"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topicListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewSno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="1."
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="15dp" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewTopicName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Physics"
+                        android:textAllCaps="false"
+                        android:paddingVertical="10dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/downward_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toLeftOf="@+id/lockImage"
+                android:src="@mipmap/down_arrow_listing"
+                android:visibility="visible"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/badge"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginRight="1dp"
+                android:layout_toLeftOf="@+id/lockImage"
+                android:src="@drawable/ic_badge"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearPath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="14dp"
+                android:visibility="invisible"
+                android:background="@color/line"
+                tools:ignore="DuplicateIds" />
+
+            <LinearLayout
+                android:id="@+id/diagnosticTestLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_marginLeft="1dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/diagnosticTestItemsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left">
+
+                    <ImageView
+                        android:id="@+id/selectItem1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_unlocked" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewdTest"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_toRightOf="@+id/selectItem1"
+                        android:text="Take Diagnostic Test"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewDTestScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/skip_button_color"
+                        android:backgroundTint="#F8FAFC"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="स्कोर: "
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="12dp"
+                        android:visibility="gone" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/startDiagnosticTest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/skip_button_color"
+                        android:backgroundTint="#F8FAFC"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:text="Start"
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="12dp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/topicOptionsLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/diagnosticTestLayout"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/linef"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="14dp"
+                    android:background="@color/line" />
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/topicOptionsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/diagnosticTestLayout"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="1dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/topicOptionsLayout2"
+                android:layout_marginLeft="14dp"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/practiceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line3"
+                android:layout_marginLeft="1dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center|left">
+
+                <LinearLayout
+                    android:id="@+id/practiceItemsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left">
+
+                    <ImageView
+                        android:id="@+id/selectItem3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_locked" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewdPractice"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/selectItem3"
+                        android:text="अभ्यास"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="14sp" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewPracticeScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="स्कोर: "
+                        android:layout_gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="12dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:background="@drawable/skip_button_color"
+                        android:backgroundTint="#F8FAFC"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line5"
+                android:layout_width="1dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/practiceLayout"
+                android:layout_marginLeft="14dp"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/testLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line5"
+                android:layout_marginBottom="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center|left">
+
+                <LinearLayout
+                    android:id="@+id/testItemsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left">
+
+                    <ImageView
+                        android:id="@+id/selectItem4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_locked" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewdNormalTest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/selectItem4"
+                        android:text="परीक्षा"
+                        android:layout_gravity="center"
+                        android:gravity="center|left"
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="14dp" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewDNScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:text="स्कोर: "
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="#707070"
+                        android:textSize="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp"
+                        android:background="@drawable/skip_button_color"
+                        android:backgroundTint="#F8FAFC" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/verticalLine"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginRight="14dp"
+                android:background="@color/gray_oast"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/timeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/testLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/skip_button_color"
+                android:backgroundTint="#F8FAFC">
+
+                <ImageView
+                    android:id="@+id/selectItem3"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_inactive_videos"
+                    android:visibility="gone" />
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/textvideosViewtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/selectItem3"
+                    android:gravity="center"
+                    android:text="Learning Time"
+                    android:textAllCaps="false"
+                    android:textColor="#707070"
+                    android:textSize="13sp" />
+
+                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                    android:id="@+id/textViewvideoWatched"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/textvideosViewtext"
+                    android:gravity="center"
+                    android:text="स्कोर: "
+                    android:textAllCaps="false"
+                    android:textColor="#707070"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/actions_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/videoLayout"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/video_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_video_grey" />
+
+                <TextView
+                    android:id="@+id/video_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Videos"
+                    android:textColor="@color/text"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/practice_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_practice_grey" />
+
+                <TextView
+                    android:id="@+id/practice_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Remedial"
+                    android:textColor="@color/text"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/finaltest_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_test_grey" />
+
+                <TextView
+                    android:id="@+id/test_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Final Test"
+                    android:textColor="@color/text"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/books_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_book_grey" />
+
+                <TextView
+                    android:id="@+id/book_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Books"
+                    android:textColor="@color/text"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.idreameducation.ipreppal.util.TextViewBodyFont
+        android:id="@+id/btnReports"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btnStart"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

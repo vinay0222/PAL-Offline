@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/card">
+
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewVideoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="18dp"
+        android:textColor="@color/black">
+
+    </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="false"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+</LinearLayout>

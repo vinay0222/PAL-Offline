@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/back_iprep" />
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="My Reports"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/tab_color"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearVisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_title"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorColor="@color/blue"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="5dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#212121"
+            app:tabTextAppearance="@style/MineCustomTabText"
+            app:tabTextColor="#C9C9C9" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tab_view"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:background="#DEDEDE" />
+
+        <!-- View pager to swipe views -->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pagers"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/tab_view"
+            android:background="#fff" />
+
+
+        <!--        android:layout_marginTop="20dp"
+    -->
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/reletiveNoReports"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_title"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/noReportsImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/reportsempty"
+            android:visibility="gone" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lotie_player"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            app:lottie_loop="true" />
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/noReportsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noReportsImageView"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="No Reports to Show !"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/noReportsTextViewDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noReportsTextView"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Once you start using iPrep PAL. Your reports will show here. Track your performance and continue to learn and be better."
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#9E9E9E" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/startLearningTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noReportsTextViewDetail"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/blue_iprep_button"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Start Learning"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/textViewHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:gravity="center"
+            android:text="Type"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+        <Button
+            android:id="@+id/buttonDate"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Date"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"></Button>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewHead"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Time"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewTopicName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:text="Topic name"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textViewReview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:text="Review"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/linear"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="30dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/floating_draw_contact_us"></include>
+
+</RelativeLayout>

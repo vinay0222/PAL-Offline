@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reletive"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:id="@+id/yt_video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imageViewCrossVideo_"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="-40dp"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+
+        <ImageView
+            android:id="@+id/fullscreen_bbtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-40dp"
+            app:srcCompat="@mipmap/full_screen" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reletiveVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageViewCross"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/videoView"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="-45dp"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+
+        <ImageView
+            android:id="@+id/imageViewFullScreen"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_above="@+id/videoView"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="-40dp"
+            app:srcCompat="@mipmap/full_screen" />
+
+        <ImageView
+            android:id="@+id/imageViewCrossVideo"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_above="@+id/videoView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="-40dp"
+            android:background="?selectableItemBackground"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="visible"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/slow_internet_Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:text="Slow Internet Connection"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageViewCrossVideo2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_below="@id/slow_internet_Text"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_close_blue" />
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewTooltipMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text=""
+        android:textColor="#212121"
+        android:textSize="18sp" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewTooltipSkipBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTooltipMsg"
+        android:layout_margin="15dp"
+        android:layout_toLeftOf="@+id/textViewTooltipBt"
+        android:background="?selectableItemBackground"
+        android:text=""
+        android:textColor="#707070"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewTooltipBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTooltipMsg"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:background="?selectableItemBackground"
+        android:text=""
+        android:textColor="#0077FF"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

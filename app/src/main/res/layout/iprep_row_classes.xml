@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <com.idreameducation.ipreppal.util.TextViewBodyFont
+        android:id="@+id/textViewClass"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+
+        android:background="@drawable/gray_iprep"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#666666" />
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="row_padding_vertical">10dp</dimen>
+
+    <dimen name="standard_55">55dp</dimen>
+    <dimen name="standard_105">105dp</dimen>
+    <dimen name="standard_155">155dp</dimen>
+
+    <dimen name="video_payer_margin">60dp</dimen>
+
+</resources>

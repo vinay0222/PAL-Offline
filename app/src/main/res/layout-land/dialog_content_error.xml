@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/textViewTitle"
+            android:text="Report an error"
+            android:textColor="@android:color/black"
+            android:textSize="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <com.idreameducation.ipreppal.util.CheckBoxBodyFont
+                android:id="@+id/checkbox1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:theme="@style/AppThemeEditText" />
+
+
+            <com.idreameducation.ipreppal.util.CheckBoxBodyFont
+                android:id="@+id/checkbox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:text=""
+
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:theme="@style/AppThemeEditText" />
+
+
+            <com.idreameducation.ipreppal.util.CheckBoxBodyFont
+                android:id="@+id/checkbox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:text=""
+
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:theme="@style/AppThemeEditText" />
+
+            <com.idreameducation.ipreppal.util.CheckBoxBodyFont
+                android:id="@+id/checkbox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:text=""
+
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:theme="@style/AppThemeEditText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint=""
+                android:textColorHint="@android:color/black"
+                android:theme="@style/AppThemeEditText">
+
+                <com.idreameducation.ipreppal.util.EditTextWithFont
+                    android:id="@+id/errorMessageEditText"
+                    android:layout_width="300dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="center|left"
+                    android:layout_gravity="center"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewSubmitReport"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="50dp"
+
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/blue_pressed_25"
+
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewBack"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/blue_pressed_25"
+
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

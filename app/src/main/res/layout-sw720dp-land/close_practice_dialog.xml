@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/closeImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+        <ImageView
+            android:id="@+id/errorImg"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/ic_error_blue" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/errorImg"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:text="Are you sure you want to exit?"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textViewSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="left"
+            android:text="Few more questions can take you closer to achieving 100% mastery in this chapter."
+            android:fontFamily="@font/inter_regular"
+            android:textSize="16dp"
+            android:textColor="#666666" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewSubTitle"
+            android:gravity="end|center"
+            android:layout_marginTop="120dp">
+
+            <TextView
+                android:id="@+id/TxtExit"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textViewContinoue"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/trans_blue_iprep_button"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:text="Exit"
+                android:fontFamily="@font/inter_regular"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/textViewContinoue"
+                android:layout_width="151dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textViewSubTitle"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/blue_iprep_button"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Keep Practicing"
+                android:textAllCaps="false"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14dp"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

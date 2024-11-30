@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/nest_scrollview"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/indicate_lineleft" />
+
+                <TextView
+                    android:id="@+id/tab_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#212121"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/indicate_line" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/underline_tab"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/linear1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/screen_line" />
+
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/underline_tab"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linear_time_spend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/timeSpent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time Sent On Learning"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/text_content" />
+
+                    <TextView
+                        android:id="@+id/textViewTotalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=" "
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/tab_color" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linear_day_spent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/linear_time_spend"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/daysSpent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Days Sent On Learning"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/text_content" />
+
+                    <TextView
+                        android:id="@+id/textViewDays"
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/tab_color" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_below="@id/relative1"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/relative12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/underline_tab"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linear_time_spend2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/timeSpent2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Time Spent on Virtual Lab"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/text_content" />
+
+                        <TextView
+                            android:id="@+id/textViewTotalTime2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text=" "
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/tab_color" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_day_spent2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@id/linear_time_spend2"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/daysSpent2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Virtual Lab Usage"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/text_content" />
+
+                        <TextView
+                            android:id="@+id/textViewDays2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text=""
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/tab_color" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+
+                <LinearLayout
+                    android:id="@+id/linearReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/relative_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:text="Categories"
+                android:textColor="@color/tab_color"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/relative_cate_content1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/relative_category"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="100dp"
+                android:gravity="center|top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/buttonPractice"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_video"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Videos"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/textPractice"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textVideos"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_practice"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Practice"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+
+                <TextView
+                    android:id="@+id/textDiagonostic"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textNormalTest"
+                    android:layout_toRightOf="@+id/textVideos"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_final_tests"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Diagonostic Test"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/textBimonthly"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textPractice"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@mipmap/test_icon_small"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Bi Monthly Test"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textNormalTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/buttonDiagonostic"
+                    android:layout_toRightOf="@+id/textVideos"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_final_tests"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Test"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/book_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textPractice"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_books"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Book Report"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/ncert_book_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textPractice"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_books"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Subject Book Report"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/projectvideo_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/textDiagonostic"
+                    android:layout_toRightOf="@+id/book_report"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_practice"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Project video Report"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/dikshavideo_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/book_report"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_video"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Diksha videos"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/simulation_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_below="@+id/book_report"
+                    android:background="?selectableItemBackground"
+                    android:drawableLeft="@drawable/ic_video"
+                    android:drawableRight="@mipmap/gray_forward"
+                    android:drawablePadding="10dp"
+                    android:gravity="center|left"
+                    android:text="Diksha videos"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+
+            <!--</ScrollView>-->
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/slow_internet_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:text="Slow Internet Connection"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewCrossVideo2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/slow_internet_Text"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

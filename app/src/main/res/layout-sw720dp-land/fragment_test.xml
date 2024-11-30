@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/testLayout"
+    android:gravity="center|top">
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="27dp"
+        android:background="@color/gray_toast" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/line"
+        android:background="@drawable/item_background_white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <Spinner
+        android:id="@+id/testsSpinner"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="20dp"
+        android:layout_below="@+id/line"
+        android:visibility="gone"
+        android:background="@drawable/spinner_back"
+
+        android:foreground="?selectableItemBackground"/>
+
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testsSpinner"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="Your score is"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/textViewStartTest"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/testsSpinner"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/blue_iprep_button"
+        android:gravity="center"
+        android:foreground="?selectableItemBackground"
+        android:padding="10dp"
+        android:text="Start Test"
+        android:visibility="gone"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

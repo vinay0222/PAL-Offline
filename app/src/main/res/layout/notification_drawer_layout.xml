@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reletiveDrawerLayoutNotification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/navLinearLayout"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:paddingTop="20dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Notifications"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewHeadingFont
+            android:id="@+id/markAllRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Mark all as read"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textViewTitle"
+            android:background="@color/white"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:background="@mipmap/unread_notifications"
+                android:scaleType="fitXY" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No unread notifications!"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="You’re all caught up with your notifications."
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/darker_gray" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/NotificationRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageViewCrossNotification"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/navLinearLayout"
+        android:src="@drawable/ic_close_white" />
+
+</RelativeLayout>

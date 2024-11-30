@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/connetion_lyt"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:elevation="0dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:id="@+id/imageViewGif"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp">
+
+        </ImageView>
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/imageViewGif"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/text_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/text"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewRetry"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/text_"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_pressed_25"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/crossImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_close_blue" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

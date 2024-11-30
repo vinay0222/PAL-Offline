@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pal.activity.Book_ReportActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="8dp"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/back_iprep" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/type_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="My Reports"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/tab_color"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/line"
+            android:layout_marginRight="10dp"
+            android:background="@color/edit_text_color"/>
+
+        <RelativeLayout
+            android:id="@+id/reletiveNoReports"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_below="@id/line"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/noReportsImageView"
+                android:layout_width="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="200dp"
+                android:src="@mipmap/reportsempty" />
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/noReportsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noReportsImageView"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="No Reports to Show"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/noReportsTextViewDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/noReportsTextView"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Your usage reports will show here!"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#9E9E9E" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/startLearningTextView"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/noReportsTextViewDetail"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/blue_iprep_button"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center"
+                android:text="Start Learning"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reletiveReports"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_below="@id/line"
+            android:gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/floating_draw_contact_us"></include>
+
+
+
+
+</RelativeLayout>

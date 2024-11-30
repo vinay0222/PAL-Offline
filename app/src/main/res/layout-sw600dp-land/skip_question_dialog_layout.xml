@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageViewCross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?selectableItemBackground"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/cross_icon" />
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewCross"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/submit_bt"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/blue_iprep_button"
+
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:text="Submit Test"
+            android:textAllCaps="false"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</LinearLayout>

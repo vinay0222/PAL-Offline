@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/white_solid_shadow_less_redius">
+
+        <ImageView
+            android:id="@+id/closeImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:srcCompat="@drawable/ic_close_blue" />
+
+        <ImageView
+            android:id="@+id/errorImg"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/ic_error_blue" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/errorImg"
+            android:gravity="left|center"
+            android:text="क्या आप आगे बढ़ने से पहले इस अध्याय को बेहतर ढंग से समझना चाहते हैं?"
+            android:textSize="16dp"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/textView"
+            android:layout_marginTop="160dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center|right">
+
+            <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                android:id="@+id/orText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoBt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="या"
+                android:visibility="gone"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/continueBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/orText"
+                android:background="@drawable/trans_blue_iprep_button"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="अभ्यास जारी रखें"
+                android:layout_marginRight="10dp"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:textColor="@color/blue" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/videoBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/blue_iprep_button"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="वीडियो देखें"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

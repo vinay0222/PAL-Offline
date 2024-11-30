@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+
+    android:background="#c9363535">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/half_rounded_chat_white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+android:id="@+id/reletive"
+            android:background="@drawable/half_rounded_chat"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:src="@mipmap/facilitator" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/textViewChatBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imageView3"
+                android:layout_toLeftOf="@+id/imageViewClose"
+                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toStartOf="@+id/imageViewClose"
+
+
+                android:gravity="center"
+                android:text=""
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceLargeInverse"
+                android:textColor="@android:color/white" />
+
+
+            <ImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:padding="8dp"
+                android:src="@mipmap/close_new" />
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearBottom"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/reletive"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/linearBottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:src="@mipmap/facilitator"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/chat_box"
+                android:padding="2dp"
+                android:weightSum="2">
+
+
+                <com.idreameducation.ipreppal.util.EditTextWithFont
+                    android:id="@+id/messageEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:backgroundTint="@null"
+                    android:gravity="center|left"
+                    android:hint="Enter Message"
+                    android:imeOptions="actionNone"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/sendButton"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:src="@mipmap/send"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

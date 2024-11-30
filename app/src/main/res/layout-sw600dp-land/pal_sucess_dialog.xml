@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Great you can access more content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewContinoue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/submit"
+
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Videos"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewPractice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textViewContinoue"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/submit"
+
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Practice"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/white" />
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/TxtExit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textViewPractice"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/submit"
+
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Diagonostic Test"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

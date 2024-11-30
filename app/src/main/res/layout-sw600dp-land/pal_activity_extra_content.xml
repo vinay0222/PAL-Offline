@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/rootLayout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:id="@+id/reletiveLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".7"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/linearLayout"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_back_round" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewSubjectName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageViewBack"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center|left"
+                    android:maxLength="20"
+                    android:textColor="@color/textcolour"
+                    android:singleLine="true"
+                    android:text="Phycis"
+                    android:textSize="30px" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewChapterCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageViewBack"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignBottom="@+id/textViewSubjectName"
+                    android:gravity="center|left"
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:text="16 chapters"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#707070" />
+
+                <ImageView
+                    android:id="@+id/imageViewSubject"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="?selectableItemBackground" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_toast" />
+            <FrameLayout
+                android:id="@+id/leftTransparentBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/recyclerView"
+                android:background="#CC000000"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/downArrowImg"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="right"
+                    app:srcCompat="@mipmap/down_arrow_big" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/line"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutWeight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/rightTransparentBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC000000"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/selectTopicTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:text="सीखना शुरू करने के लिए एक अध्याय का चयन करें।"
+                    android:textAllCaps="false"
+                    android:textSize="22sp"
+                    android:textColor="@android:color/white" />
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <!--<com.idream.android.util.TextViewBodyFont
+                    android:id="@+id/videoNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:textColor="@android:color/black" />-->
+
+
+
+                <LinearLayout
+                    android:id="@+id/videoLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        app:tabGravity="fill"
+                        android:visibility="gone"
+                        app:tabIndicatorFullWidth="false"
+                        android:background="@color/white"
+                        app:tabMode="fixed"
+                        android:layout_marginTop="5dp"
+                        app:tabInlineLabel="true"
+                        app:tabIndicator="@drawable/tab_indicator"
+                        app:tabSelectedTextColor="#212121"
+                        app:tabTextAppearance="@style/TabLayoutTextStyle"
+                        app:tabTextColor="#212121" />
+
+                    <TextView
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:layout_below="@+id/tabLayout"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/gray_toast" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <FrameLayout
+                            android:id="@+id/container"
+                            android:layout_width="match_parent"
+                            android:layout_height="320dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@color/shadow"
+                            android:visibility="gone"/>
+                    </RelativeLayout>
+
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/practiceLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@+id/togglePracticeLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:background="@drawable/bg_transparent_shape">
+
+                    <ImageView
+                        android:id="@+id/imageViewStar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/green_star_icon" />
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/textViewPractice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imageViewStar"
+                        android:layout_marginRight="150dp"
+                        android:layout_centerVertical="true"
+                        android:text="Practice"
+                        android:textSize="12sp"
+                        android:textColor="#6A6A6A" />
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/textViewResumePractice"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/textViewPractice"
+                        android:background="?selectableItemBackground"
+                        android:text="Resume Practice"
+                        android:textSize="12sp"
+                        android:textColor="#0077FF" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/togglePracticeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    android:background="@drawable/gray_white_toggle_background">
+
+                    <ImageView
+                        android:id="@+id/imageViewToggle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:rotation="270"
+                        android:background="?selectableItemBackground"
+                        android:src="@mipmap/up_arrow_icon" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/actionBar"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageViewBackFoundational"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_back_round" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="Videos - "
+                    android:textSize="18sp" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewSubTitle"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/actionBar"
+                android:layout_height="1dp"
+                android:background="@color/gray_toast" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/videoRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+            <FrameLayout
+                android:id="@+id/videoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:color/black"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fullTransparentBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"/>
+
+    <include layout="@layout/floating_draw_contact_us"></include>
+
+    <LinearLayout
+        android:id="@+id/connection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6B4E4E4E"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/slow_internet_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:text="Slow Internet Connection"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewCrossVideo2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/slow_internet_Text"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

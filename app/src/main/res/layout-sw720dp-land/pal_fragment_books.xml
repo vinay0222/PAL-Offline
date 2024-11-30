@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/item_background_white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <LinearLayout
+        android:id="@+id/nobookLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="5dp"
+        android:gravity="center"
+        android:background="@drawable/item_background_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noDataAvailableText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No data available at the moment"
+            android:textColor="@color/textcolour"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="16dp"
+            android:gravity="center"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:lottie_fileName="sleeping_cat.json"
+            app:lottie_autoPlay="true"
+            android:layout_marginVertical="10dp"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:id="@+id/catDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discoveries yet to come, as the cat takes a nap."
+            android:textColor="@color/textcolour"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="16dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

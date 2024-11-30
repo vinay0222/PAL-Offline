@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <com.idreameducation.ipreppal.util.EditTextWithFont
+        android:id="@+id/editTextTabID"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/white_solid_shadow"
+        android:elevation="3dp"
+        android:hint="Enter Tab ID"
+        android:paddingLeft="10dp">
+
+    </com.idreameducation.ipreppal.util.EditTextWithFont>
+
+
+    <RelativeLayout
+        android:id="@+id/reletiveLayout"
+android:padding="10dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/editTextTabID">
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewAppID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/buttonRefres"
+            android:gravity="center|left"
+            android:text=""
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/buttonRefres"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Refresh" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonGetAppID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Get AppID" />
+
+
+</RelativeLayout>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeLayout"
+    android:background="#FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="ifContentScrolls">
+
+        <RelativeLayout
+            android:id="@+id/layoutabove"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/lastTopicLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blue_iprep"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/subjectImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/subjectImageView"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="#212121"
+                    android:textSize="12dp" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewContinue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/textViewMsg"
+                    android:background="?selectableItemBackground"
+                    android:text="सीखना जारी रखें"
+                    android:textColor="#0077FF"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/closeImg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/textViewContinue"
+                    android:background="?selectableItemBackground"
+                    android:padding="3dp"
+                    android:src="@mipmap/cross_diagnostic"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/nextImg"
+                    android:layout_width="25dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@+id/textViewContinue"
+                    android:background="?selectableItemBackground"
+                    android:padding="3dp"
+                    android:src="@mipmap/right_arrow_blue" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/subjectsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:background="@color/white"
+                android:layout_below="@+id/lastTopicLayout">
+
+                <TextView
+                    android:id="@+id/textViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:text="आपके विषय"
+                    android:textAllCaps="false"
+                    android:textSize="17dp"
+                    android:textColor="#212121"
+                    android:fontFamily="@font/inter_medium"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewTitle"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="2dp"
+                    android:overScrollMode="never"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/reletiveTest"
+                android:layout_below="@+id/subjectsLayout"
+                android:layout_alignStart="@+id/subjectsLayout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center|left"
+                    android:text="Your Test Preprations"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal" />
+
+
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewTestSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="See All"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_alignParentRight="true"
+                    android:textAllCaps="false"
+                    android:padding="5dp"
+                    android:background="@drawable/pal_blue_transparent"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/blue" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reletiveTest"
+                android:layout_alignStart="@+id/subjectsLayout"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="4">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutBooks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/test"
+                android:paddingVertical="5dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewBooks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="डिजिटल किताबें"
+                        android:textAllCaps="false"
+                        android:textSize="17dp"
+                        android:textColor="#212121"
+                        android:fontFamily="@font/inter_medium"
+                        android:textStyle="bold" />
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewBooksSeeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/pal_blue_transparent"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="5dp"
+                        android:text="See All"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/blue"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewBooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="2dp"
+                    android:overScrollMode="never"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutStem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutBooks"
+                android:paddingVertical="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewStem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="परियोजनाओं और व्यावहारिक वीडियो"
+                        android:textAllCaps="false"
+                        android:textSize="17dp"
+                        android:textColor="#212121"
+                        android:fontFamily="@font/inter_medium"
+                        android:textStyle="bold"/>
+
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewStemSeeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:text="See All"
+                        android:foreground="?selectableItemBackground"
+                        android:layout_alignParentRight="true"
+                        android:textAllCaps="false"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="5dp"
+                        android:background="@drawable/pal_blue_transparent"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/blue" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewStem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="2dp"
+                    android:overScrollMode="never"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutSimulation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutStem"
+                android:layout_alignStart="@+id/subjectsLayout"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSimulation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        android:text="Simulation Projects"
+                        android:textAllCaps="false"
+                        android:visibility="gone"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#212121"
+                        android:fontFamily="@font/inter_medium"
+                        android:textStyle="bold" />
+
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/pal_blue_transparent"
+                        android:foreground="?selectableItemBackground"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="5dp"
+                        android:text="See All"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/blue"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewSimulation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="2dp"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/audioBooksTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ebooksRecyclerView"
+                    android:layout_alignStart="@+id/test"
+                    android:text="Audio Book"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="15dp"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#363636"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/audioBooksRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/audioBooksTitle"
+                    android:layout_alignStart="@+id/recyclerView"
+                    android:layout_marginTop="4dp"
+                    android:focusable="true"
+                    android:layout_centerHorizontal="false"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="gone"
+                    android:nextFocusUp="@id/recyclerView"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/imageViewFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/subjectsLayout"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/footer"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewShare"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/recyclerView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Share iPrep with your Friends"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal" />
+
+                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                    android:id="@+id/textViewShareButton"
+
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/recyclerView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/blue_iprep_more_redius"
+                    android:gravity="center"
+                    android:text="Share "
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="visible"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/slow_internet_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:text="Slow Internet Connection"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageViewCrossVideo2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_below="@id/slow_internet_Text"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

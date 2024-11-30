@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="700dp"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:layout_centerVertical="true"
+    android:gravity="center">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:elevation="3dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent">
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewMessge1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textViewDetails"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true"
+                        android:text="Please get in touch and we will be happy to help you."
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="#1E293B"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:padding="8dp"
+                        android:scaleType="fitXY"
+                        android:background="@mipmap/cross_diagnostic"
+                        android:id="@+id/imageViewCrossDialogue"
+                        android:layout_height="30dp">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewMessge2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewMessge1"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="If you with to ask any question about iPrep PAL"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewMessge3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewMessge1"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="If you have an amazing idea to grow iPrep PAL and its reach"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/textViewMessge4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewMessge1"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="If you wish to share your feelings about iPerp PAL"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible" />
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/call1TextView"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/EmailTextView"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:visibility="visible"
+                    android:foreground="?selectableItemBackground"
+                    android:drawableLeft="@mipmap/call_icon_contact_us"
+                    android:drawablePadding="10dp"
+                    android:elevation="1dp"
+                    android:gravity="center"
+                    android:minHeight="60dp"
+                    android:paddingLeft="20dp"
+                    android:text="Call us   +91 7737403501"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/WhatsappTextView"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/EmailTextView"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/rounded_edittext_watsapp"
+                    android:drawableLeft="@mipmap/whatsapp_icon_contact_us"
+                    android:drawablePadding="10dp"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:minHeight="60dp"
+                    android:elevation="1dp"
+                    android:paddingLeft="20dp"
+                    android:text="Watsapp   +91 7737403501"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:id="@+id/EmailTextView"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/rounded_edittext_email"
+                    android:drawableLeft="@mipmap/email_icon_contact_us"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:minHeight="60dp"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingLeft="20dp"
+                    android:text="Email   share@idreameducation.org"
+                    android:elevation="1dp"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

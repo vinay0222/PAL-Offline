@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:ignore="MissingDefaultResource">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/alert_popup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/no_file_alert"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/alert_popup">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="It seems like there is no content here."
+                android:textAppearance="?android:textAppearanceLargeInverse"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewGoBack"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/linear"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blue_iprep_button"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Go Back"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp">
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:fadeScrollbars="false"
+            android:layout_marginVertical="10dp"
+            android:scrollbarSize="10dp"
+            android:paddingTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:scrollbarFadeDuration="200"
+            style="@style/scrollbar_style_popup">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/correctImageView"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="end"
+                        android:background="?selectableItemBackground"
+                        android:src="@drawable/ic_correct_sign"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Correct Answer"
+                        android:textColor="@color/text"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/feedback_bg"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Feedback"
+                        android:textColor="@color/blue"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/textViewSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="India is a federal republic and it has a constitution that clearly sets the sharing of powers between the central and state governments. India is a federal republic and it has a constitution that clearly sets the sharing of powers between the central and state governments.India is a federal republic and it has a constitution that clearly sets the sharing of powers between the central and state governments.India is a federal republic and it has a constitution that clearly sets the sharing of powers between the central and state governments."
+                        android:textColor="@color/profile_text"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewSubTitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Your Answer is correct. If you wish to further improve your clarity on this, you can watch the videos below or else attempt next questions."
+                    android:textColor="@color/greentext"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/videoLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/gray_iprep"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/videoTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="iPrep"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="44dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_video_icon" />
+
+                            <TextView
+                                android:id="@+id/textViewMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="10dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Key Feature to Federalism"
+                                android:textColor="@color/textcolour"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:id="@+id/videoDikshaLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/gray_iprep"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/videoTextViewDiksha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="iPrep"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="44dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_video_icon" />
+
+                            <TextView
+                                android:id="@+id/textViewMessageDiskha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="10dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Key Feature to Federalism"
+                                android:textColor="@color/textcolour"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageViewCross"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_close_blue"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="10dp"
+            android:gravity="end"
+            android:background="#ffffff">
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/textViewNext"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:layout_marginRight="10dp"
+                android:text="अगला प्रश्न"
+                android:gravity="center"
+                android:textColor="@color/blue"
+                android:background="@drawable/trans_blue_iprep_button"
+                android:drawableRight="@mipmap/white_right_arrow_icon"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/blue"
+                android:foreground="?selectableItemBackground"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewFlag"
+            android:paddingHorizontal="10dp"
+            android:visibility="gone"
+            android:paddingVertical="15dp">
+
+            <com.idreameducation.ipreppal.util.MaxHeightScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/imageViewCross"
+                android:scrollbars="none"
+                app:maxHeight="400dp">
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageViewClose"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@mipmap/smily" />
+
+                        <ImageView
+                            android:id="@+id/imageViewFlag"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:src="@mipmap/error_flag"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@android:color/white"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <VideoView
+                        android:id="@+id/videoView"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="20dp"
+                        android:visibility="gone" />
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:textAppearanceLargeInverse"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageViewFeedback"
+                        android:layout_width="wrap_content"
+                        android:visibility="visible"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:gravity="left"
+                        android:layout_marginLeft="20dp"
+                        android:text="गलत उत्तर"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#00B158" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="left"
+                        android:layout_marginLeft="20dp"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textColor="#424242" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/textViewSubTitle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="left"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textColor="#424242" />
+
+
+                </LinearLayout>
+
+            </com.idreameducation.ipreppal.util.MaxHeightScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scroll"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearVideoTitleLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal" >
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:id="@+id/videoTextView"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="वीडियो (iPrep)"
+                        android:textSize="16sp"
+                        android:textColor="#0077FF" />
+
+                    <com.idreameducation.ipreppal.util.TextViewBodyFont
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="वीडियो (Diksha)"
+                        android:textSize="16sp"
+                        android:textColor="#0077FF" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reletiveparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="?selectableItemBackground"
+                    android:gravity="center">
+
+                    <!--<ImageView
+                        android:id="@+id/playbutton"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:src="@mipmap/video_icon"
+                        android:visibility="visible" />-->
+
+                    <LinearLayout
+                        android:id="@+id/linearVideoLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:weightSum="2"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal" >
+
+                        <RelativeLayout
+                            android:id="@+id/videoLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center">
+
+                            <FrameLayout
+                                android:id="@+id/videoThumnailLayout"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="2dp"
+                                android:layout_gravity="center"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/playbutton"
+                                    android:layout_width="150dp"
+                                    android:padding="10dp"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY" />
+
+                                <ImageView
+                                    android:id="@+id/playButtonThumnail"
+                                    android:layout_width="15dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="15dp"
+                                    android:src="@mipmap/play_video_icon"/>
+
+                            </FrameLayout>
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/shimmer_view_container"
+                                android:layout_width="150dp"
+                                android:layout_height="100dp"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                shimmer:duration="600">
+
+
+                                <ImageView
+                                    android:id="@+id/imageViewThumnail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#dddddd"
+                                    android:scaleType="fitXY" />
+
+
+                                <com.idreameducation.ipreppal.util.TextViewBodyFont
+                                    android:id="@+id/textViewName_"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:layout_marginVertical="10dp"
+                                    android:layout_toRightOf="@+id/shimmer_view_container"
+                                    android:gravity="center|left"
+                                    android:text=""
+                                    android:textColor="@android:color/white"
+                                    android:textSize="10dp"
+                                    android:visibility="gone" />
+
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                                android:id="@+id/textViewMessage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/videoThumnailLayout"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:text="ewfergerg"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:textColor="@android:color/black" />
+
+
+
+                            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                                android:id="@+id/textViewAssigned"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="@android:color/holo_green_dark"
+                                android:gravity="center|left"
+                                android:text=""
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:textColor="@android:color/black"
+                                android:visibility="gone" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                style="?android:attr/progressBarStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginBottom="30dp"
+                                android:visibility="gone" />
+
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/videoDikshaLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gray_iprep"
+                            android:gravity="center">
+
+                            <FrameLayout
+                                android:id="@+id/videoThumnailLayoutDiksha"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="2dp"
+                                android:layout_gravity="center"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/playbuttonDiksha"
+                                    android:layout_width="150dp"
+                                    android:padding="10dp"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY" />
+
+                                <!--                                <View-->
+                                <!--                                    android:layout_width="150dp"-->
+                                <!--                                    android:layout_height="match_parent"-->
+                                <!--                                    android:background="@drawable/video_background_layout" />-->
+
+                                <ImageView
+                                    android:id="@+id/playButtonThumnailDiksha"
+                                    android:layout_width="15dp"
+                                    android:layout_gravity="center"
+                                    android:layout_height="15dp"
+                                    android:src="@mipmap/play_video_icon"/>
+
+                            </FrameLayout>
+
+                            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                                android:id="@+id/textViewMessageDiskha"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/videoThumnailLayoutDiksha"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:text="ewfergerg"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textAppearance="?android:textAppearanceMedium"
+                                android:textColor="@android:color/black" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/textViewOkay"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/scroll"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/submit"
+
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewReportError"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textViewOkay"
+                android:layout_marginTop="10dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="vhbfjhvbfjv"
+                android:layout_alignParentBottom="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

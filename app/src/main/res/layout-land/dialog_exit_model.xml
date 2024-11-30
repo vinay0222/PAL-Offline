@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:id="@+id/crossImage"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_close_blue"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_question_bc"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center|left"
+            android:text="Confirm Log Out"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center|left"
+            android:text="Are you sure you want to Logout?"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#666666" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center|right">
+
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/TxtExit"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/textViewContinoue"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/trans_blue_iprep_button"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/blue" />
+
+            <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                android:id="@+id/textViewContinoue"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView"
+                android:backgroundTint="@color/blue"
+                android:background="@drawable/blue_iprep_button"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

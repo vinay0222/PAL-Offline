@@ -1,0 +1,2471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.3.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.3.1)" variant="fatal" version="8.3.1">
+
+    <issue
+        id="NamespaceTypo"
+        message="Suspicious namespace and prefix combination"
+        errorLine1="    xmlns:app=&quot;http://schemas.android.com/tools&quot;"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/iprep_row_inner_video_extra.xml"
+            line="3"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="NamespaceTypo"
+        message="Suspicious namespace and prefix combination"
+        errorLine1="    xmlns:app=&quot;http://schemas.android.com/tools&quot;"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/iprep_row_stem_video_listings.xml"
+            line="3"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="NamespaceTypo"
+        message="Suspicious namespace and prefix combination"
+        errorLine1="    xmlns:app=&quot;http://schemas.android.com/tools&quot;"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/iprep_row_stem_video_listings.xml"
+            line="3"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="NamespaceTypo"
+        message="Suspicious namespace and prefix combination"
+        errorLine1="    xmlns:app=&quot;http://schemas.android.com/tools&quot;"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/iprep_row_stem_video_listings.xml"
+            line="3"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`textViewFlag`&quot; is not defined anywhere."
+        errorLine1="            android:layout_below=&quot;@+id/textViewFlag&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="252"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/setupPathText`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/setupPathText&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_activation_detail.xml"
+            line="226"
+            column="13"/>
+        <location
+            file="src/main/res/layout/activity_activation_detail.xml"
+            line="124"
+            column="17"
+            message="Duplicate id `@+id/setupPathText` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/Onboading_crossImage`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/Onboading_crossImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="1872"
+            column="17"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="1828"
+            column="17"
+            message="Duplicate id `@+id/Onboading_crossImage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/Onboading_crossImage`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/Onboading_crossImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="1872"
+            column="17"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="1828"
+            column="17"
+            message="Duplicate id `@+id/Onboading_crossImage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/Onboading_crossImage`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/Onboading_crossImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="1877"
+            column="17"/>
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="1833"
+            column="17"
+            message="Duplicate id `@+id/Onboading_crossImage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="2022"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="447"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="2022"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="446"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="2027"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="449"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="2072"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="447"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="2072"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="446"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="2077"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="449"
+            column="17"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="2084"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="459"
+            column="17"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="2084"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="458"
+            column="17"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="2089"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="461"
+            column="17"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_question.xml"
+            line="1418"
+            column="13"/>
+        <location
+            file="src/main/res/layout/activity_question.xml"
+            line="710"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1430"
+            column="13"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="784"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1431"
+            column="13"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="785"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1436"
+            column="13"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="786"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1885"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="784"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1886"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="785"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hintImageView`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hintImageView&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1891"
+            column="21"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="786"
+            column="25"
+            message="Duplicate id `@+id/hintImageView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/video_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/video_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1893"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1438"
+            column="13"
+            message="Duplicate id `@+id/video_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/video_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/video_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1894"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1439"
+            column="13"
+            message="Duplicate id `@+id/video_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/video_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/video_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1899"
+            column="21"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1444"
+            column="13"
+            message="Duplicate id `@+id/video_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hint_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hint_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1958"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1403"
+            column="13"
+            message="Duplicate id `@+id/hint_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hint_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hint_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1959"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1404"
+            column="13"
+            message="Duplicate id `@+id/hint_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/hint_text`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/hint_text&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1963"
+            column="21"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1409"
+            column="13"
+            message="Duplicate id `@+id/hint_text` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/option1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/option1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2032"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="515"
+            column="41"
+            message="Duplicate id `@+id/option1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/option1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/option1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2033"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="516"
+            column="41"
+            message="Duplicate id `@+id/option1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/option1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/option1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2038"
+            column="21"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="517"
+            column="41"
+            message="Duplicate id `@+id/option1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/onboading_textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/onboading_textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2126"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2108"
+            column="25"
+            message="Duplicate id `@+id/onboading_textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/onboading_textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/onboading_textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2127"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2109"
+            column="25"
+            message="Duplicate id `@+id/onboading_textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/onboading_textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/onboading_textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2132"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2114"
+            column="25"
+            message="Duplicate id `@+id/onboading_textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2164"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="30"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2165"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="30"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2170"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="31"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2176"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="821"
+            column="29"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2177"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="822"
+            column="29"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubmit`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2182"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="824"
+            column="29"
+            message="Duplicate id `@+id/textViewSubmit` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/questionLayout`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/questionLayout&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2256"
+            column="17"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="16"
+            column="13"
+            message="Duplicate id `@+id/questionLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/questionLayout`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/questionLayout&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2257"
+            column="17"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="16"
+            column="13"
+            message="Duplicate id `@+id/questionLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/questionLayout`, already defined earlier in this layout"
+        errorLine1="                android:id=&quot;@+id/questionLayout&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2262"
+            column="17"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="16"
+            column="13"
+            message="Duplicate id `@+id/questionLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2273"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="30"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2274"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="30"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewBack`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/imageViewBack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2279"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="31"
+            column="21"
+            message="Duplicate id `@+id/imageViewBack` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/topicName`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/topicName&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2285"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="42"
+            column="21"
+            message="Duplicate id `@+id/topicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/topicName`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/topicName&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2286"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="42"
+            column="21"
+            message="Duplicate id `@+id/topicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/topicName`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/topicName&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2291"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="43"
+            column="21"
+            message="Duplicate id `@+id/topicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/progress`, already defined earlier in this layout"
+        errorLine1="                                    android:id=&quot;@+id/progress&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2351"
+            column="37"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="108"
+            column="33"
+            message="Duplicate id `@+id/progress` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/progress`, already defined earlier in this layout"
+        errorLine1="                                    android:id=&quot;@+id/progress&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2352"
+            column="37"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="109"
+            column="33"
+            message="Duplicate id `@+id/progress` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/progress`, already defined earlier in this layout"
+        errorLine1="                                    android:id=&quot;@+id/progress&quot;"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2357"
+            column="37"/>
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="110"
+            column="33"
+            message="Duplicate id `@+id/progress` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/gender_fullName`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/gender_fullName&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_user_profile_screen.xml"
+            line="287"
+            column="33"/>
+        <location
+            file="src/main/res/layout/activity_user_profile_screen.xml"
+            line="246"
+            column="33"
+            message="Duplicate id `@+id/gender_fullName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/genderEditText`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/genderEditText&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_user_profile_screen.xml"
+            line="300"
+            column="33"/>
+        <location
+            file="src/main/res/layout/activity_user_profile_screen.xml"
+            line="259"
+            column="33"
+            message="Duplicate id `@+id/genderEditText` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewCrossVideo2`, already defined earlier in this layout"
+        errorLine1="            android:id=&quot;@+id/imageViewCrossVideo2&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_video_view.xml"
+            line="88"
+            column="13"/>
+        <location
+            file="src/main/res/layout/activity_video_view.xml"
+            line="27"
+            column="13"
+            message="Duplicate id `@+id/imageViewCrossVideo2` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/progressBar5`, already defined earlier in this layout"
+        errorLine1="        android:id=&quot;@+id/progressBar5&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="117"
+            column="9"/>
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="61"
+            column="9"
+            message="Duplicate id `@+id/progressBar5` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewVideoName`, already defined earlier in this layout"
+        errorLine1="        android:id=&quot;@+id/textViewVideoName&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="127"
+            column="9"/>
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="80"
+            column="13"
+            message="Duplicate id `@+id/textViewVideoName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSelected`, already defined earlier in this layout"
+        errorLine1="        android:id=&quot;@+id/textViewSelected&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="143"
+            column="9"/>
+        <location
+            file="src/main/res/layout/iprep_row_inner_video.xml"
+            line="110"
+            column="9"
+            message="Duplicate id `@+id/textViewSelected` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="207"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="207"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="208"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="208"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="243"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="243"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="244"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="244"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="487"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="487"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="488"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="488"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="521"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="522"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="523"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="523"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="556"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="557"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="558"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="558"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="663"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="664"
+            column="29"/>
+        <location
+            file="src/main/res/layout/navigationdrawer_new.xml"
+            line="188"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="665"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/imageViewAnalytics`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/imageViewAnalytics&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="665"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/navigationdrawer_new.xml"
+            line="189"
+            column="29"
+            message="Duplicate id `@+id/imageViewAnalytics` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubTitle1`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubTitle1&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="353"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="99"
+            column="21"
+            message="Duplicate id `@+id/textViewSubTitle1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubTitle1`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubTitle1&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="353"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="98"
+            column="21"
+            message="Duplicate id `@+id/textViewSubTitle1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubTitle1`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubTitle1&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="353"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="98"
+            column="21"
+            message="Duplicate id `@+id/textViewSubTitle1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewSubTitle1`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/textViewSubTitle1&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="353"
+            column="25"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="98"
+            column="21"
+            message="Duplicate id `@+id/textViewSubTitle1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoTextView`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/videoTextView&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="385"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="127"
+            column="29"
+            message="Duplicate id `@+id/videoTextView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoTextView`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/videoTextView&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="385"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="126"
+            column="29"
+            message="Duplicate id `@+id/videoTextView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoTextView`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/videoTextView&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="385"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="126"
+            column="29"
+            message="Duplicate id `@+id/videoTextView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoTextView`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/videoTextView&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="385"
+            column="25"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="126"
+            column="29"
+            message="Duplicate id `@+id/videoTextView` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="432"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="118"
+            column="25"
+            message="Duplicate id `@+id/videoLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="432"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="117"
+            column="25"
+            message="Duplicate id `@+id/videoLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="432"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="117"
+            column="25"
+            message="Duplicate id `@+id/videoLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="432"
+            column="29"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="117"
+            column="25"
+            message="Duplicate id `@+id/videoLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessage`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessage&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="499"
+            column="33"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="146"
+            column="33"
+            message="Duplicate id `@+id/textViewMessage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessage`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessage&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="499"
+            column="33"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="145"
+            column="33"
+            message="Duplicate id `@+id/textViewMessage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessage`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessage&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="499"
+            column="33"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="145"
+            column="33"
+            message="Duplicate id `@+id/textViewMessage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessage`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessage&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="499"
+            column="33"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="145"
+            column="33"
+            message="Duplicate id `@+id/textViewMessage` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoDikshaLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoDikshaLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="557"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="165"
+            column="25"
+            message="Duplicate id `@+id/videoDikshaLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoDikshaLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoDikshaLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="557"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="164"
+            column="25"
+            message="Duplicate id `@+id/videoDikshaLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoDikshaLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoDikshaLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="557"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="164"
+            column="25"
+            message="Duplicate id `@+id/videoDikshaLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/videoDikshaLayout`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/videoDikshaLayout&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="557"
+            column="29"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="164"
+            column="25"
+            message="Duplicate id `@+id/videoDikshaLayout` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessageDiskha`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessageDiskha&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="594"
+            column="33"/>
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="193"
+            column="33"
+            message="Duplicate id `@+id/textViewMessageDiskha` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessageDiskha`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessageDiskha&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="594"
+            column="33"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="192"
+            column="33"
+            message="Duplicate id `@+id/textViewMessageDiskha` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessageDiskha`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessageDiskha&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="594"
+            column="33"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="192"
+            column="33"
+            message="Duplicate id `@+id/textViewMessageDiskha` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewMessageDiskha`, already defined earlier in this layout"
+        errorLine1="                                android:id=&quot;@+id/textViewMessageDiskha&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="594"
+            column="33"/>
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="192"
+            column="33"
+            message="Duplicate id `@+id/textViewMessageDiskha` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewTopicName`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/textViewTopicName&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="88"
+            column="29"/>
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="72"
+            column="25"
+            message="Duplicate id `@+id/textViewTopicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewTopicName`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/textViewTopicName&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="88"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="72"
+            column="25"
+            message="Duplicate id `@+id/textViewTopicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/textViewTopicName`, already defined earlier in this layout"
+        errorLine1="                            android:id=&quot;@+id/textViewTopicName&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="88"
+            column="29"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="72"
+            column="25"
+            message="Duplicate id `@+id/textViewTopicName` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/line1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/line1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_topics.xml"
+            line="205"
+            column="21"/>
+        <location
+            file="src/main/res/layout/pal_row_topics.xml"
+            line="105"
+            column="17"
+            message="Duplicate id `@+id/line1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/line1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/line1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="266"
+            column="21"/>
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="165"
+            column="17"
+            message="Duplicate id `@+id/line1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/line1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/line1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="268"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="165"
+            column="17"
+            message="Duplicate id `@+id/line1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/line1`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/line1&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="268"
+            column="21"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="165"
+            column="17"
+            message="Duplicate id `@+id/line1` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/selectItem3`, already defined earlier in this layout"
+        errorLine1="                    android:id=&quot;@+id/selectItem3&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_topics.xml"
+            line="392"
+            column="21"/>
+        <location
+            file="src/main/res/layout/pal_row_topics.xml"
+            line="246"
+            column="25"
+            message="Duplicate id `@+id/selectItem3` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/selectItem3`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/selectItem3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="451"
+            column="25"/>
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="309"
+            column="25"
+            message="Duplicate id `@+id/selectItem3` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/selectItem3`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/selectItem3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="453"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="311"
+            column="25"
+            message="Duplicate id `@+id/selectItem3` originally defined here"/>
+    </issue>
+
+    <issue
+        id="DuplicateIds"
+        message="Duplicate id `@+id/selectItem3`, already defined earlier in this layout"
+        errorLine1="                        android:id=&quot;@+id/selectItem3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="453"
+            column="25"/>
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="311"
+            column="25"
+            message="Duplicate id `@+id/selectItem3` originally defined here"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The layout &quot;activity_pal_video_player&quot; in layout-land has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_pal_video_player.xml"
+            line="1"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The layout &quot;activity_pal_video_player&quot; in layout-sw720dp-land has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier"
+        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_pal_video_player.xml"
+            line="1"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/rollmobilelayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@id/rollmobilelayout&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_anonymous_login.xml"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/rollmobilelayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@id/rollmobilelayout&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_anonymous_login.xml"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videoView` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_above=&quot;@+id/videoView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_i_prep_video_player.xml"
+            line="121"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videoView` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_above=&quot;@+id/videoView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_i_prep_video_player.xml"
+            line="134"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewToatal` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@+id/textViewToatal&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_model_paper.xml"
+            line="155"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewToatal` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@+id/textViewToatal&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_model_paper.xml"
+            line="193"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewToatal` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@+id/textViewToatal&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_model_paper.xml"
+            line="194"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewToatal` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@+id/textViewToatal&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_model_paper.xml"
+            line="196"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayoutTrack` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_toRightOf=&quot;@+id/linearLayoutTrack&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_model_paper.xml"
+            line="215"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                    android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="36"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                    android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="36"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                    android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="37"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/questionLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_alignTop=&quot;@id/questionLayout&quot;>"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_question.xml"
+            line="296"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/questionLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_alignTop=&quot;@id/questionLayout&quot;>"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="341"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/questionLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_alignTop=&quot;@id/questionLayout&quot;>"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="342"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/questionLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_alignTop=&quot;@id/questionLayout&quot;>"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="343"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_question.xml"
+            line="769"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_question.xml"
+            line="782"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="843"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="844"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="846"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="856"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="857"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout3` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_below=&quot;@+id/linearLayout3&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="859"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videos_btn` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_toEndOf=&quot;@+id/videos_btn&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="1946"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videos_btn` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_toEndOf=&quot;@+id/videos_btn&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="1947"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videos_btn` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_toEndOf=&quot;@+id/videos_btn&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="1951"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/activity_question.xml"
+            line="2279"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/activity_question.xml"
+            line="2280"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/top_line` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                        android:layout_above=&quot;@id/top_line&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_question.xml"
+            line="2285"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/container` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                            android:layout_below=&quot;@+id/container&quot; />"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/activity_stem_listing.xml"
+            line="143"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videoView` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_above=&quot;@+id/videoView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_video_view.xml"
+            line="107"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/videoView` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_above=&quot;@+id/videoView&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_video_view.xml"
+            line="121"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/linearLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_below=&quot;@+id/linearLayout&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_activity_extra_content.xml"
+            line="26"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/shimmer_view_container` is not a sibling in the same `RelativeLayout`"
+        errorLine1="        android:layout_below=&quot;@+id/shimmer_view_container&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_extra_content_inner.xml"
+            line="34"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/imageViewCross` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_below=&quot;@+id/imageViewCross&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_feedback_dialog.xml"
+            line="261"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/imageViewCross` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_below=&quot;@+id/imageViewCross&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_feedback_dialog.xml"
+            line="261"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/imageViewCross` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_below=&quot;@+id/imageViewCross&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/pal_row_feedback_dialog.xml"
+            line="261"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/imageViewCross` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                android:layout_below=&quot;@+id/imageViewCross&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_feedback_dialog.xml"
+            line="262"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewStudentCount` is not a sibling in the same `RelativeLayout`"
+        errorLine1="        android:layout_toLeftOf=&quot;@+id/textViewStudentCount&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_recent_chats.xml"
+            line="41"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/lockImage` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="                android:layout_toLeftOf=&quot;@+id/lockImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-land/pal_row_topics.xml"
+            line="118"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/lockImage` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="                android:layout_toLeftOf=&quot;@+id/lockImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw600dp-land/pal_row_topics.xml"
+            line="118"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/lockImage` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="                android:layout_toLeftOf=&quot;@+id/lockImage&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="118"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/btnStart` is not a sibling in the same `RelativeLayout`"
+        errorLine1="        android:layout_below=&quot;@+id/btnStart&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_row_topics.xml"
+            line="502"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/reletive` is not a sibling in the same `RelativeLayout`"
+        errorLine1="        android:layout_below=&quot;@+id/reletive&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/pal_video_list.xml"
+            line="29"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/reltive_layout_back` is not a sibling in the same `RelativeLayout`"
+        errorLine1="            android:layout_below=&quot;@+id/reltive_layout_back&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/row_facilitator_list.xml"
+            line="25"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@id/progressBar` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                            android:layout_below=&quot;@id/progressBar&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/row_model_paper.xml"
+            line="123"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/questionLayout` is not a sibling in the same `RelativeLayout`"
+        errorLine1="        android:layout_below=&quot;@+id/questionLayout&quot;>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/row_review_modelpaper.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotSibling"
+        message="`@+id/textViewSubmit` is not a sibling in the same `RelativeLayout`"
+        errorLine1="                    android:layout_above=&quot;@+id/textViewSubmit&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout-sw720dp-land/row_review_modelpaper.xml"
+            line="48"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UnspecifiedImmutableFlag"
+        message="Missing `PendingIntent` mutability flag"
+        errorLine1="        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);"
+        errorLine2="                                                                                 ~">
+        <location
+            file="src/main/java/com/idreameducation/ipreppal/notification/FireMsgService.java"
+            line="151"
+            column="82"/>
+    </issue>
+
+</issues>

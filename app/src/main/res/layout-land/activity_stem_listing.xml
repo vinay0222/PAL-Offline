@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stem_listing_layout"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:id="@+id/showLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.3"
+                    android:paddingRight="10dp"
+                    android:visibility="visible"
+                    android:id="@+id/topicLayout"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_above="@+id/recyclerView"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:background="?selectableItemBackground"
+                        android:focusable="true"
+                        android:nextFocusRight="@id/tabLayout"
+                        android:nextFocusDown="@id/recyclerView"
+                        android:padding="2dp"
+                        android:src="@drawable/ic_back_round" />
+
+                    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                        android:id="@+id/textViewSubjectName"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/recyclerView"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_toEndOf="@+id/imageViewBack"
+                        android:layout_toRightOf="@id/imageViewBack"
+                        android:gravity="center|left"
+                        android:maxLines="1"
+                        android:text="Physics"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#FCAC52"
+                        android:textStyle="bold" />
+
+                    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                        android:id="@+id/textViewChapterCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textViewSubjectName"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center|left"
+                        android:text="6 chapyetr"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#6A6A6A"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageViewSubject"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:background="?selectableItemBackground"
+                        android:foregroundGravity="center" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_below="@+id/imageViewSubject"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="visible"
+                        android:background="@color/unselected_tab" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/line"
+                        android:layout_marginTop="5dp"
+                        android:nextFocusRight="@id/tabLayout"
+                        android:nextFocusForward="@id/tabLayout"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                        <requestFocus></requestFocus>
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/containerLinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/viiew2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:visibility="gone"/>
+
+                        <View
+                            android:id="@+id/viiew"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_below="@+id/container" />
+
+                        <LinearLayout
+                            android:weightSum="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_weight="1"
+                                android:id="@+id/container"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:background="@android:color/black"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/imageViewCrossVideo"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="left"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="1dp"
+                                    android:background="@mipmap/cross_icon_video_player"
+                                    android:visibility="gone" />
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/videoLayout"
+                                android:layout_weight="1"
+                                android:visibility="visible"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                                    android:id="@+id/videoName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/viiew"
+                                    android:layout_marginLeft="15dp"
+                                    android:textAppearance="?android:textAppearanceSmall"
+                                    android:textColor="@color/black"
+                                    android:visibility="gone" />
+
+                                <com.idreameducation.ipreppal.util.TextViewHeadingFont
+                                    android:id="@+id/textViewVideoTitle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/videoName"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:textAppearance="?android:textAppearanceMedium"
+                                    android:textColor="#FB9E36" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/videoRecyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textViewVideoTitle"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:scrollbarSize="5dp"
+                                    android:scrollbarThumbVertical="@android:color/darker_gray"
+                                    android:scrollbars="vertical"
+                                    android:splitMotionEvents="false"
+                                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/hideLayout"
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progresss"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="#0077FF"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="visible" />
+
+
+        <ImageView
+            android:id="@+id/loaderlogo"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/progresss"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ipreplogo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/loaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progresss"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Please wait, while we load your content"
+            android:textColor="#898C91"
+            android:textSize="22dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/floating_draw_contact_us"></include>
+
+</RelativeLayout>
+

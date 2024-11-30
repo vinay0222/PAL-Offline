@@ -1,0 +1,885 @@
+{
+  "project_info": {
+    "project_number": "165257927521",
+    "firebase_url": "https://iprep-7f10a.firebaseio.com",
+    "project_id": "iprep-7f10a",
+    "storage_bucket": "iprep-7f10a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:350ee2bd0280ba2c63c320",
+        "android_client_info": {
+          "package_name": "com.example.app_id_refresh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:e0f13e6e4c596c9263c320",
+        "android_client_info": {
+          "package_name": "com.example.coach_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:7712f2776843121a63c320",
+        "android_client_info": {
+          "package_name": "com.example.ipreplearningtablet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:17a5060c509dfbd763c320",
+        "android_client_info": {
+          "package_name": "com.idream.PALcoach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:629706e19761749263c320",
+        "android_client_info": {
+          "package_name": "com.idream.geminiAI"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:a19665aacb3287d063c320",
+        "android_client_info": {
+          "package_name": "com.idream.idreamsurveyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-j06ql2cq8272jt5ri4l7jndohllog06v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.idream.idreamsurveyapp",
+            "certificate_hash": "5755477571355530df226fe95ae0cc5b9c0407b3"
+          }
+        },
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:d76b923e5fbcf54b63c320",
+        "android_client_info": {
+          "package_name": "com.idream.management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:0ff2734c129726cd63c320",
+        "android_client_info": {
+          "package_name": "com.idream.mdmtestingpackage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:e97815dd7fc0b51e63c320",
+        "android_client_info": {
+          "package_name": "com.idreameducation.iprepapppal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:9688e382a71f447163c320",
+        "android_client_info": {
+          "package_name": "com.idreameducation.ipreppal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:1148a0bedfbc2a8563c320",
+        "android_client_info": {
+          "package_name": "com.idreameducation.ipreppalharyana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:3639624298439c5863c320",
+        "android_client_info": {
+          "package_name": "com.ipreponline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-jh94ukcoudqot00kobld6bm2dkqefvja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ipreponline",
+            "certificate_hash": "5755477571355530df226fe95ae0cc5b9c0407b3"
+          }
+        },
+        {
+          "client_id": "165257927521-qhftg4nkhvnpafhfduclar2gkbl9d55k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ipreponline",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:73b90f36640680da",
+        "android_client_info": {
+          "package_name": "org.idreameducation.iprepapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-2cjpr6eh62v27efaf62s59ucja51o12f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "76346b654c2479bc4e646faafc334448025bd4a3"
+          }
+        },
+        {
+          "client_id": "165257927521-5jvjgbsuplu1hg8ud5nknrppu1d7vi15.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "95c59a58db09baee4b271083a4defcb64a6b6a7a"
+          }
+        },
+        {
+          "client_id": "165257927521-77nacnaobtlurilugb2b3n7kpbhrfe9k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "74e1babdefafde5ca3b5b95347877c5d3b35d3ae"
+          }
+        },
+        {
+          "client_id": "165257927521-9ibvr1ae83l2apncck8jp2f7s4903462.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "966ad63fdace0998ce2071f9a2f0ff75d85c951d"
+          }
+        },
+        {
+          "client_id": "165257927521-cn8bs02opkgfstk9sq7102qaqjkjsgo3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "119cf460685b7141ea21c41e77b1a894192dc704"
+          }
+        },
+        {
+          "client_id": "165257927521-ies4hk008r9chruh595ps1ej0ujvfnce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "f5125ff5de2e8d8391c32bfd671610fa3343033f"
+          }
+        },
+        {
+          "client_id": "165257927521-lfa0bonuhrjh3d5fh8ignhlujres53tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "696337547ccde8094453060f2b08729e41c20b04"
+          }
+        },
+        {
+          "client_id": "165257927521-loon0skb637616irnh8u1riigstibb52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "5755477571355530df226fe95ae0cc5b9c0407b3"
+          }
+        },
+        {
+          "client_id": "165257927521-og09ihakg1mrlnse21jj9dsi7hb7ivun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "1854232d84e092c0be926a86f14c659083332eaa"
+          }
+        },
+        {
+          "client_id": "165257927521-th3lt8solk8nttcpj8le0cne5vi7053d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepapp",
+            "certificate_hash": "4d0d57b6e3c8464a08989c7973ea12ed8dfb8e7e"
+          }
+        },
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:d704125d0dfc48d763c320",
+        "android_client_info": {
+          "package_name": "org.idreameducation.iprepapp_lan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:7f1c1038012a3c4d63c320",
+        "android_client_info": {
+          "package_name": "org.idreameducation.iprepapppal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:c9829b4d7d6352d9",
+        "android_client_info": {
+          "package_name": "org.idreameducation.iprepcoach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-04arsif2ev80o8od30rmhdvsi25cpvnr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "1c3d83ab7fdb5fd6d95bee1898788bd30eb84bee"
+          }
+        },
+        {
+          "client_id": "165257927521-0dpn5oe951oajd2u4ltb55mmjjfb7vsa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "915251a05dc918a866700eacda27224dc2b8e965"
+          }
+        },
+        {
+          "client_id": "165257927521-4nch2g4m1i93bfnnfeerv6psnb79tpia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "5755477571355530df226fe95ae0cc5b9c0407b3"
+          }
+        },
+        {
+          "client_id": "165257927521-ak4glandpg9999q9ucvgtivj4ekuo55r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "1250e6dd734238a85e293f04750e8fee433afa48"
+          }
+        },
+        {
+          "client_id": "165257927521-dkl5qcgsa2mbiprvmcah7kk3beidr1si.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "95c59a58db09baee4b271083a4defcb64a6b6a7a"
+          }
+        },
+        {
+          "client_id": "165257927521-eklji71ln4di8bt7iemklt5tl6ctf5if.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "382091fc711027ee344584e6f73aa8d9238be420"
+          }
+        },
+        {
+          "client_id": "165257927521-er67qlcqmt9esbjngc5jnsk729uchi1a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "0982f24f377c4997fac30a55aa8f4bb00665965b"
+          }
+        },
+        {
+          "client_id": "165257927521-jc5te27evifgo4ft23oedrusp5k8a5d3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "95d394040f46081cedf8212317a33416384f958a"
+          }
+        },
+        {
+          "client_id": "165257927521-o47ieairmq3q4cqll6blrlc5jkh45jmu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "7bd3eda4ef97dfe098b859549b6e0aa46c5f157a"
+          }
+        },
+        {
+          "client_id": "165257927521-odlo2i68cru7peulish0g7hgnjdasori.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "5a5fcf0e0e49c6d084193a32f41db62d4b6f95ac"
+          }
+        },
+        {
+          "client_id": "165257927521-sfrk9jlp5k94he4cqumu6bebol14uuoe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "0991cc607ec09d84c4eec09466abf8d82786128a"
+          }
+        },
+        {
+          "client_id": "165257927521-v5qf021ie8dt56un844ner3ellcfgnab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "0ae260cf7004c96818a54bcf8c578d90ed10bf98"
+          }
+        },
+        {
+          "client_id": "165257927521-v6p7noukpet78t70srqjni33r1hlkrka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.idreameducation.iprepcoach",
+            "certificate_hash": "c10e04f3c0765c371c5626122b15630ba00935f7"
+          }
+        },
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:00e2f4318d71a3cb63c320",
+        "android_client_info": {
+          "package_name": "org.idreameducation.iprepnonpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165257927521:android:290efcf2ed63317163c320",
+        "android_client_info": {
+          "package_name": "org.idreameducation.pal_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165257927521-616f9rbv1btgg3cqa0e9ag2v4ec8jdgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Qk3M9IpKMnOkC6ztIeMFXT69QzLugaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165257927521-51f8befrjvcpfptlp3c31vn6vrrpee9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165257927521-a0b8g7qmneqbpescfa4qhur3bof0oqsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.idreameducation.iprepapp",
+                "app_store_id": "1547212891"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

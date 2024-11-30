@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:src="@mipmap/back_black"></ImageView>
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewdTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewBack"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Congratulations!"
+        android:textColor="#00B158"
+
+        android:textSize="30dp"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewdUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewdTest"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Anurag "
+        android:textSize="30dp"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+    <ImageView
+        android:id="@+id/imageViewDImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewdUserName"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/d_test_image"></ImageView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewDImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center|left"
+        android:orientation="vertical">
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/textViewMessage"
+            android:drawablePadding="10dp"
+            android:text="You have Unlocked Electric Charges and Fields, \nand Unlocked Diagnostic Test for Electrostatic Potential &amp; Capacitance I"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/buttonPreceed"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/blue_iprep_button"
+        android:gravity="center"
+        android:text="Start Diagnostic Test"
+        android:textSize="18sp"
+        android:textColor="@color/white" />
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewdExplore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonPreceed"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Explore Electric Charges and Fields"
+        android:textColor="@color/black"
+        android:textSize="30dp"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+
+
+</RelativeLayout>

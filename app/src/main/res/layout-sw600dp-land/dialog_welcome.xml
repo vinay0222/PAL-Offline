@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textViewHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black" />
+
+        <com.idreameducation.ipreppal.util.MaxHeightScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/scroll"
+            app:maxHeight="400dp"
+            android:layout_below="@+id/textViewHeading"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="wrap_content">
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black" />
+        </com.idreameducation.ipreppal.util.MaxHeightScrollView>
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textViewMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scroll"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+
+        <com.idreameducation.ipreppal.util.CheckBoxBodyFont
+            android:id="@+id/CheckBoxNever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewMessage2"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:theme="@style/AppThemeEditText"
+            android:visibility="gone" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewOkay"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CheckBoxNever"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_pressed_25"
+
+            android:gravity="center"
+
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

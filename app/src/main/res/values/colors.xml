@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="primary_color">#3F51B5</color>
+    <color name="edit_text_color">#212121</color>
+    <!--    FCFFEE-->
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorFAB1">#2196F3</color>
+    <color name="colorFAB2">#E040FB</color>
+
+    <color name="colorAccent">#FCAC52</color>
+    <color name="trans">#722b2a2a</color>
+    <color name="gray">#dedbdb</color>
+    <color name="gray_toast">#EBEBEB</color>
+    <color name="gray_oast">#9e9b9b</color>
+    <color name="dssfs">#707070</color>
+    <color name="shadow">#707070</color>
+    <color name="contentStatusBar">#FFF</color>
+    <color name="line">#CECECE</color>
+
+    <color name="edittext_hint_color">#bdbdbd</color>
+    <color name="blue">#0077FF</color>
+    <color name="grey">#DEDEDE</color>
+    <color name="notifidatibgrey">#4D000000</color>
+    <color name="lightgrey">#F8F8F8</color>
+    <color name="lightbule">#EBF4FF</color>
+    <color name="white">#ffffff</color>
+    <color name="offwhite">#33D9D9D9</color>
+    <color name="offwhite2">#33E5E5E5</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="navigation_drawer_text">#95989A</color>
+    <color name="profile_text">#666666</color>
+
+    <color name="transBlue">#302196F3</color>
+
+    <!-- Screens background color-->
+
+    <!-- dots inactive colors -->
+
+    <!-- dots active colors -->
+    <color name="light_grey_books">#8A8A8E</color>
+    <color name="sky_blue">#47D9CC</color>
+    <color name="sky_blue_light">#CAEEEA</color>
+    <color name="green">#5cb85c</color>
+    <color name="greentext">#146B3E</color>
+    <color name="green2">#22C59B</color>
+    <color name="red2">#FF665B</color>
+    <color name="green_light">#CDF7C9</color>
+    <color name="yellow">#FFC107</color>
+    <color name="yellow_light">#FCC67A</color>
+    <color name="black">#000000</color>
+    <color name="black2">#212121</color>
+    <color name="textcolour">#0F172A</color>
+    <color name="layout_title">#212121</color>
+    <color name="text">#212121</color>
+
+    <!--    iPrep colours -->
+    <color name="yellorIprep">#FDC500</color>
+    <color name="blueIprep">#3399FF</color>
+    <color name="greenIprep">#8AC926</color>
+
+    <color name="yellorTransIprep">#14FDC500</color>
+    <color name="blueTransIprep">#143399FF</color>
+    <color name="greenTransIprep">#148AC926</color>
+
+
+    <!-- theme colors -->
+
+    <color name="tab_color">#212121</color>
+    <color name="unselected_tab">#C9C9C9</color>
+    <color name="progressbar_background">#E6E6E6</color>
+    <color name="text_content">#9E9E9E</color>
+    <color name="categories_content">#666666</color>
+    <color name="button_bg">#0077FF</color>
+    <color name="content_selected_state">#F3F9FF</color>
+    <color name="selected_pointer">#334155</color>
+    <color name="unselected_pointer">#F1F5F9</color>
+    <color name="linkcolour">#003FFF</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+
+</resources>

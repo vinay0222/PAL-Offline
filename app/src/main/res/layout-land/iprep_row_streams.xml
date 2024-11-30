@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_back"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/gray_iprep"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="3dp">
+
+        <ImageView
+            android:id="@+id/streamImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="#dddddd"
+
+            />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            shimmer:duration="500">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#dddddd" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|left"
+            android:orientation="horizontal">
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewStream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center|left"
+                android:text=""
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/select_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:src="@mipmap/select_icon" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

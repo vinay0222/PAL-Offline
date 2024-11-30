@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/layout_bg"
+    android:elevation="2dp"
+    android:gravity="center|left"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:gravity="center"
+
+
+            android:layout_marginTop="1dp"
+            android:layout_toLeftOf="@+id/imageview">
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+
+                android:layout_height="match_parent">
+
+                <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+                    android:layout_width="65dp"
+                    android:text="iDream"
+                    android:id="@+id/textViewIprep"
+                    android:elevation="1dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/back_icon"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_height="65dp" />
+
+
+                <ImageView
+                    android:id="@+id/imageViewFaciitator"
+                    android:layout_width="65dp"
+                    android:visibility="gone"
+                    android:layout_margin="10dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/facilitator" />
+
+            </LinearLayout>
+
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewnotificationSenderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/linear"
+                android:layout_toLeftOf="@+id/textViewTime"
+                android:layout_toRightOf="@+id/linear"
+                android:layout_toStartOf="@+id/textViewTime"
+                android:paddingLeft="2dp"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewnotificationSenderName"
+                android:layout_alignBottom="@+id/textViewnotificationSenderName"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="3dp"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewnotificationMessage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/textViewnotificationSenderName"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/linear"
+                android:layout_toRightOf="@+id/linear"
+                android:paddingLeft="2dp"
+                android:paddingTop="0dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black" />
+
+            <com.idreameducation.ipreppal.util.TextViewBodyFont
+                android:id="@+id/textViewReadMore"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center"
+                android:paddingRight="10dp"
+                android:text=""
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:padding="0dp"
+            android:src="@mipmap/check_not" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.idreameducation.ipreppal.util.TextViewHeadingFont
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageViewHomeScreen"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/welcome_dialog" />
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewHomeScreen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/step1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/green_dot"
+            android:layout_gravity="center|left"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:drawablePadding="10dp"
+            android:text="प्रत्येक अध्याय के लिए, आपके सीखने के स्तर को जानने के लिए आपको एक डायग्नोस्टिक परिक्षण करना है"
+            android:textColor="@color/black" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/step2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center|left"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@mipmap/green_dot"
+            android:drawablePadding="10dp"
+            android:text="उसके बाद वैचारिक स्पष्टता और निपुणता के लिए मनोरंजक एनिमेशन्स के साथ प्रश्नो का अभ्यास करेंगे"
+            android:textColor="@color/black" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/step3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center|left"
+            android:drawableLeft="@mipmap/green_dot"
+            android:drawablePadding="10dp"
+            android:text="अंत में पूर्ण महारत के लिए आपको हर अध्याय में अंतिम परिक्षण देना होगा"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/step4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="iPrep आपको हर कदम पर सीखने और आगे बढ़ने के लिए मार्गदर्शित करेगा"
+        android:textColor="@color/black" />
+
+    <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+        android:id="@+id/buttonProceed"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/blue_iprep_button"
+        android:gravity="center"
+        android:text="सीखना शुरू करें"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>

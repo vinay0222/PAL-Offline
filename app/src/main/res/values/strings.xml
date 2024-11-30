@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">iPrep Pal</string>
+    <string name="welcomeMessage">Welcome to iDream Learning App</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="facebook_app_id">2367613703311287</string>
+    <string name="progress_uploading">Uploading…</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_gender">Gender</string>
+    <string name="hint_dob">Date Of Birth</string>
+    <string name="parents_mobile">Parents Contact</string>
+    <string name="address">Address</string>
+    <string name="change_default_home_dialog_proceed">change_default_home_dialog_proceed</string>
+    <string name="change_default_home_dialog_cancel">change_default_home_dialog_cancel</string>
+    <string name="change_default_home_dialog_body_settings_tts">change_default_home_dialog_body_settings_tts</string>
+    <string name="change_default_home_dialog_body_settings">Iprep PAL </string>
+    <string name="change_default_home_dialog_body">change_default_home_dialog_body</string>
+    <string name="state">Enter State</string>
+    <string name="city">Enter City</string>
+    <string name="please_set_launcher_setting" translatable="false">Please set launcher setting.</string>
+    <string name="updated_date">05-08-2022</string>
+    <string name="Pass">iDreamPAL@12345</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="notification_channel_id">default</string>
+    <string name="com.crashlytics.android.build_id">1</string>
+</resources>

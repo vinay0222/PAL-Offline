@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp">
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTitle"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="#fcdb08"
+                android:rating="0" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputMObile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear"
+            android:layout_marginTop="5dp"
+            android:textColorHint="@android:color/black"
+            android:theme="@style/rateEditText"
+            android:visibility="gone">
+
+            <com.idreameducation.ipreppal.util.EditTextWithFont
+                android:id="@+id/rateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/black"
+                android:gravity="center|left"
+                android:hint="Enter message"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewRate"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/inputMObile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_pressed_25"
+
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewRetry"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/textViewRate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_pressed_25"
+
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text="Exit"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

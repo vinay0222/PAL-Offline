@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_solid_shadow_less_redius"
+
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:layout_margin="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+        <com.idreameducation.ipreppal.util.TextViewBodyFont
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:gravity="center"
+            android:text="You are currently on the Demo plan please subscribe any plan from plans  "
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewAdd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/submit"
+
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="12dp"
+            android:text="Subscribe"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+
+        <com.idreameducation.ipreppal.util.TextViewWithRegularFont
+            android:id="@+id/textViewCancel"
+            android:layout_width="match_parent"
+            
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/submit_gray"
+
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="12dp"
+            android:text="Close"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

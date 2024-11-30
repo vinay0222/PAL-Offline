@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/nameIntroTextView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="A"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/white"
+        android:background="@drawable/circular_background"
+        android:backgroundTint="@color/green"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vinay"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="14dp"
+            android:textColor="@color/text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/classTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class 6"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14dp"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/rollNoTextVew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RollNo. 32"
+                android:paddingVertical="6dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/white_background"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14dp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
