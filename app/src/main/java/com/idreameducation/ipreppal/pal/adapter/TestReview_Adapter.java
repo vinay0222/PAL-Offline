@@ -229,12 +229,8 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
-
-
                 }
-
             }
-
 
             if (questionsArrayList.get(position).get("type2").equalsIgnoreCase("Text")) {
                 viewHolder.textViewOption2.setVisibility(View.VISIBLE);

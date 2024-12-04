@@ -125,10 +125,12 @@ public class PalSplashActivity extends Activity {
         if(!isTablet(context)) {
             Util.setPortraitMode(context, true);
             Util.setPortraitView(this);
+//            Util.setWindowSettings(this);
         }
         else {
             Util.setPortraitMode(context, false);
             Util.setLandscapeView(this);
+//            Util.setWindowSettings(this);
         }
 
         logo=findViewById(R.id.logo);

@@ -64,7 +64,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.idreameducation.ipreppal.PalMobile.adapter.DiagonosticTestAdapter_Mobile;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.pal.activity.LinearLayoutManagerWithSmoothScroller;
@@ -2105,6 +2104,12 @@ public class ExtraContentListingActivity extends AppCompatActivity {
                     File file = new File(filePath);
                     String url;
                     boolean isLocalFile;
+
+                    if (!file.exists()) {
+                        filePath = Util.getSDCardPath(context)+"/.iDream_content/multimediaEE/"+offlineLink;
+                        file = new File(filePath);
+                    }
+
                     if(file.exists() && Util.isOfflineMode(context)){
                         url = file.toString();
                         isLocalFile = true;

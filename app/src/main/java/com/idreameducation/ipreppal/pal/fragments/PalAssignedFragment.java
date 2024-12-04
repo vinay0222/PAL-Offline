@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
-
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
-
 import com.idreameducation.ipreppal.model.PracticeScoreModel;
 import com.idreameducation.ipreppal.model.TestScoreModel;
 import com.idreameducation.ipreppal.pal.adapter.PalAssignedAdapter;
@@ -226,35 +224,63 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
                         HashMap<String,Object> map1=new HashMap<>();
 
                         for (String date : assignedContentHashMap.keySet()) {
-//                            HashMap<String,Object> map= (HashMap<String, Object>) assignedContentHashMap.get(date);
-//                            HashMap<String,Object> map2= (HashMap<String, Object>) map.get("info");
-//
-//                            dateArrayList.add(map2.get("startDate").toString());
-//                            assignedContentHashMap2.put(Util.timestampToDate(Long.valueOf(map2.get("startDate").toString())),assignedContentHashMap.get(date));
+                            HashMap<String,Object> mape= (HashMap<String, Object>) assignedContentHashMap.get(date);
 
-                            /** this hashmap handling content details */
-                            HashMap<String,Object> map21;
+                            // check if it assined to me or not
+                            for (String name : mape.keySet()) {
 
-                            /** check Date first */
 
-                            String convertedDate = Util.timestampToDate(Long.valueOf(date));
+                                HashMap<String,Object> mapwe= (HashMap<String, Object>) mape.get(name);
 
-                            /** check date is already available in map1 */
-                            if(map1.containsKey(convertedDate)) {
-                                /** fetching old values */
-                                map21 = (HashMap<String, Object>) map1.get(convertedDate);
-                                map21.put(date,assignedContentHashMap);
+                                for (String namde : mapwe.keySet()) {
+
+
+                                    HashMap<String,Object> mawwpwe= (HashMap<String, Object>) mapwe.get(namde);
+                                    HashMap<String,Object> m= (HashMap<String, Object>) mawwpwe.get("info");
+
+                                    HashMap<String,Object> w= (HashMap<String, Object>) m.get("st_list");
+
+
+                                    if(w.containsKey(Util.getUserId(context))) {
+
+
+
+                                        /** this hashmap handling content details */
+                                        HashMap<String,Object> map21;
+
+                                        /** check Date first */
+
+                                        String convertedDate = Util.timestampToDate(Long.valueOf(date));
+
+                                        /** check date is already available in map1 */
+                                        if(map1.containsKey(convertedDate)) {
+                                            /** fetching old values */
+                                            map21 = (HashMap<String, Object>) map1.get(convertedDate);
+                                            map21.put(date,assignedContentHashMap);
+                                        }
+                                        else {
+                                            /** created new hashmap  */
+                                            map21= new HashMap<>();
+                                            map21.put(date,assignedContentHashMap);
+                                            dateArrayList.add(date);
+                                            converedDateArrayList.add(convertedDate);
+                                        }
+
+                                        /** added content details in converted date */
+                                        map1.put(convertedDate,map21);
+
+
+                                    }
+
+
+
+                                }
+
+
                             }
-                            else {
-                                /** created new hashmap  */
-                                map21= new HashMap<>();
-                                map21.put(date,assignedContentHashMap);
-                                dateArrayList.add(date);
-                                converedDateArrayList.add(convertedDate);
-                            }
 
-                            /** added content details in converted date */
-                            map1.put(convertedDate,map21);
+
+
 
 
                         }

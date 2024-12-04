@@ -1369,6 +1369,9 @@ public class iPrepVideoPlayerActivity extends Fragment {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
             } else {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+                if (file.exists()) {
+                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                }
             }
         } else {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
@@ -1377,6 +1380,9 @@ public class iPrepVideoPlayerActivity extends Fragment {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
             } else {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+                if (file.exists()) {
+                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                }
             }
         }
 

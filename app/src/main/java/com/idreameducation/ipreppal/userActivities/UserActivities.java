@@ -425,45 +425,49 @@ public class UserActivities {
                                     topicID = topicID.trim();
 
                                     //ncert_eng_bst_12_01_05
-                                    ArrayList<Object> levels= (ArrayList<Object>) topics.get(topicID);
+                                    try {
+                                        ArrayList<Object> levels= (ArrayList<Object>) topics.get(topicID);
 
-                                    for(int i=1;i<=4;i++) {
+                                        for(int i=1;i<=4;i++) {
 
-                                        try {
-                                            HashMap<Object,Object> videoss= (HashMap<Object, Object>) levels.get(i);
+                                            try {
+                                                HashMap<Object,Object> videoss= (HashMap<Object, Object>) levels.get(i);
 
-                                            for(Object videoKey:videoss.keySet()) {
+                                                for(Object videoKey:videoss.keySet()) {
 
-                                                HashMap<String,String> videoInfo= (HashMap<String, String>) videoss.get(videoKey);
+                                                    try {
+                                                        HashMap<String,String> videoInfo= (HashMap<String, String>) videoss.get(videoKey);
 
-                                                VideoDataModel videoDataModel=new VideoDataModel();
-                                                videoDataModel.setAssessmentTopicID(videoInfo.get("AssessmentTopicID"));
-                                                videoDataModel.setDetail(videoInfo.get("detail"));
-                                                videoDataModel.setName(videoInfo.get("name"));
-                                                videoDataModel.setOfflineLink(videoInfo.get("offlineLink"));
-                                                videoDataModel.setOfflineThumbnail(videoInfo.get("offlineThumbnail"));
-                                                videoDataModel.setOnlineLink(videoInfo.get("onlineLink"));
-                                                videoDataModel.setThumbnail(videoInfo.get("thumbnail"));
-                                                videoDataModel.setTopicName(videoInfo.get("topicName"));
+                                                        VideoDataModel videoDataModel=new VideoDataModel();
+                                                        videoDataModel.setAssessmentTopicID(videoInfo.get("AssessmentTopicID"));
+                                                        videoDataModel.setDetail(videoInfo.get("detail"));
+                                                        videoDataModel.setName(videoInfo.get("name"));
+                                                        videoDataModel.setOfflineLink(videoInfo.get("offlineLink"));
+                                                        videoDataModel.setOfflineThumbnail(videoInfo.get("offlineThumbnail"));
+                                                        videoDataModel.setOnlineLink(videoInfo.get("onlineLink"));
+                                                        videoDataModel.setThumbnail(videoInfo.get("thumbnail"));
+                                                        videoDataModel.setTopicName(videoInfo.get("topicName"));
 
-                                                videoDataModel.setSubjectID(subject);
-                                                videoDataModel.setKey(String.valueOf(videoKey));
+                                                        videoDataModel.setSubjectID(subject);
+                                                        videoDataModel.setKey(String.valueOf(videoKey));
 
-                                                if(!videoNameList.contains(videoDataModel.getName().toLowerCase().trim())) {
-                                                    videoNameList.add(videoDataModel.getName().toLowerCase().trim());
-                                                    videoDataModelHashMap.put(videoDataModel.getName().toLowerCase().trim(),videoDataModel);
+                                                        if(!videoNameList.contains(videoDataModel.getName().toLowerCase().trim())) {
+                                                            videoNameList.add(videoDataModel.getName().toLowerCase().trim());
+                                                            videoDataModelHashMap.put(videoDataModel.getName().toLowerCase().trim(),videoDataModel);
+                                                        }
+                                                    } catch (Exception r) {
+                                                        r.printStackTrace();
+                                                    }
+
                                                 }
-
+                                            }catch (Exception r) {
+                                                r.printStackTrace();
                                             }
-                                        }catch (Exception r) {
-                                            r.printStackTrace();
                                         }
-
+                                    }catch (Exception r ){
+                                        r.printStackTrace();
                                     }
-
                                 }
-
-
                             }
 
                             /** fetch Practice */

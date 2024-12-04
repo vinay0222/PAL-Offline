@@ -203,6 +203,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     }
                     else {
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+ "/" + questionsArrayList.get(position).get("option1"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option1"));
+                        }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option1").replace(" ","");
                         viewHolder.textViewOption1.setVisibility(View.GONE);
@@ -275,6 +278,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.textViewOption2.setText(imageInternet);
 
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option2"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option2"));
+                        }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://www.idreameducation.org/subjects_videos_books_icon/math.png";
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option2").replace(" ","");
@@ -350,6 +356,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.textViewOption3.setText(imageInternet);
 
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option3"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option3"));
+                        }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option3").replace(" ","");
                         viewHolder.textViewOption3.setVisibility(View.GONE);
@@ -419,6 +428,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.textViewOption4.setText(imageInternet);
 
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option4"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option4"));
+                        }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://www.idreameducation.org/subjects_videos_books_icon/math.png";
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option4").replace(" ","");
@@ -455,6 +467,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                         viewHolder.questionImageView.setVisibility(View.VISIBLE);
                         viewHolder.zoomImageView.setVisibility(View.VISIBLE);
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                        }
                         Uri uri = Uri.fromFile(file);
 //                        viewHolder.progressBar3.setVisibility(View.VISIBLE);
                         viewHolder.downloadingTextView.setVisibility(View.VISIBLE);
@@ -619,6 +634,9 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     } else {
 
                         File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                        }
                         Uri uri = Uri.fromFile(file);
                         viewHolder.downloadingTextView.setVisibility(View.VISIBLE);
                         viewHolder.NoInternetConnectionTextView.setVisibility(View.GONE);

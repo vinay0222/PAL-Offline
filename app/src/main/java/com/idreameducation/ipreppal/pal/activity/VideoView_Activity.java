@@ -389,89 +389,6 @@ public class VideoView_Activity extends AppCompatActivity{
         }
 
 
-//        try {
-//            getVideoCount();
-//            getTime();
-//
-//
-//
-//            if (offlineLink != null) {
-//                reletiveVideoView.setVisibility(View.VISIBLE);
-//                yt_video_layout.setVisibility(View.GONE);
-//                if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
-//                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-//                    File file = new File(filePath.toString());
-//                    if (file.exists()) {
-//                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-//                    } else {
-//                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-//                    }
-//                } else {
-//                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-//                    File file = new File(filePath.toString());
-//                    if (file.exists()) {
-//                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-//                    } else {
-//                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-//                    }
-//                }
-//
-////                if(Util.getSelectedLanguage(context).equalsIgnoreCase("hindi"))
-////                {
-////                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-////                }else
-////                {
-////                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-////                }
-//                File file = new File(filePath.toString());
-//                if (file.exists()) {
-//                    reletiveVideoView.setVisibility(View.VISIBLE);
-//                    yt_video_layout.setVisibility(View.GONE);
-//
-//                    serviceIntent = new Intent(context, SocketService.class);
-//                    context.startService(serviceIntent);
-//                    checkPermissions(offlineLink);
-//                } else if (url.contains("youtube")) {
-//                    if (Util.isNetworkAvailable(context)) {
-//                        url = getYouTubeId(url);
-//                        initYouTubePlayerView(url);
-//                        reletiveVideoView.setVisibility(View.GONE);
-//                        yt_video_layout.setVisibility(View.VISIBLE);
-//                    } else {
-//                        Toast.makeText(context, "Kindly Connect your device to internet for playing content online", Toast.LENGTH_LONG).show();
-//                    }
-//
-//                } else {
-//                    if (Util.isNetworkAvailable(context)) {
-//                        initializePlayer(url, time);
-//                    } else {
-//                        Toast.makeText(context, "Kindly Connect your device to internet for playing content online", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//            } else {
-//                if (url.contains("youtube")) {
-//                    if (Util.isNetworkAvailable(context)) {
-//                       url = getYouTubeId(url);
-//                        initYouTubePlayerView(url);
-//                        reletiveVideoView.setVisibility(View.GONE);
-//                        yt_video_layout.setVisibility(View.VISIBLE);
-//                    } else {
-//                        Toast.makeText(context, "Kindly Connect your device to internet for playing content online", Toast.LENGTH_LONG).show();
-//                    }
-//
-//                } else {
-//                    if (Util.isNetworkAvailable(context)) {
-//                        initializePlayer(url, time);
-//                    } else {
-//                        Toast.makeText(context, "Kindly Connect your device to internet for playing content online", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-////                initializePlayer(url, time);
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         isloading=true;
         checkConnection(false);
 
@@ -1283,6 +1200,12 @@ public class VideoView_Activity extends AppCompatActivity{
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
             } else {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+
+                File file3 = new File(filePath.toString());
+                if (!file3.exists()) {
+                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                }
+
             }
         } else {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
@@ -1291,6 +1214,12 @@ public class VideoView_Activity extends AppCompatActivity{
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
             } else {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+
+                File file3 = new File(filePath.toString());
+                if (!file3.exists()) {
+                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                }
+
             }
         }
 

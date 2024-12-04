@@ -234,11 +234,17 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
 
                 if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-                    File file = new File(filePath.toString());
+
+                   File file = new File(filePath.toString());
                     if (file.exists()) {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
                     } else {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+
+                        File file3 = new File(filePath.toString());
+                        if (!file3.exists()) {
+                            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                        }
                     }
                 } else {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
@@ -247,6 +253,12 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
                     } else {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+
+                        File file3 = new File(filePath.toString());
+                        if (!file3.exists()) {
+                            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                        }
+
                     }
                 }
 
@@ -280,6 +292,11 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
                         } else {
                             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+
+                            File file3 = new File(filePath.toString());
+                            if (!file3.exists()) {
+                                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                            }
                         }
                     } else {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
@@ -288,6 +305,11 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
                         } else {
                             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+
+                            File file3 = new File(filePath.toString());
+                            if (!file3.exists()) {
+                                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                            }
                         }
                     }
 
@@ -316,6 +338,12 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
                     } else {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+
+                        File file3 = new File(filePath.toString());
+                        if (!file3.exists()) {
+                            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                        }
+
                     }
                 } else {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
@@ -324,6 +352,11 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
                     } else {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+
+                        File file3 = new File(filePath.toString());
+                        if (!file3.exists()) {
+                            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                        }
                     }
                 }
 
