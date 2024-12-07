@@ -52,7 +52,6 @@ import com.idreameducation.ipreppal.BuildConfig;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.model.AndroidIdModel;
-import com.idreameducation.ipreppal.model.CurrentPlanModel;
 import com.idreameducation.ipreppal.model.RegisterModel;
 import com.idreameducation.ipreppal.model.StudentInfoModel;
 import com.idreameducation.ipreppal.model.UserInfoModel;
@@ -711,9 +710,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                                 } else {
                                     UserActivities.resetPref();
                                     Util.setSRNUser(context, false);
-                                    startActivity(new Intent(context, PalLanguageSelectionActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                                    clearFields();
-                                    finish();
+                                    afterRegisterProcess(userID, studentName, studentMobile);
+//                                    startActivity(new Intent(context, PalLanguageSelectionActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//                                    clearFields();
+//                                    finish();
                                 }
                             }
 
@@ -884,6 +884,7 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         registerModel.setDateStarted(Calendar.getInstance().getTimeInMillis() + "");
         global.getDatabaseReference().child(ApplicationConstants.USERS).child(ApplicationConstants.STUDENTS).child(UId).setValue(registerModel);
         global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).setValue(registerModel);
+        global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("fullName").setValue(name.replace(" ", "_"));
         global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("schoolId").setValue(Util.getSchoolId(context));
         global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("schoolName").setValue(Util.getSchoolName(context));
 
@@ -945,34 +946,6 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
 
     private String userID;
 
-    private void moveToHomePage(String UId) {
-        try {
-            userID = UId;
-            String token = Util.getToken(context);
-            global.getDatabaseReference().child(ApplicationConstants.USERS).child(Util.getNGOID(context)).child(UId).child("token").setValue(token);
-            global.getDatabaseReference().child(ApplicationConstants.USERS).child(ApplicationConstants.STUDENTS).child(UId).child("token").setValue(token);
-            global.getDatabaseReference().child(ApplicationConstants.USERS).child(ApplicationConstants.STUDENTS).child(UId).child("schoolId").setValue(Util.getSchoolId(context));
-            global.getDatabaseReference().child(ApplicationConstants.USERS).child(ApplicationConstants.STUDENTS).child(UId).child("schoolName").setValue(Util.getSchoolName(context));
-            global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("token").setValue(token);
-            global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("schoolId").setValue(Util.getSchoolId(context));
-            global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(UId).child("schoolName").setValue(Util.getSchoolName(context));
-            Util.setNameAge(context, yes);
-
-            startTrialPlan();
-            syncAndroidId();
-
-            Util.setIntroDialog(context, true);
-            UserActivities.resetPref();
-            Util.setSRNUser(context, false);
-            startActivity(new Intent(context, PalLanguageSelectionActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            clearFields();
-            finish();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        global.setPreferenceChange(false);
-
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -989,25 +962,6 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         return referalArrayList.hashCode();
     }
 
-    /* This call is only  to save the plan for topic screen*/
-    private void startTrialPlan() {
-        Date currentTime = Calendar.getInstance().getTime();
-        CurrentPlanModel currentPlanModel = new CurrentPlanModel();
-        currentPlanModel.setDateStarted(currentTime.toString());
-        currentPlanModel.setPlanDuration("180");
-        currentPlanModel.setStatus("180 days plan");
-        HashMap<String, Object> currentPlanHashmap = new HashMap<>();
-        currentPlanHashmap.put("dateStarted", currentTime.toString());
-        currentPlanHashmap.put("status", "180 days plan");
-        currentPlanHashmap.put("planDuration", "180");
-        global.getDatabaseReference().child(ApplicationConstants.USERS).child(Util.getNGOID(context)).child(userID).child("UsersPlans").updateChildren(currentPlanHashmap);
-        global.getDatabaseReference().child(ApplicationConstants.USERS).child(ApplicationConstants.STUDENTS).child(userID).child("UsersPlans").updateChildren(currentPlanHashmap);
-        global.getDatabaseReference().child(ApplicationConstants.REFERALS_SCHOLAR_PLANS).child("UsersPlans").child(userID).setValue(currentPlanModel);
-        global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(userID).child("UsersPlans").updateChildren(currentPlanHashmap);
-        global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(userID).child("UsersPlans").updateChildren(currentPlanHashmap);
-        global.getDatabaseReference().child("offline_login_users").child(Util.getNGOID(context)).child("students").child(userID).setValue(currentPlanModel);
-        ApplicationConstants.STATUS = "PLAN";
-    }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -1280,15 +1234,6 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         });
     }
 
-    //    private void saveNewStudentIntoFirebaseDatabaseAndLogin(final String studentName, String userPassword) {
-//        // Create user
-//        StudentInfo studentInfo = new StudentInfo(studentName, userPassword, studentName);
-//        String ngoID = Util.getNGOID(context);
-//        String usersDetailsPath = "offline_login_users/" + ngoID;
-//        String userID = ngoID + "_" + studentName+"_"+Util.getUserMobile(context);
-//
-//        global.getDatabaseReference().child(usersDetailsPath).child(userID).setValue(studentInfo);
-//    }
     private void getUserDetails(String studentName, String studentMobile) {
 
         String ngoID = Util.getNGOID(context);

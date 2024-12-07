@@ -3055,11 +3055,21 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
                                         System.out.println("-");
                                     }
                                 });
-                                String expireText = "Hi, <B>" + Util.getUsername(context) + "</B> , your app subscription plan is now expired. Without getting your app subscription renewed, you will not be able to use your iPrep app for learning";
+                                String expireText = "Hi, <B>" + Util.getUsername(context) + "</B> , your app subscription plan cannot be activated right now. Please speak to your teacher and\n" +
+                                        "reach out to a representative of iDream Education.\n" +
+                                        "You can call us at “18008899710”.";
 
                                 expiretext=findViewById(R.id.expiretext);
 
                                 expiretext.setText(Html.fromHtml(expireText));
+
+                                try {
+                                    TextView vi = findViewById(R.id.textViewclose);
+
+                                    vi.setText("Reactivate");
+                                }catch (Exception r) {
+
+                                }
 
                                 findViewById(R.id.textViewclose).setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -3097,7 +3107,6 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
 //                                    Util.setStartDate(context,Long.parseLong(hash.get("startDate").toString()));
                                         Util.setEndDate(context,Long.parseLong(hash.get("endDate").toString()));
 
-
                                         Util.setProjectId(context,projectID);
                                         Util.setSchoolName(context,schoolName);
                                         String forPAl = "true";
@@ -3112,6 +3121,33 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
                                         map.put("ngoID", Util.getNGOID(context));
                                         map.put("userID","");
 
+                                        long endDate;
+
+                                        try {
+                                            ArrayList<HashMap<String,Object>> map1 = (ArrayList<HashMap<String, Object>>) hash.get("ReactivationDetails");
+
+                                            endDate = (long) map1.get(map1.size()-1).get("endDate");
+                                            Util.setEndDate(context,endDate);
+                                            boolean isRen = false;
+                                            if(map1.get(map1.size()-1).get("renewed")!=null) {
+                                                isRen =  (boolean) map1.get(map1.size()-1).get("renewed");
+                                            }
+
+                                            if(!isRen) {
+//                                                Util.setEndDate(context,endDate);
+                                                global.getDatabaseReference().child("app_ngo_relation").child(Util.getNGOID(context))
+                                                        .child(Util.getAPPID(context)).child("ReactivationDetails")
+                                                        .child(map1.size()-1+"").child("renewed").setValue(true);
+
+                                                global.getDatabaseReference().child("app_ngo_relation").child(Util.getNGOID(context))
+                                                        .child(Util.getAPPID(context)).child("ReactivationDetails")
+                                                        .child(map1.size()-1+"").child("renewalDate").setValue(System.currentTimeMillis());
+
+                                            }
+
+                                         }catch (Exception r) {
+                                            endDate = Util.getEndDate(context);
+                                        }
 
                                         ActivationDetailsRepository activationDetailsRepository = new ActivationDetailsRepository(context);
                                         ActivationModel activationModel = new ActivationModel();
@@ -3121,6 +3157,8 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
                                         activationModel.setServerTime(serverTime);
                                         activationModel.setLocalTime(localTime);
                                         activationModel.setDays(days);
+                                        activationModel.setEndDate(endDate);
+
                                         activationDetailsRepository.insertActivationDetails(activationModel);
                                         global.getDatabaseReference().child("app_tab_relation").child(Util.getTABID(context)).setValue(map);
 

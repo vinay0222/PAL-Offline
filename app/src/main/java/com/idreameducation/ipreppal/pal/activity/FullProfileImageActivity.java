@@ -56,12 +56,27 @@ public class FullProfileImageActivity extends AppCompatActivity {
         }
         else {
             String link = "https://download.iprep.in/super_app_content/assessment_images/";
-            String offlinelink = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/";
+            String offlinelink = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/";
+            String offlinelink2 = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/";
+            String offlinelink3 = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/";
+
+
+
             try{
                 /* Set Image on ImageView*/
                 if (global.getFullImage() != null) {
                     if(Util.isOfflineMode(context)){
                         File file = new File(offlinelink+global.getFullImage());
+
+                        if(!file.exists()) {
+                            file = new File(offlinelink2+global.getFullImage());
+
+                            if(!file.exists()) {
+                                file = new File(offlinelink3+global.getFullImage());
+                            }
+
+                        }
+
                         Uri uri = Uri.fromFile(file);
 
                         Glide.with(context)

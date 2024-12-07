@@ -1150,6 +1150,8 @@ public class PalPdfViewerActivity extends AppCompatActivity implements OnPageCha
         row_usage.put("board",Util.getSelectedBoard(context));
         row_usage.put("category_name",category_name);
         row_usage.put("userType", "students");
+        row_usage.put("app_id", Util.getAPPID(context));
+
         String date = Util.getCurrentDateWithDifferentFormat();
         global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
         global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);

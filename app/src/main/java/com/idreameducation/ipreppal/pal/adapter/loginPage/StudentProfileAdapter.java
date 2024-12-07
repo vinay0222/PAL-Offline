@@ -2,9 +2,6 @@ package com.idreameducation.ipreppal.pal.adapter.loginPage;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.model.StudentInfoModel;
-import com.idreameducation.ipreppal.pal.adapter.PracticeTopicAdapter;
 import com.idreameducation.ipreppal.util.Util;
 
 import java.util.ArrayList;
@@ -49,7 +43,7 @@ public class StudentProfileAdapter extends RecyclerView.Adapter<StudentProfileAd
     public void onBindViewHolder(@NonNull holder holder, int position) {
         holder.userNameText.setText(studentInfo.get(position).getUserName().replace("_"," "));
         holder.classTextView.setText("Class "+studentInfo.get(position).getUserClass().replace("nonmedical_medical","Non-med").replace("_"," "));
-        holder.rollNoTextVew.setText("RollNo : "+studentInfo.get(position).getUserMobile());
+        holder.rollNoTextVew.setText("Mobile number : "+studentInfo.get(position).getUserMobile());
         holder.nameIntroTextView.setText(studentInfo.get(position).getUserName().substring(0,1));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             holder.nameIntroTextView.getBackground().setTint(Color.parseColor(Util.generateRandomColor()));

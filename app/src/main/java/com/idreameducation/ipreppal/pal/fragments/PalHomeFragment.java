@@ -25,7 +25,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,7 +49,6 @@ import com.idreameducation.ipreppal.PalMobile.activity.PalContentListingActivity
 import com.idreameducation.ipreppal.PalMobile.activity.ProjectVideos_topic_Activity;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
-import com.idreameducation.ipreppal.model.ChatModel;
 import com.idreameducation.ipreppal.model.SubjectInfoModel;
 import com.idreameducation.ipreppal.model.SubjectsModel;
 import com.idreameducation.ipreppal.model.simulationModel.SimulationChaptersModel;
@@ -65,8 +63,8 @@ import com.idreameducation.ipreppal.pal.activity.StemProjectsListingActivity;
 import com.idreameducation.ipreppal.pal.adapter.ExtraContentAdapter;
 import com.idreameducation.ipreppal.pal.adapter.HomeBooksAdapter;
 import com.idreameducation.ipreppal.pal.adapter.PalSubjectsAdapter;
-import com.idreameducation.ipreppal.pal.adapter.simulationAdapters.SimulationSubjectsAdapter;
 import com.idreameducation.ipreppal.pal.adapter.StemSubjectsAdapter;
+import com.idreameducation.ipreppal.pal.adapter.simulationAdapters.SimulationSubjectsAdapter;
 import com.idreameducation.ipreppal.roomdatabase.model.ActivationModel;
 import com.idreameducation.ipreppal.roomdatabase.model.LastTopicDetailsModel;
 import com.idreameducation.ipreppal.roomdatabase.repository.ActivationDetailsRepository;
@@ -161,6 +159,9 @@ public class PalHomeFragment extends Fragment {
         FirebaseMessaging.getInstance().subscribeToTopic("all");
         FirebaseMessaging.getInstance().subscribeToTopic(Util.getUserId(context));
         FirebaseMessaging.getInstance().subscribeToTopic("vinay");
+
+
+        Util.getSelectedState(context);
 
         /** init views */
         imageViewCrossVideo2=view.findViewById(R.id.imageViewCrossVideo2);

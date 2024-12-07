@@ -120,7 +120,7 @@ public class VideoView_Activity extends AppCompatActivity{
     private String board;
     private String sClass;
     private String subject;
-    private String topicID,videoID_ForReports;
+    private String topicID,currentDate,videoID_ForReports;
     private String icon;
     private int videoClosedTiming = 0;
     private String language;
@@ -265,6 +265,7 @@ public class VideoView_Activity extends AppCompatActivity{
 
         currentvideo_url = bundle.getString("url");
         topicID = bundle.getString("topicID");
+        currentDate = bundle.getString("currentDate");
         videoName = bundle.getString("videoName");
         offlineLink = bundle.getString("offlineLink");
         topicName = bundle.getString("topicName");
@@ -556,9 +557,16 @@ public class VideoView_Activity extends AppCompatActivity{
         row_usage.put("board",Util.getSelectedBoard(context));
         row_usage.put("category_name",category_name);
         row_usage.put("userType", "students");
+        row_usage.put("app_id", Util.getAPPID(context));
 
-        global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
-        global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
+
+        if(currentDate==null) {
+            currentDate =  Util.getCurrentDate();
+        }
+
+
+        global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + currentDate).setValue(row_usage);
+        global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + currentDate).setValue(row_usage);
 
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("time_spent").child(date).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).setValue(timeget + innerplayedDuration);
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("count").child(date).child("video_lessons").setValue(videoNumber);
@@ -1193,33 +1201,24 @@ public class VideoView_Activity extends AppCompatActivity{
     private void playVideofromSDCard(String path) {
         Uri filePath;
 
-        if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
+        System.out.println( "----- Util.getSDCardPath(context) "+Util.getSDCardPath(context));
+
+        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+        File file3 = new File(filePath.toString());
+        if (file3.exists()) {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-            File file = new File(filePath.toString());
-            if (file.exists()) {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-            } else {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-
-                File file3 = new File(filePath.toString());
-                if (!file3.exists()) {
-                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
-                }
-
-            }
         } else {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-            File file = new File(filePath.toString());
-            if (file.exists()) {
+            file3 = new File(filePath.toString());
+            if (file3.exists()) {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-            } else {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-
-                File file3 = new File(filePath.toString());
-                if (!file3.exists()) {
+            }
+            else {
+                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                file3 = new File(filePath.toString());
+                if (file3.exists()) {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
                 }
-
             }
         }
 

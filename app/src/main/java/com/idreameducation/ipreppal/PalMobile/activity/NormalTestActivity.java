@@ -3176,20 +3176,18 @@ public class NormalTestActivity extends AppCompatActivity {
         row_usage.put("board", Util.getSelectedBoard(context));
         row_usage.put("category_name", "Final Test");
         row_usage.put("userType", "students");
+        row_usage.put("app_id", Util.getAPPID(context));
+
         global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child(""+Util.getCurrentDate()).setValue(row_usage);
         global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child(""+Util.getCurrentDate()).setValue(row_usage);
 
-
-
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("time_spent").child(date).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).setValue(timeTosync);
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("count").child(date).child("simple_test").setValue(diagonosticCount);
-
 
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("date_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child("simple_test").child(Util.getSubjectName(context)).child(date).child("" + System.currentTimeMillis()).setValue(scoreDetailHashmap);
 
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context)).child("simple_test").child(date).child(topicId).child("name").setValue(Util.getTopicNameAlt(context));
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context)).child("simple_test").child(date).child(topicId).child("detail").child("" + System.currentTimeMillis()).setValue(scoreDetailHashmap);
-
 
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("latest_data").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context)).child("simple_test").child(topicId).child("detail").setValue(scoreDetailHashmap);
         //global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("latest_data").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSubject(context)).child("simple_test").child(date).child(topicId).child("name").setValue(Util.getTopicNameAlt(context));

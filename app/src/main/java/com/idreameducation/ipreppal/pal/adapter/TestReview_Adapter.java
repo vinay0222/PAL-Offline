@@ -192,7 +192,15 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                 viewHolder.imageViewOption1FullImage.setVisibility(View.VISIBLE);
                 viewHolder.linearFullscreen1.setVisibility(View.VISIBLE);
                 if (Util.isOfflineMode(context)) {
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option1"));
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option1"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option1"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option1"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption1.setVisibility(View.GONE);
                     viewHolder.imageViewOption1.setVisibility(View.VISIBLE);
@@ -200,19 +208,27 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                     viewHolder.imageViewOption1FullImage.setVisibility(View.VISIBLE);
 
                     String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option1").replace(" ","");
-                    Glide.with(context).load(image).into(viewHolder.imageViewOption1);
+                    Glide.with(context).load(uri).into(viewHolder.imageViewOption1);
                     viewHolder.imageViewOption1FullImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            global.setFullImage(image);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("option1"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,image);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
                 } else {
 //                    String image=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option1");
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option1"));
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option1"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option1"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option1"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption1.setVisibility(View.GONE);
                     viewHolder.imageViewOption1.setVisibility(View.VISIBLE);
@@ -254,21 +270,29 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                 viewHolder.linearFullscreen2.setVisibility(View.VISIBLE);
                 viewHolder.imageViewOption2FullImage.setVisibility(View.VISIBLE);
                 if (Util.isOfflineMode(context)) {
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option2"));
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option2"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option2"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option2"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption2.setVisibility(View.GONE);
                     viewHolder.imageViewOption2.setVisibility(View.VISIBLE);
                     viewHolder.linearFullscreen2.setVisibility(View.VISIBLE);
                     viewHolder.imageViewOption2FullImage.setVisibility(View.VISIBLE);
                     String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option2").replace(" ","");
-                    Glide.with(context).load(image).into(viewHolder.imageViewOption2);
+                    Glide.with(context).load(uri).into(viewHolder.imageViewOption2);
 
                     viewHolder.imageViewOption2FullImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            global.setFullImage(image);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("option2"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,image);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
@@ -279,15 +303,19 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
 //                    viewHolder.textViewOption2.setVisibility(View.VISIBLE);
 //                    viewHolder.imageViewOption2.setVisibility(View.GONE);
 //                    viewHolder.textViewOption2.setText(imageInternet);
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option2"));
 
-
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option2"));
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option2"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option2"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption2.setVisibility(View.GONE);
                     viewHolder.imageViewOption2.setVisibility(View.VISIBLE);
                     viewHolder.linearFullscreen2.setVisibility(View.VISIBLE);
                     viewHolder.imageViewOption2FullImage.setVisibility(View.VISIBLE);
-//                    String image = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option2");
                     String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option2").replace(" ","");
 
                     Glide.with(context).load(image).into(viewHolder.imageViewOption2);
@@ -330,21 +358,29 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                 viewHolder.linearFullscreen3.setVisibility(View.VISIBLE);
                 viewHolder.imageViewOption3FullImage.setVisibility(View.VISIBLE);
                 if (Util.isOfflineMode(context)) {
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option3"));
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option3"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option3"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option3"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption3.setVisibility(View.GONE);
                     viewHolder.imageViewOption3.setVisibility(View.VISIBLE);
                     viewHolder.linearFullscreen3.setVisibility(View.VISIBLE);
                     viewHolder.imageViewOption3FullImage.setVisibility(View.VISIBLE);
                     String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option3").replace(" ","");
-                    Glide.with(context).load(image).into(viewHolder.imageViewOption3);
+                    Glide.with(context).load(uri).into(viewHolder.imageViewOption3);
 
                     viewHolder.imageViewOption3FullImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            global.setFullImage(image);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("option3"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,image);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
@@ -404,7 +440,15 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                 viewHolder.linearFullscreen4.setVisibility(View.VISIBLE);
                 viewHolder.imageViewOption4FullImage.setVisibility(View.VISIBLE);
                 if (Util.isOfflineMode(context)) {
-                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option4"));
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option4"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option4"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option4"));
+                        }
+                    }
                     Uri uri = Uri.fromFile(file);
                     viewHolder.textViewOption4.setVisibility(View.GONE);
                     viewHolder.imageViewOption4.setVisibility(View.VISIBLE);
@@ -412,18 +456,15 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                     viewHolder.imageViewOption4FullImage.setVisibility(View.VISIBLE);
                     String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option4").replace(" ","");
 
-                    if(file.exists()) image=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option4");
-
-                    Glide.with(context).load(image).into(viewHolder.imageViewOption4);
+                    Glide.with(context).load(uri).into(viewHolder.imageViewOption4);
 
                     String finalImage = image;
                     viewHolder.imageViewOption4FullImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            //global.setFullImage(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option4"));
-                            global.setFullImage(finalImage);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("option4"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,finalImage);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
@@ -469,21 +510,31 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                     viewHolder.NoInternetConnectionTextView.setVisibility(View.GONE);
                     viewHolder.questionImageView.setVisibility(View.VISIBLE);
                     viewHolder.zoomImageView.setVisibility(View.VISIBLE);
-//                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image"));
-//                    Uri uri = Uri.fromFile(file);
+
+
+                    File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("image"));
+
+                    if(!file.exists()) {
+                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                        if(!file.exists()) {
+                            file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("image"));
+                        }
+                    }
+                    Uri uri = Uri.fromFile(file);
                     viewHolder.progressBar3.setVisibility(View.VISIBLE);
                     viewHolder.downloadingTextView.setVisibility(View.VISIBLE);
                     viewHolder.NoInternetConnectionTextView.setVisibility(View.GONE);
                     viewHolder.questionImageView.setVisibility(View.VISIBLE);
                     viewHolder.zoomImageView.setVisibility(View.VISIBLE);
 
-                    String image;
 
-                    if(Util.isOfflineMode(context)) image = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image");
-                    else image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("image").replace(" ","");
+//                    String image;
+//
+//                    if(Util.isOfflineMode(context)) image = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image");
+//                    else image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("image").replace(" ","");
 
                     Glide.with(context)
-                            .load(image)
+                            .load(uri)
                             .listener(new RequestListener<Drawable>() {
                                 @Override
                                 public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -520,8 +571,17 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
 
                             if(Util.isOfflineMode(context)) {
                                 String image = Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image");
+
+                                File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("image"));
+
+                                if(!file.exists()) {
+                                    file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                                    if(!file.exists()) {
+                                        file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("image"));
+                                    }
+                                }
                                 Glide.with(context)
-                                        .load(image)
+                                        .load(file)
                                         .listener(new RequestListener<Drawable>() {
                                             @Override
                                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -660,9 +720,9 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                     viewHolder.questionImageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            global.setFullImage(image);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("image"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,image);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });
@@ -670,9 +730,9 @@ public class TestReview_Adapter extends RecyclerView.Adapter<TestReview_Adapter.
                     viewHolder.zoomImageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            global.setFullImage(image);
+                            Util.preventTwoClick(view);
+                            global.setFullImage(questionsArrayList.get(position).get("image"));
                             global.setImageAdded(true);
-                            Util.setImageURL(context,image);
                             context.startActivity(new Intent(context, FullProfileImageActivity.class));
                         }
                     });

@@ -119,7 +119,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
     private View view;
     private String sClass;
     private String subject;
-    private String topicID;
+    private String topicID,currentDate;
     public static String videoID_ForReports;
     private String icon;
     private String language;
@@ -460,6 +460,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
         imageViewCrossVideo = view.findViewById(R.id.imageViewCrossVideo);
         currentvideo_url = getArguments().getString("url");
         topicID = getArguments().getString("topicID");
+        currentDate = getArguments().getString("currentDate");
         videoName = getArguments().getString("videoName");
         offlineLink = getArguments().getString("offlineLink");
         topicName = getArguments().getString("topicName");
@@ -764,8 +765,14 @@ public class iPrepVideoPlayerActivity extends Fragment {
         row_usage.put("board",Util.getSelectedBoard(context));
         row_usage.put("category_name",category_name);
         row_usage.put("userType", "students");
-        global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
-        global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
+        row_usage.put("app_id", Util.getAPPID(context));
+
+        if(currentDate==null) {
+            currentDate =  Util.getCurrentDate();
+        }
+
+        global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" +currentDate).setValue(row_usage);
+        global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" +currentDate).setValue(row_usage);
 
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("time_spent").child(date).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).setValue(timeget + innerplayedDuration);
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(board).child(sClass).child("count").child(date).child("video_lessons").setValue(videoNumber);
@@ -1362,29 +1369,48 @@ public class iPrepVideoPlayerActivity extends Fragment {
 
         System.out.println( "----- Util.getSDCardPath(context) "+Util.getSDCardPath(context));
 
-        if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
+        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+        File file3 = new File(filePath.toString());
+        if (file3.exists()) {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-            File file = new File(filePath.toString());
-            if (file.exists()) {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-            } else {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-                if (file.exists()) {
-                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
-                }
-            }
         } else {
             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-            File file = new File(filePath.toString());
-            if (file.exists()) {
+            file3 = new File(filePath.toString());
+            if (file3.exists()) {
                 filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-            } else {
-                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-                if (file.exists()) {
+            }
+            else {
+                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                file3 = new File(filePath.toString());
+                if (file3.exists()) {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
                 }
             }
         }
+
+//        if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
+//            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+//            File file = new File(filePath.toString());
+//            if (file.exists()) {
+//                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+//            } else {
+//                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+//                if (file.exists()) {
+//                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+//                }
+//            }
+//        } else {
+//            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+//            File file = new File(filePath.toString());
+//            if (file.exists()) {
+//                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
+//            } else {
+//                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+//                if (file.exists()) {
+//                    filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+//                }
+//            }
+//        }
 
         getTime();
 

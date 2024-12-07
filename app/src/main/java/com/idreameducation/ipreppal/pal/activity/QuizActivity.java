@@ -219,7 +219,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 
     private String facilitatorId,closeMidway,facebookInstallMessage,message,completeQuiz,closeAnyways,incorrectMessage;
     private String correctMessage,endMessage,waitString,goBack,weldone,emptyMessage,greatAttempt,tenMessage,share,comingSoon;
-    private String topicMaster,message1,message2,message3,chooseAnotherTopic,offlineImagePath,offlineImagePath2;
+    private String topicMaster,message1,message2,message3,chooseAnotherTopic,offlineImagePath,offlineImagePath2,offlineImagePath3;
 
     private int incorrectStreak,questionNo,testPercentageAchieved,practiceCount = 0;
     private int level,streak,corectAnswer = 0,hintCount = 0,tempLevel=1;
@@ -445,6 +445,8 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 //                        }
 //                    },1000);
 //                }
+
+                row_usage.put("app_id", Util.getAPPID(context));
 
                 global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
                 global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
@@ -1994,8 +1996,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         datetostore = getIntent().getStringExtra("date");
         teacherID = getIntent().getStringExtra("teacherID");
         type = getIntent().getStringExtra("type");
-        offlineImagePath=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+ "/";
+        offlineImagePath=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/";
         offlineImagePath2=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/";
+        offlineImagePath3=Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/";
 
         if(type==null) {
             type="practice";
@@ -2869,6 +2872,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                     File file = new File(offlineImagePath + questionIcon);
                                     if(!file.exists()) {
                                         file = new File(offlineImagePath2 + questionIcon);
+                                        if(!file.exists()) {
+                                            file = new File(offlineImagePath3 + questionIcon);
+                                        }
                                     }
                                     Uri uri = Uri.fromFile(file);
                                     Glide.with(this)
@@ -2910,6 +2916,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 File file = new File(offlineImagePath + questionIcon);
                                 if(!file.exists()) {
                                     file = new File(offlineImagePath2 + questionIcon);
+                                    if(!file.exists()) {
+                                        file = new File(offlineImagePath3 + questionIcon);
+                                    }
                                 }
                                 Uri uri = Uri.fromFile(file);
                                 Glide.with(this)
@@ -3267,6 +3276,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image1.replace(" ","");
@@ -3279,6 +3291,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption1);
@@ -3309,6 +3324,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image2.replace(" ","");
@@ -3320,6 +3338,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption2);
@@ -3349,6 +3370,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image3.replace(" ","");
@@ -3360,6 +3384,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption3);
@@ -3389,6 +3416,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image4.replace(" ","");
@@ -3399,6 +3429,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption4);
@@ -3429,6 +3462,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image1.replace(" ","");
@@ -3439,6 +3475,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption1);
@@ -3468,6 +3507,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image2.replace(" ","");
@@ -3478,6 +3520,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption2);
@@ -3509,6 +3554,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 File file = new File(offlineImagePath + image3);
                                 if(!file.exists()) {
                                     file = new File(offlineImagePath2 + image3);
+                                    if(!file.exists()) {
+                                        file = new File(offlineImagePath3 + image3);
+                                    }
                                 }
                                 Uri uri = Uri.fromFile(file);
                                 String url="https://download.iprep.in/super_app_content/assessment_images/"+image3.replace(" ","");
@@ -3519,6 +3567,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 File file = new File(offlineImagePath + image3);
                                 if(!file.exists()) {
                                     file = new File(offlineImagePath2 + image3);
+                                    if(!file.exists()) {
+                                        file = new File(offlineImagePath3 + image3);
+                                    }
                                 }
                                 Uri uri = Uri.fromFile(file);
                                 Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption3);
@@ -3531,6 +3582,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 File file = new File(offlineImagePath + image3);
                                 if(!file.exists()) {
                                     file = new File(offlineImagePath2 + image3);
+                                    if(!file.exists()) {
+                                        file = new File(offlineImagePath3 + image3);
+                                    }
                                 }
                                 Uri uri = Uri.fromFile(file);
                                 Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption3);
@@ -3563,6 +3617,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image4.replace(" ","");
@@ -3573,6 +3630,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption4);
@@ -3602,6 +3662,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image1.replace(" ","");
@@ -3612,6 +3675,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption1);
@@ -3633,6 +3699,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image2.replace(" ","");
@@ -3643,6 +3712,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption2);
@@ -3672,6 +3744,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image3.replace(" ","");
@@ -3682,6 +3757,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption3);
@@ -3705,6 +3783,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String url="https://download.iprep.in/super_app_content/assessment_images/"+image4.replace(" ","");
@@ -3715,6 +3796,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption4);
@@ -3745,6 +3829,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String link = "https://download.iprep.in/super_app_content/assessment_images/"+image1.replace(" ","");
@@ -3755,6 +3842,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image1);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image1);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image1);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption1);
@@ -3782,6 +3872,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String link = "https://download.iprep.in/super_app_content/assessment_images/"+image2.replace(" ","");
@@ -3793,6 +3886,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image2);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image2);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image2);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption2);
@@ -3820,6 +3916,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String link = "https://download.iprep.in/super_app_content/assessment_images/"+image3.replace(" ","");
@@ -3830,6 +3929,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image3);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image3);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image3);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption3);
@@ -3857,6 +3959,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             String link = "https://download.iprep.in/super_app_content/assessment_images/"+image4.replace(" ","");
@@ -3868,6 +3973,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             File file = new File(offlineImagePath + image4);
                             if(!file.exists()) {
                                 file = new File(offlineImagePath2 + image4);
+                                if(!file.exists()) {
+                                    file = new File(offlineImagePath3 + image4);
+                                }
                             }
                             Uri uri = Uri.fromFile(file);
                             Glide.with(context).load(uri).apply(requestOptions).into(imageViewOption4);
@@ -4078,6 +4186,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 File file = new File(offlineImagePath + feedback);
                 if(!file.exists()) {
                     file = new File(offlineImagePath2 + feedback);
+                    if(!file.exists()) {
+                        file = new File(offlineImagePath3 + feedback);
+                    }
                 }
                 Glide.with(context).load(file).into(imageViewFeedback);
             }
@@ -4641,14 +4752,26 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 //        feedbackImage="https://download.iprep.in/super_app_content/assessment_images/ncert_eng_sci_06_01_01_023_q.png";
         if (feedbackImage != null) {
             imageViewFeedback.setVisibility(View.VISIBLE);
+
+
             if (!Util.isOfflineMode(context)) {
                 NoInternetConnectionTextView.setVisibility(View.GONE);
                 questionImageView.setVisibility(View.VISIBLE);
                 Glide.with(context).load(feedbackImage).into(imageViewFeedback);
             } else {
-                NoInternetConnectionTextView.setVisibility(View.VISIBLE);
-                questionImageView.setVisibility(View.GONE);
-                NoInternetConnectionTextView.setText(imageInternetError);
+                imageViewFeedback.setVisibility(View.VISIBLE);
+//                questionImageView.setVisibility(View.GONE);
+//                NoInternetConnectionTextView.setText(imageInternetError);
+
+                File file = new File(offlineImagePath + feedback);
+                if(!file.exists()) {
+                    file = new File(offlineImagePath2 + feedback);
+                    if(!file.exists()) {
+                        file = new File(offlineImagePath3 + feedback);
+                    }
+                }
+                Glide.with(context).load(file).into(imageViewFeedback);
+
             }
 
         } else {
@@ -5225,8 +5348,11 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 File file = new File(offlineImagePath + feedback);
                 if(!file.exists()) {
                     file = new File(offlineImagePath2 + feedback);
+                    if(!file.exists()) {
+                        file = new File(offlineImagePath3 + feedback);
+                    }
                 }
-                Glide.with(context).load(offlineImagePath+""+feedback).into(imageViewFeedback);
+                Glide.with(context).load(file).into(imageViewFeedback);
 
             }
 
@@ -8859,7 +8985,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 
     }
 
-    public static void playVideo(Context context,int position) {
+    public static String currentDate;
+
+    public static void playVideo(Context context,int position,String currentDatee) {
 
         removeVideoLayout(context);
 
@@ -8868,9 +8996,18 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         currentvideoofflineLink=videoList.get(position).getOfflineLink();
         videoPos=position;
 
+        if(currentDatee==null) {
+            currentDate = Util.getCurrentDate();
+        }
+        else {
+            currentDate=currentDatee;
+        }
+
+
         Bundle bundls =new Bundle();
         bundls.putString("url", currentvideoID);
         bundls.putString("type", "level_practice_videos");
+        bundls.putString("currentDate", currentDate);
         bundls.putString("offlineLink", videoList.get(position).getOfflineLink());
         bundls.putBoolean("isLocalFile", false);
         bundls.putString("videoName", videoList.get(position).getName());
@@ -8952,6 +9089,8 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         bundls.putBoolean("isLocalFile", false);
         bundls.putString("videoName", currentvideoName);
         bundls.putString("topicID", TOPICID);
+        bundls.putString("currentDate", currentDate);
+
         bundls.putString("subjectName", Util.getSubjectName(context));
         bundls.putString("videoid_for_reports", videoList.get(videoPos).getKey());
         bundls.putBoolean("isFullScreen", false);
@@ -8992,7 +9131,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 //        ity.videoID_ForReports=videoID_ForReports;
 //        iPrepVideoPlayerActivity.videoName=videoName;
 
-        playVideo(context,videoPos);
+        playVideo(context,videoPos,currentDate);
     }
 
     public static boolean playNextVideo(Context context) {
@@ -9004,7 +9143,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    playVideo(context,nextVideoPositio);
+                    playVideo(context,nextVideoPositio,null);
                 }
             },1500);
             return true;

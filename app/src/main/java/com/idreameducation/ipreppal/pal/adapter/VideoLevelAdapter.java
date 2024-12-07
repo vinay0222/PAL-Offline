@@ -57,7 +57,7 @@ public class VideoLevelAdapter extends RecyclerView.Adapter<VideoLevelAdapter.ho
             public void onClick(View v) {
 
                 holder.card.setBackground(context.getResources().getDrawable(R.drawable.bg_selected_chapter));
-                QuizActivity.playVideo(context,position);
+                QuizActivity.playVideo(context,position,null);
             }
         });
 

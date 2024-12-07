@@ -3287,6 +3287,8 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
         row_usage.put("topic", "" + topicId);
         row_usage.put("userId", Util.getUserId(context));
         row_usage.put("username", Util.getUsername(context));
+        row_usage.put("username", Util.getUsername(context));
+        row_usage.put("app_id", Util.getAPPID(context));
         // row_usage.put("userIdFirebase", Util.getLoginUserId(context));
 
         row_usage.put("board", Util.getSelectedBoard(context));

@@ -230,38 +230,28 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
             if(onlineLink==null) onlineLink=vidId;
 
             if(Util.isOfflineMode(context)) {
-                Uri filePath ;
+                Uri filePath;
 
-                if (Util.getSelectedLanguagePackage(context).equalsIgnoreCase("English")) {
+                System.out.println( "----- Util.getSDCardPath(context) "+Util.getSDCardPath(context));
+
+                filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
+                File file3 = new File(filePath.toString());
+                if (file3.exists()) {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-
-                   File file = new File(filePath.toString());
-                    if (file.exists()) {
-                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-                    } else {
-                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-
-                        File file3 = new File(filePath.toString());
-                        if (!file3.exists()) {
-                            filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
-                        }
-                    }
                 } else {
                     filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-                    File file = new File(filePath.toString());
-                    if (file.exists()) {
+                    file3 = new File(filePath.toString());
+                    if (file3.exists()) {
                         filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimedia/" + offlineLink);
-                    } else {
-                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaE/" + offlineLink);
-
-                        File file3 = new File(filePath.toString());
-                        if (!file3.exists()) {
+                    }
+                    else {
+                        filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
+                        file3 = new File(filePath.toString());
+                        if (file3.exists()) {
                             filePath = Uri.parse(Util.getSDCardPath(context) + "/.iDream_content/multimediaEE/" + offlineLink);
                         }
-
                     }
                 }
-
 
                 File file = new File(String.valueOf(filePath));
                 if(file.exists()){
@@ -872,6 +862,8 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
 
         ///
 
+        row_usage.put("app_id", Util.getAPPID(context));
+
         global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
         global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
 
@@ -1187,11 +1179,11 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        System.out.println("------------ clicked   ");
         if (videoView != null) {
             videoView.stopPlayback();
         }
         destroyService();
-        super.onBackPressed();
     }
 
 //    @SuppressLint("NewApi")

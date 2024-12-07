@@ -310,6 +310,27 @@ public class IPrepFullScreenMediaController extends MediaController {
             }
 
         }
+        else if(type.equals("video_lessons")) {
+            if(Util.getIsFullScreen(context)){
+                actionButton.setImageResource(R.mipmap.video_zoom_in);
+                actionButton.setTag("fullscreen");
+//                    goto_smallscreen=true;
+                try {
+                    videoView_activity.onBackPressed();
+                    PalContentListingActivity.backToNormalView();
+                } catch (Exception e) {
+                    PalContentListingActivity.backToNormalView();
+                }
+            }else {
+                actionButton.setTag("cross");
+                current_duration=iPrepVideoPlayerActivity.videoView.getCurrentPosition();
+                actionButton.setImageResource(R.mipmap.video_zoom_out);
+
+                Util.setIsFullScreen(context,true);
+                PalContentListingActivity.openVimeoVideoFullScreenFragment();
+            }
+
+        }
         else {
 
 

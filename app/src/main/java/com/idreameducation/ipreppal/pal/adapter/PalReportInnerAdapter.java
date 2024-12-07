@@ -398,71 +398,153 @@ public class PalReportInnerAdapter extends RecyclerView.Adapter {
                     try {
 
 
+                        if(type.equals("project_video")) {
 
-                        int totaltime=0;
+                            int totaltime=0;
 
-                        HashMap<String, Object> data2 = (HashMap<String, Object>) mainArrayList.get(videosKeys.get(position));
-
-
-                        for(String key:data2.keySet()) {
-                            HashMap<String, Object> data = (HashMap<String, Object>) data2.get(key);
-                            String time = (String) data.get("time");
-                            if(time.equals("null")) time="0";
-                            totaltime=totaltime+Integer.parseInt(time);
-                            String timeForSave=millisecondsToTime(Long.parseLong(String.valueOf(totaltime)));
-
-                            String topicName = (String) data.get("videoName");
-                            String topicName_main = (String) data.get("topicName");
-                            viewHolder.textViewTopicName.setText(topicName);
-
-                            String timeText="Time";
-
-                            if(Util.getSelectedLanguage(context).equals("hindi")) timeText="समय";
-
-                            viewHolder.textViewDetail.setText(timeText+" : "+ timeForSave+" Sec");
-
-                        }
-
-                        viewHolder.RelativeClickListener.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                if (viewHolder.linearAttempts1.getVisibility()==GONE) {
-                                    pos = 1;
-                                    viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.up_pal, 0);
-                                    viewHolder.linearAttempts1.setVisibility(View.VISIBLE);
-                                    viewHolder.linearAttempts.removeAllViews();
-
-                                    View child = null;
-//                                        HashMap<String, Object> data = mainArrayList.get(ij);
-                                    for (String key : data2.keySet()) {
-                                        HashMap<String, Object> dataa = (HashMap<String, Object>) data2.get(key);
-                                        child = LayoutInflater.from(context).inflate(R.layout.row_layout_attempts, null);
-                                        TextView textViewAttemptCount = child.findViewById(R.id.textViewAttemptCount);
-                                        TextView textViewAttempt = child.findViewById(R.id.textViewAttempt);
-                                        String time = (String) dataa.get("time");
-                                        if(time.equals("null")) time="0";
-                                        String date = (String) dataa.get("date");
-                                        System.out.println("------ date "+date);
-                                        String[] splitStr = date.split("\\s+");
-                                        textViewAttempt.setText(splitStr[0]+" "+splitStr[1]);
+                            HashMap<String, Object> data2 = (HashMap<String, Object>) mainArrayList.get(videosKeys.get(position));
 
 
-                                        String timeforSave= millisecondsToTime(Long.parseLong(time));
-                                        textViewAttemptCount.setText(timeforSave +" Sec");
-                                        viewHolder.linearAttempts.addView(child);
-                                    }
+                            for(String key:data2.keySet()) {
+                                HashMap<String, Object> data = (HashMap<String, Object>) data2.get(key);
 
+                                for(String name : data.keySet()) {
+                                    HashMap<String, Object> data22 = (HashMap<String, Object>) data.get(name);
 
+                                    String time = (String) data22.get("time");
+                                    if(time.equals("null")) time="0";
+                                    totaltime=totaltime+Integer.parseInt(time);
+                                    String timeForSave=millisecondsToTime(Long.parseLong(String.valueOf(totaltime)));
 
-                                } else {
-                                    pos = 0;
-                                    notifyDataSetChanged();
-                                    viewHolder.linearAttempts1.setVisibility(GONE);
-                                    viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.down_pal, 0);
+                                    String topicName = (String) data22.get("videoName");
+                                    String topicName_main = (String) data22.get("topicName");
+                                    viewHolder.textViewTopicName.setText(topicName);
+
+                                    String timeText="Time";
+
+                                    if(Util.getSelectedLanguage(context).equals("hindi")) timeText="समय";
+
+                                    viewHolder.textViewDetail.setText(timeText+" : "+ timeForSave+" Sec");
                                 }
 
                             }
-                        });
+
+                            viewHolder.RelativeClickListener.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    if (viewHolder.linearAttempts1.getVisibility()==GONE) {
+                                        pos = 1;
+                                        viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.up_pal, 0);
+                                        viewHolder.linearAttempts1.setVisibility(View.VISIBLE);
+                                        viewHolder.linearAttempts.removeAllViews();
+
+                                        View child = null;
+//                                        HashMap<String, Object> data = mainArrayList.get(ij);
+                                        for (String key : data2.keySet()) {
+                                            HashMap<String, Object> dataa = (HashMap<String, Object>) data2.get(key);
+
+                                            for(String nam : dataa.keySet()) {
+                                                HashMap<String, Object> d = (HashMap<String, Object>) dataa.get(nam);
+
+                                                child = LayoutInflater.from(context).inflate(R.layout.row_layout_attempts, null);
+                                                TextView textViewAttemptCount = child.findViewById(R.id.textViewAttemptCount);
+                                                TextView textViewAttempt = child.findViewById(R.id.textViewAttempt);
+                                                String time = (String) d.get("time");
+                                                if(time.equals("null")) time="0";
+                                                String date = (String) d.get("date");
+                                                System.out.println("------ date "+date);
+                                                String[] splitStr = date.split("\\s+");
+                                                textViewAttempt.setText(splitStr[0]+" "+splitStr[1]);
+
+
+                                                String timeforSave= millisecondsToTime(Long.parseLong(time));
+                                                textViewAttemptCount.setText(timeforSave +" Sec");
+                                                viewHolder.linearAttempts.addView(child);
+
+                                            }
+
+                                        }
+
+
+
+                                    } else {
+                                        pos = 0;
+                                        notifyDataSetChanged();
+                                        viewHolder.linearAttempts1.setVisibility(GONE);
+                                        viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.down_pal, 0);
+                                    }
+
+                                }
+                            });
+
+                        }
+
+                        else {
+                            int totaltime=0;
+
+                            HashMap<String, Object> data2 = (HashMap<String, Object>) mainArrayList.get(videosKeys.get(position));
+
+
+                            for(String key:data2.keySet()) {
+                                HashMap<String, Object> data = (HashMap<String, Object>) data2.get(key);
+                                String time = (String) data.get("time");
+                                if(time.equals("null")) time="0";
+                                totaltime=totaltime+Integer.parseInt(time);
+                                String timeForSave=millisecondsToTime(Long.parseLong(String.valueOf(totaltime)));
+
+                                String topicName = (String) data.get("videoName");
+                                String topicName_main = (String) data.get("topicName");
+                                viewHolder.textViewTopicName.setText(topicName);
+
+                                String timeText="Time";
+
+                                if(Util.getSelectedLanguage(context).equals("hindi")) timeText="समय";
+
+                                viewHolder.textViewDetail.setText(timeText+" : "+ timeForSave+" Sec");
+
+                            }
+
+                            viewHolder.RelativeClickListener.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    if (viewHolder.linearAttempts1.getVisibility()==GONE) {
+                                        pos = 1;
+                                        viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.up_pal, 0);
+                                        viewHolder.linearAttempts1.setVisibility(View.VISIBLE);
+                                        viewHolder.linearAttempts.removeAllViews();
+
+                                        View child = null;
+//                                        HashMap<String, Object> data = mainArrayList.get(ij);
+                                        for (String key : data2.keySet()) {
+                                            HashMap<String, Object> dataa = (HashMap<String, Object>) data2.get(key);
+                                            child = LayoutInflater.from(context).inflate(R.layout.row_layout_attempts, null);
+                                            TextView textViewAttemptCount = child.findViewById(R.id.textViewAttemptCount);
+                                            TextView textViewAttempt = child.findViewById(R.id.textViewAttempt);
+                                            String time = (String) dataa.get("time");
+                                            if(time.equals("null")) time="0";
+                                            String date = (String) dataa.get("date");
+                                            System.out.println("------ date "+date);
+                                            String[] splitStr = date.split("\\s+");
+                                            textViewAttempt.setText(splitStr[0]+" "+splitStr[1]);
+
+
+                                            String timeforSave= millisecondsToTime(Long.parseLong(time));
+                                            textViewAttemptCount.setText(timeforSave +" Sec");
+                                            viewHolder.linearAttempts.addView(child);
+                                        }
+
+
+
+                                    } else {
+                                        pos = 0;
+                                        notifyDataSetChanged();
+                                        viewHolder.linearAttempts1.setVisibility(GONE);
+                                        viewHolder.textViewAttempts.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.down_pal, 0);
+                                    }
+
+                                }
+                            });
+                        }
 
                     }
                     catch (Exception ee)

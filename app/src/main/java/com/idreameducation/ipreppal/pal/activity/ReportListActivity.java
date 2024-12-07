@@ -1941,9 +1941,9 @@ public class ReportListActivity extends AppCompatActivity {
                                     ArrayList<HashMap<String, Object>> mainArrayList = new ArrayList<>();
                                     for(ReportsTopicWiseTestModel item: list){
 
-                                        if(!subjectArrayList.contains(item.getSubjectName())) subjectArrayList.add(item.getSubjectName());
-                                        if(!dateArrayList.contains(item.getSubjectName() + "_" + item.getTestDate())) dateArrayList.add(item.getSubjectName() + "_" + item.getTestDate());
-                                        if(!nameArrayList.contains(item.getSubjectName() + "_" + item.getName())) nameArrayList.add(item.getSubjectName() + "_" + item.getName());
+                                        if(!subjectArrayList.contains(item.getSubjectName().replace("_"," ").toLowerCase())) subjectArrayList.add(item.getSubjectName().replace("_"," ").toLowerCase());
+                                        if(!dateArrayList.contains(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate())) dateArrayList.add(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate());
+                                        if(!nameArrayList.contains(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getName())) nameArrayList.add(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getName());
 
                                         HashMap<String, Object> mainMap = new HashMap<>();
                                         HashMap<String, Object> map = new HashMap<>();
@@ -1986,17 +1986,17 @@ public class ReportListActivity extends AppCompatActivity {
 
                                         for(int i=mainArrayList.size()-1;i>=0;i--)
                                         {
-                                            if(mainArrayList.get(i).containsKey(item.getSubjectName() + "_" + item.getTestDate()))
+                                            if(mainArrayList.get(i).containsKey(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate()))
                                             {
                                                 mainMap=mainArrayList.get(i);
-                                                HashMap<String,Object> m = (HashMap<String, Object>) mainMap.get(item.getSubjectName() + "_" + item.getTestDate());
+                                                HashMap<String,Object> m = (HashMap<String, Object>) mainMap.get(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate());
 
                                                 if(m.containsKey(item.getTopicId()))
                                                 {
                                                     HashMap<String,Object> map22= (HashMap<String, Object>) m.get(item.getTopicId());
                                                     map22.put(String.valueOf(item.getTime()),dataMapValue);
                                                     m.put(item.getTopicId(), map22);
-                                                    mainMap.put(item.getSubjectName() + "_" + item.getTestDate(),m );
+                                                    mainMap.put(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate(),m );
                                                     mainArrayList.remove(i);
                                                     mainArrayList.add(mainMap);
                                                     added=true;
@@ -2007,7 +2007,7 @@ public class ReportListActivity extends AppCompatActivity {
 
                                                     map22.put(String.valueOf(item.getTime()),dataMapValue);
                                                     m.put(item.getTopicId(), map22);
-                                                    mainMap.put(item.getSubjectName() + "_" + item.getTestDate(),m );
+                                                    mainMap.put(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate(),m );
                                                     mainArrayList.remove(i);
                                                     mainArrayList.add(mainMap);
                                                     added=true;
@@ -2023,7 +2023,7 @@ public class ReportListActivity extends AppCompatActivity {
                                                 map2.put(String.valueOf(item.getTime()), dataMapValue);
 
                                                 map.put(item.getTopicId(), map2);
-                                                mainMap.put(item.getSubjectName() + "_" + item.getTestDate(), map);
+                                                mainMap.put(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate(), map);
                                                 mainArrayList.add(mainMap);
                                             }
                                         }
@@ -2032,7 +2032,7 @@ public class ReportListActivity extends AppCompatActivity {
                                         {
                                             dataMap.put(String.valueOf(item.getTime()), dataMapValue);
                                             map.put(item.getTopicId(), dataMap);
-                                            mainMap.put(item.getSubjectName() + "_" + item.getTestDate(), map);
+                                            mainMap.put(item.getSubjectName().replace("_"," ").toLowerCase() + "_" + item.getTestDate(), map);
                                             mainArrayList.add(mainMap);
 
                                         }

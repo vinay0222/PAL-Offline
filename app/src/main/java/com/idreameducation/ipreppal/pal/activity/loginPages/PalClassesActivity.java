@@ -73,15 +73,15 @@ public class PalClassesActivity extends AppCompatActivity  {
                 Util.preventTwoClick(v);
                 if (sClass == null) {
                     Util.openGifDialogue(context,errorMessage);
-//                    Util.showToast(context, errorMessage);
+
                 }
                 else {
-
 
                     if (sClass.equalsIgnoreCase("11") || sClass.equalsIgnoreCase("12")) {
                         startActivity(new Intent(context, PalStreamsActivity.class).putExtra("board", board).putExtra("class", sClass));
 
-                    } else {
+                    }
+                    else {
 
                         saveNewStudentIntoFirebaseDatabaseAndLogin();
 
@@ -114,6 +114,7 @@ public class PalClassesActivity extends AppCompatActivity  {
                         Util.setIsFirstTime(context,"false");
                     }
 
+                    finish();
                 }
             }
         });

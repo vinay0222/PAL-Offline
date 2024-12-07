@@ -3083,6 +3083,8 @@ public class DiagonosticTestActivity extends AppCompatActivity{
         row_usage.put("userType", "students");
         System.out.println( "------- Util.getDistrict(context) "+Util.getDistrict(context));
 
+        row_usage.put("app_id", Util.getAPPID(context));
+
         global.getDatabaseReference().child(Util.rawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
         global.getDatabaseReference().child(Util.segmentedRawUsageNode).child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
 

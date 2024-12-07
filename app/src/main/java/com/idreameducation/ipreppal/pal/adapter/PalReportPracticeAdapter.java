@@ -468,6 +468,7 @@ import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.util.Util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 
@@ -715,24 +716,29 @@ public class PalReportPracticeAdapter extends RecyclerView.Adapter {
                     for(String key :mainHashMap_.keySet()){
                         keyArrayList_.add(key);
                     }
-
+                    HashMap<String, Object> mainHashMap_;
                     for(int i=0;i<keyArrayList.size();i++) {
 
                         ArrayList<String> keyArrayList_ = new ArrayList<>();
 
-                        HashMap<String, Object> mainHashMap_ = (HashMap<String, Object>) ((HashMap<String, Object>) mainArrayList.get(position).get(dateArrayList.get(position))).get(keyArrayList.get(i));
+                        mainHashMap_ = (HashMap<String, Object>) ((HashMap<String, Object>) mainArrayList.get(position).get(dateArrayList.get(position)));
 
                         for (String key : mainHashMap_.keySet()) {
                             keyArrayList_.add(key);
 
                         }
 
-                        nameList.add(nameArrayList.get(i));
+                        try {
+                            nameList.add(nameArrayList.get(i));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                         PalReportInnerAdapter palReportInnerAdapter = new PalReportInnerAdapter(context, mainHashMap_, keyArrayList_, nameArrayList, subject, dateArrayList.get(position), type);
                         viewHolder.recyclerView.setAdapter(palReportInnerAdapter);
 
-                        viewHolder.recyclerView_topic.setAdapter(new PalReport_topicAdapter(context,viewHolder,mainArrayList,dateArrayList,nameList,keyArrayList,position));
+                        Collections.reverse(nameList);
+//                        viewHolder.recyclerView_topic.setAdapter(new PalReport_topicAdapter(context,viewHolder,mainArrayList,dateArrayList,nameList,keyArrayList,position));
 
                     }
 
@@ -771,7 +777,7 @@ public class PalReportPracticeAdapter extends RecyclerView.Adapter {
 
         try
         {
-            HashMap<String, Object> mainHashMap_ = (HashMap<String, Object>) ((HashMap<String, Object>) mainArrayList.get(position).get(dateArrayList.get(position))).get(keyArrayList.get(finalI));
+            HashMap<String, Object> mainHashMap_ = (HashMap<String, Object>) ((HashMap<String, Object>) mainArrayList.get(position).get(dateArrayList.get(position)));
             for(String key :mainHashMap_.keySet()) keyArrayList_.add(key);
             PalReportInnerAdapter palReportInnerAdapter = new PalReportInnerAdapter(context, mainHashMap_, keyArrayList_, nameArrayList,subject, dateArrayList.get(position) , type);
             viewHolder.recyclerView.setAdapter(palReportInnerAdapter);

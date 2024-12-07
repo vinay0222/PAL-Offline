@@ -120,7 +120,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
     private String category;
     private String url;
     private String topicName;
-    private boolean isFullScreen, canSaveReports=false;
+    private boolean isFullScreen, canSaveReports=true;
     private float duration;
     public YouTubePlayer youtubePlayer;
     private String timeToSendTofirebase_;
@@ -986,6 +986,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
             row_usage.put("board", Util.getSelectedBoard(context));
             row_usage.put("category_name", "Project Videos");
             row_usage.put("userType", "students");
+            row_usage.put("app_id", Util.getAPPID(context));
 
             global.getDatabaseReference().child(Util.rawUsageNode)
                     .child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);

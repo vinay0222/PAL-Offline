@@ -248,9 +248,12 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
                         });
                     }
                     else {
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+ "/" + questionsArrayList.get(position).get("option1"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+ "/" + questionsArrayList.get(position).get("option1"));
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option1"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option1"));
+                            }
                         }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option1").replace(" ","");
@@ -323,10 +326,13 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.imageViewOption2.setVisibility(View.GONE);
 //                    viewHolder.textViewOption2.setText(imageInternet);
 
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option2"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option2"));
 
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option2"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option2"));
+                            }
                         }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://www.idreameducation.org/subjects_videos_books_icon/math.png";
@@ -402,9 +408,12 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.imageViewOption3.setVisibility(View.GONE);
 //                    viewHolder.textViewOption3.setText(imageInternet);
 
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option3"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option3"));
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option3"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option3"));
+                            }
                         }
                         Uri uri = Uri.fromFile(file);
 //                        String image = "https://download.iprep.in/super_app_content/assessment_images/"+questionsArrayList.get(position).get("option3").replace(" ","");
@@ -474,10 +483,13 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
 //                    viewHolder.imageViewOption4.setVisibility(View.GONE);
 //                    viewHolder.textViewOption4.setText(imageInternet);
 
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("option4"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("option4"));
 
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("option4"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("option4"));
+                            }
                         }
 
                         Uri uri = Uri.fromFile(file);
@@ -515,9 +527,12 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
                         viewHolder.NoInternetConnectionTextView.setVisibility(View.GONE);
                         viewHolder.questionImageView.setVisibility(View.VISIBLE);
                         viewHolder.zoomImageView.setVisibility(View.VISIBLE);
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("image"));
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("image"));
+                            }
                         }
                         Uri uri = Uri.fromFile(file);
 //                        viewHolder.progressBar3.setVisibility(View.VISIBLE);
@@ -682,10 +697,13 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
 
                     } else {
 
-                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_"+Util.getSelectedLanguage(context).toLowerCase()+"/" + questionsArrayList.get(position).get("image"));
+                        File file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_english"+"/" + questionsArrayList.get(position).get("image"));
 
                         if(!file.exists()) {
                             file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_extra"+"/" + questionsArrayList.get(position).get("image"));
+                            if(!file.exists()) {
+                                file = new File(Util.getSDCardPath(context) + "/.iDream_content/AssessmentImages_hindi"+"/" + questionsArrayList.get(position).get("image"));
+                            }
                         }
 
                         Uri uri = Uri.fromFile(file);
@@ -816,10 +834,10 @@ public class DiagonosticTestAdapter extends RecyclerView.Adapter {
                         viewHolder.questionImageView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Util.preventTwoClick(view);
-                                global.setFullImage(questionsArrayList.get(position).get("image"));
-                                global.setImageAdded(true);
-                                context.startActivity(new Intent(context, FullProfileImageActivity.class));
+                                    Util.preventTwoClick(view);
+                                    global.setFullImage(questionsArrayList.get(position).get("image"));
+                                    global.setImageAdded(true);
+                                    context.startActivity(new Intent(context, FullProfileImageActivity.class));
                             }
                         });
                         viewHolder.zoomImageView.setOnClickListener(new View.OnClickListener() {
