@@ -2013,9 +2013,6 @@ public class ReportListActivity extends AppCompatActivity {
                                                     added=true;
                                                 }
 
-
-
-
                                             }
                                             else if(i==0 && !added)
                                             {

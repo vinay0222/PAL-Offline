@@ -313,9 +313,9 @@ public class PalContentListingActivity extends AppCompatActivity  {
         if (backPressed) {
 
             try {
-
                 refreshListing();
                 backPressed = false;
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -4164,6 +4164,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void refreshListing() {
 //        showDialog();
         mProgressBar.setVisibility(View.VISIBLE);
@@ -4171,7 +4172,6 @@ public class PalContentListingActivity extends AppCompatActivity  {
         imageViewCrossVideo2.setVisibility(View.GONE);
         layout_connection.setVisibility(View.VISIBLE);
         isloading=false;
-
         PalContentListingActivity.keys="";
         try {
             PalVideoListFragment.videoListAdapter.notifyDataSetChanged();
@@ -4190,6 +4190,12 @@ public class PalContentListingActivity extends AppCompatActivity  {
             @Override
             public void run() {
                 getPath(subject);
+                try {
+                    PalVideoListFragment.videoListAdapter.notifyDataSetChanged();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
         }, 500 );//time in milisecond
 

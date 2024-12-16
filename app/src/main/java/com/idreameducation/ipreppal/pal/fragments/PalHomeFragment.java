@@ -930,7 +930,7 @@ public class PalHomeFragment extends Fragment {
             ArrayList<HashMap<String, String>> stemSubjectArrayList = new ArrayList<>();
 
             /** add subject info in stemSubjectArrayList */
-            for (int i = 0; i < object__.length()-1; i++) {
+            for (int i = 0; i <= object__.length()-1; i++) {
                 HashMap<String, String> subjectHashMap = new HashMap<>();
                 JSONObject jsonObject1=object__.getJSONObject(i);                           // point all subjects by position
                 subjectHashMap.put("icon", jsonObject1.get("icon").toString());
