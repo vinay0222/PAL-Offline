@@ -1467,6 +1467,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
 
         long syncClassTime = updatedTime + classTime;
 
+        //timeToSendTofirebase_
         String date = Util.getCurrentDateWithDifferentFormat();
         ScoreModel scoreModel = new ScoreModel();
         scoreModel.setTopicName(topicName);
@@ -1497,7 +1498,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
             if (once) {
                 if (reportsTopicWiseVideoRepository.isDataExist(Util.getUserId(context), board, sClass, subject, "project_video", String.valueOf(id), date, System.currentTimeMillis(), Util.getSelectedLanguage(context))) {
                     reportsTopicWiseVideoRepository.updateField(Util.getUserId(context), board, sClass, subject, "project_video", String.valueOf(id),
-                            date, Long.parseLong(timeToSendTofirebase_), topicName, time + "", topicName, timeTosync + "", videoName, Util.getSelectedLanguage(context));
+                            date, Long.parseLong(timeToSendTofirebase_), topicName, time + "", topicName, ttime + "", videoName, Util.getSelectedLanguage(context));
                     once = false;
                 } else {
                     ReportsTopicWiseVideoModel reportsTopicWiseVideoModel = new ReportsTopicWiseVideoModel();
@@ -1512,7 +1513,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
                     reportsTopicWiseVideoModel.setTopicId(String.valueOf(id));
                     reportsTopicWiseVideoModel.setTopicName(topicName);
                     reportsTopicWiseVideoModel.setTotalTime(total_time_spent_video_lessons + "");
-                    reportsTopicWiseVideoModel.setVTime(timeTosync + "");
+                    reportsTopicWiseVideoModel.setVTime(ttime + "");
                     reportsTopicWiseVideoModel.setVideoName(videoName);
                     reportsTopicWiseVideoModel.setVideoId(String.valueOf(id));
                     reportsTopicWiseVideoModel.setLang(Util.getSelectedLanguage(context));
