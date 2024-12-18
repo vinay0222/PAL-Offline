@@ -988,7 +988,7 @@ public class IPrepYoutubeVideoPlayerFragment extends Fragment {
             row_usage.put("userType", "students");
             row_usage.put("app_id", Util.getAPPID(context));
 
-            global.getDatabaseReference().child(Util.rawUsageNode)
+            globalxq.getDatabaseReference().child(Util.rawUsageNode)
                     .child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
             global.getDatabaseReference().child(Util.segmentedRawUsageNode)
                     .child(Util.getSchoolId(context)).child("" + Util.getCurrentDate()).setValue(row_usage);
