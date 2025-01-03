@@ -101,6 +101,8 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
     public ArrayList<String> finalTestTopicIdArrayList=new ArrayList<>();
     TextView noAssignmentText;
     public static PalAssignedFragment palAssignedFragment;
+    PalAssignedAdapter palAssignedAdapter;
+
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
@@ -135,9 +137,8 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
 
         try {
             batchID = global.getBatchID();
-            getAssignedContent();
             getDiagnosticReport();
-
+            getAssignedContent();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -164,6 +165,99 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
         runBackgroundTask(Util.getUserId(context), Util.getSelectedBoard(context), Util.getSelectedClass(context), Util.getSubject(context), null,null, null, "testScore");
 
         getFoundationTopicDetails();
+
+        global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    if (dataSnapshot.getValue() != null) {
+                        HashMap<String, Object> assignedContentHashMap = (HashMap<String, Object>) dataSnapshot.getValue();
+                        HashMap<String, Object> assignedContentHashMap2 = (HashMap<String, Object>) dataSnapshot.getValue();
+                        ArrayList<String> dateArrayList = new ArrayList<>();
+                        ArrayList<String> converedDateArrayList = new ArrayList<>();
+
+                        /** final HashMap  */
+                        HashMap<String,Object> map1=new HashMap<>();
+
+                        for (String date : assignedContentHashMap.keySet()) {
+                            HashMap<String,Object> mape= (HashMap<String, Object>) assignedContentHashMap.get(date);
+
+                            // check if it assined to me or not
+                            for (String name : mape.keySet()) {
+
+                                HashMap<String,Object> mapwe= (HashMap<String, Object>) mape.get(name);
+
+                                for (String namde : mapwe.keySet()) {
+
+
+                                    HashMap<String,Object> mawwpwe= (HashMap<String, Object>) mapwe.get(namde);
+                                    HashMap<String,Object> m= (HashMap<String, Object>) mawwpwe.get("info");
+
+                                    HashMap<String,Object> w= (HashMap<String, Object>) m.get("st_list");
+
+                                    if(w.containsKey(Util.getUserId(context))) {
+
+                                        /** this hashmap handling content details */
+                                        HashMap<String,Object> map21;
+
+                                        /** check Date first */
+
+                                        String convertedDate = Util.timestampToDate(Long.valueOf(date));
+
+                                        /** check date is already available in map1 */
+                                        if(map1.containsKey(convertedDate)) {
+                                            /** fetching old values */
+                                            map21 = (HashMap<String, Object>) map1.get(convertedDate);
+                                            map21.put(date,assignedContentHashMap);
+                                        }
+                                        else {
+                                            /** created new hashmap  */
+                                            map21= new HashMap<>();
+                                            map21.put(date,assignedContentHashMap);
+                                            dateArrayList.add(date);
+                                            converedDateArrayList.add(convertedDate);
+                                        }
+
+                                        /** added content details in converted date */
+                                        map1.put(convertedDate,map21);
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                        if (dateArrayList.size() > 0) {
+                            imageViewOops.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        } else {
+                            recyclerView.setVisibility(View.GONE);
+                            imageViewOops.setVisibility(View.VISIBLE);
+                        }
+                        palAssignedAdapter = new PalAssignedAdapter(context, map1, dateArrayList,converedDateArrayList);
+
+                        recyclerView.setAdapter(palAssignedAdapter);
+                        noAssignmentText.setVisibility(View.GONE);
+                        // Adapter to be added here
+                    } else {
+                        recyclerView.setVisibility(View.GONE);
+                        imageViewOops.setVisibility(View.VISIBLE);
+                        noAssignmentText.setVisibility(View.VISIBLE);
+                    }
+                } catch (Exception e) {
+                    global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").removeValue();
+                    noAssignmentText.setVisibility(View.VISIBLE);
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 //        global.getDatabaseReference().child("content_assignment_batch_student").child(Util.getUserId(context)).child(batchID).addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {
@@ -535,6 +629,7 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
                                 testScoreModelArrayList.add(new TestScoreModel(item.getTopicId(), item.getType(), item.getReportsTestScoreModel().getScores() + "/" + item.getReportsTestScoreModel().getTotalScores(), item.getReportsTestScoreModel().getPercentageScored(), item.getTimeTaken()));
                             }
                             runBackgroundTask(userId, board, sClass, subject, lastTopicId,topicId, value, "practiceScore");
+                            if(palAssignedAdapter!=null) palAssignedAdapter.notifyDataSetChanged();
 //                        practiceTopicAdapter.notifyDataSetChanged();
                         }
 
@@ -570,111 +665,7 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
                                 }
                                 practiceScoreModelArrayList.add(new PracticeScoreModel(item.getTopicId(), item.getMastery(),item.getStreakProgress(),item.getCurrentLevel()));
                             }
-
-                            global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    try {
-                                        if (dataSnapshot.getValue() != null) {
-                                            HashMap<String, Object> assignedContentHashMap = (HashMap<String, Object>) dataSnapshot.getValue();
-                                            HashMap<String, Object> assignedContentHashMap2 = (HashMap<String, Object>) dataSnapshot.getValue();
-                                            ArrayList<String> dateArrayList = new ArrayList<>();
-                                            ArrayList<String> converedDateArrayList = new ArrayList<>();
-
-                                            /** final HashMap  */
-                                            HashMap<String,Object> map1=new HashMap<>();
-
-                                            for (String date : assignedContentHashMap.keySet()) {
-                                                HashMap<String,Object> mape= (HashMap<String, Object>) assignedContentHashMap.get(date);
-
-                                                // check if it assined to me or not
-                                                for (String name : mape.keySet()) {
-
-
-                                                    HashMap<String,Object> mapwe= (HashMap<String, Object>) mape.get(name);
-
-                                                    for (String namde : mapwe.keySet()) {
-
-
-                                                        HashMap<String,Object> mawwpwe= (HashMap<String, Object>) mapwe.get(namde);
-                                                        HashMap<String,Object> m= (HashMap<String, Object>) mawwpwe.get("info");
-
-                                                        HashMap<String,Object> w= (HashMap<String, Object>) m.get("st_list");
-
-
-                                                        if(w.containsKey(Util.getUserId(context))) {
-
-
-
-                                                            /** this hashmap handling content details */
-                                                            HashMap<String,Object> map21;
-
-                                                            /** check Date first */
-
-                                                            String convertedDate = Util.timestampToDate(Long.valueOf(date));
-
-                                                            /** check date is already available in map1 */
-                                                            if(map1.containsKey(convertedDate)) {
-                                                                /** fetching old values */
-                                                                map21 = (HashMap<String, Object>) map1.get(convertedDate);
-                                                                map21.put(date,assignedContentHashMap);
-                                                            }
-                                                            else {
-                                                                /** created new hashmap  */
-                                                                map21= new HashMap<>();
-                                                                map21.put(date,assignedContentHashMap);
-                                                                dateArrayList.add(date);
-                                                                converedDateArrayList.add(convertedDate);
-                                                            }
-
-                                                            /** added content details in converted date */
-                                                            map1.put(convertedDate,map21);
-
-
-                                                        }
-
-
-
-                                                    }
-
-
-                                                }
-
-
-
-
-
-                                            }
-                                            if (dateArrayList.size() > 0) {
-                                                imageViewOops.setVisibility(View.GONE);
-                                                recyclerView.setVisibility(View.VISIBLE);
-                                            } else {
-                                                recyclerView.setVisibility(View.GONE);
-                                                imageViewOops.setVisibility(View.VISIBLE);
-                                            }
-                                            PalAssignedAdapter palAssignedAdapter = new PalAssignedAdapter(context, map1, dateArrayList,converedDateArrayList);
-
-                                            recyclerView.setAdapter(palAssignedAdapter);
-                                            noAssignmentText.setVisibility(View.GONE);
-                                            // Adapter to be added here
-                                        } else {
-                                            recyclerView.setVisibility(View.GONE);
-                                            imageViewOops.setVisibility(View.VISIBLE);
-                                            noAssignmentText.setVisibility(View.VISIBLE);
-                                        }
-                                    } catch (Exception e) {
-                                        global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").removeValue();
-                                        noAssignmentText.setVisibility(View.VISIBLE);
-                                        e.printStackTrace();
-                                    }
-
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
+                            if(palAssignedAdapter!=null) palAssignedAdapter.notifyDataSetChanged();
 
 //                            updateUi();
 //                        practiceTopicAdapter.notifyDataSetChanged();

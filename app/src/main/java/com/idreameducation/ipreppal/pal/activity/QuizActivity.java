@@ -8351,7 +8351,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         Util.preventTwoClick(v);
                         Spanned topicN = Html.fromHtml(topicName);
                         Intent intent;
-
+                        PalContentListingActivity.autoPlayDelay=5000;
                         PalContentListingActivity.backPressed = true;
                         String subject = Util.getSubject(context);
                         intent = new Intent(context, PalContentListingActivity.class);
@@ -8379,7 +8379,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         intent.putExtra("board", Util.getSelectedBoard(context));
                         intent.putExtra("subjectName", subject);
                         intent.putExtra("icon", subjectModel.getIcon());
-                        intent.putExtra("color", subjectModel.getColor());
+//                        intent.putExtra("color", subjectModel.getColor());
 //                        intent.putExtra("lastTopicId", Util.getTopicID(context));
                         intent.putExtra("lastTopicId", seniorTopicID);
 
@@ -8463,7 +8463,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         intent.putExtra("board", Util.getSelectedBoard(context));
                         intent.putExtra("subjectName", subject);
                         intent.putExtra("icon", subjectModel.getIcon());
-                        intent.putExtra("color", subjectModel.getColor());
+//                        intent.putExtra("color", subjectModel.getColor());
 //                        intent.putExtra("lastTopicId", Util.getTopicID(context));
                         intent.putExtra("lastTopicId", seniorTopicID);
 
@@ -8555,7 +8555,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     intent.putExtra("subject", subject);
                     intent.putExtra("subjectName", subjectName);
                     intent.putExtra("icon", subjectModel.getIcon());
-                    intent.putExtra("color", subjectModel.getColor());
+//                    intent.putExtra("color", subjectModel.getColor());
                     intent.putExtra("backToScreen", false);
 
                     try {
@@ -8820,7 +8820,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
                             intent.putExtra("icon", subjectModel.getIcon());
-                            intent.putExtra("color", subjectModel.getColor());
+//                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("getPath", "yes");
 //                            intent.putExtra("lastTopicId", Util.getTopicID(context));
                             intent.putExtra("lastTopicId", seniorTopicID);

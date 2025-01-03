@@ -550,6 +550,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
         /** set subject name and colour  */
         textViewSubjectName.setText(subjectName.substring(0, 1).toUpperCase() + subjectName.substring(1).replace("_"," "));
         if(color==null) color=Util.getColorOffline(Util.getSubjectId(context));
+        global.setColor(color);
         textViewSubjectName.setTextColor(Color.parseColor(color));
         requestOptions = new RequestOptions();
         requestOptions.dontTransform();
@@ -1925,7 +1926,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
         String topicID_ = null;
         boolean dataExist = false;
         boolean notCompleted = false;
-        if (lastTopicId == null) {
+        if (lastTopicId == null || lastTopicId.equals("")) {
             for (HashMap<String, String> data : topicsArrayList) {
                 if (isDiagnosticTestAttempted(data.get("TopicID"))) {
                     if (isPracticeCompleted(data.get("TopicID"))) {
@@ -2055,6 +2056,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
                 checkData(topicsArrayList, practiceTopicAdapter);
 //                getCompletedForAllTopics(practiceTopicAdapter, topicsArrayList, topicID_);
                 getCompleteStatusForTopic(practiceTopicAdapter, topicsArrayList, topicID_);
+                practiceTopicAdapter.notifyDataSetChanged();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -2258,7 +2260,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
     }
 
     /** check topic have foundation topic ??  */
-    private void checkData(ArrayList<HashMap<String, String>> topicsArrayList, PracticeTopicAdapter practiceTopicAdapter) {
+    private void   checkData(ArrayList<HashMap<String, String>> topicsArrayList, PracticeTopicAdapter practiceTopicAdapter) {
         if (count != topicsArrayList.size()) {
             String topicID = topicsArrayList.get(count).get("TopicID");
 
@@ -4576,7 +4578,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
                                     }
                                 }
                             }
-//                        practiceTopicAdapter.notifyDataSetChanged();
+                        practiceTopicAdapter.notifyDataSetChanged();
                         }
 
                         @Override

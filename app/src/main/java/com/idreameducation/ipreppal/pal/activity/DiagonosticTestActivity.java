@@ -2135,7 +2135,7 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                     intent.putExtra("subjectName", subjectName);
                     intent.putExtra("icon", subjectModel.getIcon());
                     intent.putExtra("lastTopicId", topicId);
-                    intent.putExtra("color", subjectModel.getColor());
+//                    intent.putExtra("color", subjectModel.getColor());
                     intent.putExtra("getPath", "yes");
                     Util.setTopicID(context, topicId);
                     Util.setSubject(context, subject);
@@ -4340,7 +4340,7 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                 intent.putExtra("subjectName", subjectName);
                 intent.putExtra("icon", subjectModel.getIcon());
                 intent.putExtra("getPath", "yes");
-                intent.putExtra("color", subjectModel.getColor());
+//                intent.putExtra("color", subjectModel.getColor());
                 intent.putExtra("lastTopicId", topicId);
                 Util.setTopicID(context, topicId);
                 Util.setSubject(context, subject);
@@ -5211,7 +5211,7 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                         intent.putExtra("board", board);
                         intent.putExtra("subjectName", subjectName);
                         intent.putExtra("icon", subjectModel.getIcon());
-                        intent.putExtra("color", subjectModel.getColor());
+//                        intent.putExtra("color", subjectModel.getColor());
                         intent.putExtra("getPath", "yes");
                         intent.putExtra("lastTopicId", topicId);
                         Util.setTopicID(context, topicId);
@@ -5286,7 +5286,7 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
                             intent.putExtra("icon", subjectModel.getIcon());
-                            intent.putExtra("color", subjectModel.getColor());
+//                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("getPath", "yes");
                             intent.putExtra("lastTopicId", topicId);
                             Util.setTopicID(context, topicId);
@@ -5358,7 +5358,7 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
                             intent.putExtra("icon", subjectModel.getIcon());
-                            intent.putExtra("color", subjectModel.getColor());
+//                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("lastTopicId", topicId);
                             intent.putExtra("getPath", "yes");
                             Util.setTopicID(context, topicId);
