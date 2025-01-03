@@ -9075,6 +9075,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         bundls.putString("videoid_for_reports", videoList.get(position).getKey());
         bundls.putBoolean("isFullScreen", false);
         bundls.putInt("duration", videocurrentPosition);
+        bundls.putString("from", "practice");
         PalContentListingActivity.currentvideo_url = currentvideoID;
 
 
@@ -9153,6 +9154,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         bundls.putString("subjectName", Util.getSubjectName(context));
         bundls.putString("videoid_for_reports", videoList.get(videoPos).getKey());
         bundls.putBoolean("isFullScreen", false);
+        bundls.putString("from", "practice");
         bundls.putInt("duration", iPrepVideoPlayerActivity.videoView.getCurrentPosition());
         PalContentListingActivity.currentvideo_url = currentvideoID;
         PalContentListingActivity.current_duration=iPrepVideoPlayerActivity.videoView.getCurrentPosition();

@@ -4160,6 +4160,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 intent.putExtra("vidId", videoLink);
                 intent.putExtra("offlineLink", getOffLineLink(videoc));
                 intent.putExtra("videoName", videoName);
+                intent.putExtra("from", "practice");
                 startActivity(intent);
             }
         });
@@ -4756,6 +4757,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 intent.putExtra("vidId", videoLink);
                 intent.putExtra("offlineLink", getOffLineLink(videoc));
                 intent.putExtra("videoName", videoName);
+                intent.putExtra("from", "practice");
                 startActivity(intent);
 //                videoView.setVisibility(View.VISIBLE);
 //                String videoCode[] = videoLink.split("/");
@@ -4784,6 +4786,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 intent.putExtra("vidId", videoLink);
                 intent.putExtra("offlineLink", getOffLineLink(videoc));
                 intent.putExtra("videoName", videoName);
+                intent.putExtra("from", "practice");
                 startActivity(intent);
 //                videoView.setVisibility(View.VISIBLE);
 //                String videoCode[] = videoLink.split("/");
@@ -4818,6 +4821,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     Intent intent = new Intent(context, PalFullScreenVideoActivity.class);
                     intent.putExtra("onlineLink", videoLink_Diksha);
                     intent.putExtra("videoName", videoName);
+                    intent.putExtra("from", "practice");
                     startActivity(intent);
                 } else {
                     if(Util.getSelectedLanguage(context).equalsIgnoreCase("hindi"))
@@ -5279,6 +5283,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                 intent.putExtra("vidId", videoLink);
                 intent.putExtra("offlineLink", getOffLineLink(videoc));
                 intent.putExtra("videoName", videoName);
+                intent.putExtra("from", "practice");
                 startActivity(intent);
             }
         });
@@ -5298,6 +5303,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     Intent intent = new Intent(context, PalFullScreenVideoActivity.class);
                     intent.putExtra("onlineLink", videoLink_Diksha);
                     intent.putExtra("videoName", videoName);
+                    intent.putExtra("from", "practice");
                     startActivity(intent);
                 } else {
                     if(Util.getSelectedLanguage(context).equalsIgnoreCase("hindi"))
@@ -5708,6 +5714,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 //                intent.putExtra("onlineLink",videoc);
                 intent.putExtra("offlineLink", getOffLineLink(videoc));
                 intent.putExtra("videoName", videoName);
+                intent.putExtra("from", "practice");
                 startActivity(intent);
 
 //                reletiveparent.setVisibility(View.GONE);
@@ -5745,6 +5752,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     Intent intent = new Intent(context, PalFullScreenVideoActivity.class);
                     intent.putExtra("onlineLink", videoLink_Diksha);
                     intent.putExtra("videoName", videoName);
+                    intent.putExtra("from", "practice");
                     startActivity(intent);
                 } else {
                     // Util.showToast(context, videoNotAvailable);

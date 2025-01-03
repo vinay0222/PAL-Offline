@@ -1108,7 +1108,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
 //        else {
 //            if(!Util.isPortraitMode(context)) findViewById(R.id.searchImageView).setVisibility(View.VISIBLE);
 //        }
-
+        findViewById(R.id.searchImageView).setVisibility(View.GONE);
         findViewById(R.id.searchImageView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1222,7 +1222,8 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
                     }
                 },1000);
             }
-        });findViewById(R.id.languageLayout).setOnClickListener(new View.OnClickListener() {
+        });
+        findViewById(R.id.languageLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Util.preventTwoClick(v);

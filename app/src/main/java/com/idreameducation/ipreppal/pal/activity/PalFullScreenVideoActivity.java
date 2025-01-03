@@ -796,6 +796,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
     private void saveData() {
 
         if(from.equals("search")) return;
+        if(from.equals("practice")) return;
 
         time = videoView.getCurrentPosition();
 
@@ -865,7 +866,6 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
 
         Long time= timeget + Long.valueOf(watchTime);
 
-        ///
 
         row_usage.put("app_id", Util.getAPPID(context));
 
@@ -883,8 +883,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).child("diksha_content").child(date).child(topicID).child("detail").child(videoID_ForReports).child("" + System.currentTimeMillis()).setValue(scoreModel);
 
         }
-        else
-        {
+        else {
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).child("video_lessons").child(date).child(topicID).child("name").setValue(Util.getTopicNameAlt(context));
 
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_wise").child(Util.getUserId(context)).child(board).child(sClass).child(Util.getSelectedLanguage(context)).child(Util.getSubjectName(context).toLowerCase().replace(" ","_")).child("video_lessons").child(date).child(topicID).child("detail").child(videoID_ForReports).child("" + System.currentTimeMillis()).setValue(scoreModel);
@@ -944,7 +943,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
         //For Topic Wise
         if(reportsTopicWiseVideoRepository.isDataExist(Util.getUserId(context), board, sClass, Util.getSubjectInfo(Util.getSubjectId(context)).getName(), "video_lessons", topicID, date, System.currentTimeMillis(),Util.getSelectedLanguage(context))){
             reportsTopicWiseVideoRepository.updateField(Util.getUserId(context), board, sClass, Util.getSubjectInfo(Util.getSubjectId(context)).getName(), "video_lessons", topicID,
-                    date, System.currentTimeMillis(), Util.getTopicNameAlt(context), time + "", Util.getTopicNameAlt(context), watchTime + "", videoName,Util.getSelectedLanguage(context));
+                    date, System.currentTimeMillis(), Util.getTopicNameAlt(context), watchTime + "", Util.getTopicNameAlt(context), watchTime + "", videoName,Util.getSelectedLanguage(context));
         }else{
             ReportsTopicWiseVideoModel reportsTopicWiseVideoModel = new ReportsTopicWiseVideoModel();
             reportsTopicWiseVideoModel.setUserId(Util.getUserId(context));
@@ -958,7 +957,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
             reportsTopicWiseVideoModel.setTopicId(topicID);
             reportsTopicWiseVideoModel.setTopicName(Util.getTopicNameAlt(context));
             reportsTopicWiseVideoModel.setTotalTime(watchTime + "");
-            reportsTopicWiseVideoModel.setVTime(time + "");
+            reportsTopicWiseVideoModel.setVTime(watchTime + "");
             reportsTopicWiseVideoModel.setVideoName(videoName);
             reportsTopicWiseVideoModel.setVideoId(videoID_ForReports);
             reportsTopicWiseVideoModel.setLang(Util.getSelectedLanguage(context));

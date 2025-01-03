@@ -460,10 +460,9 @@
                         android:id="@+id/aboutPAL"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:background="?selectableItemBackground"
                         android:gravity="center"
-
                         android:paddingHorizontal="10dp">
 
                         <ImageView

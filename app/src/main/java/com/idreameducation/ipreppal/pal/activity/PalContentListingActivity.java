@@ -2541,8 +2541,16 @@ public class PalContentListingActivity extends AppCompatActivity  {
         transaction.add(R.id.container, palVideoPlayerActivity, "tag");
         transaction.addToBackStack(null);
 
-        transaction.commit();
-        frameLayout.setVisibility(View.VISIBLE);
+        try {
+            transaction.commit();
+            frameLayout.setVisibility(View.VISIBLE);
+        }
+        catch (Exception r) {
+
+            currentvideo_url = "";
+            PalContentListingActivity.keys = "";
+            r.printStackTrace();
+        }
 
         try {
 

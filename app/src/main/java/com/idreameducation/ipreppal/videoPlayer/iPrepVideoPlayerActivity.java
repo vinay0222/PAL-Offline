@@ -190,6 +190,8 @@ public class iPrepVideoPlayerActivity extends Fragment {
     private long timeget;
     private long videoNumber;
 
+    String from;
+
     boolean video_view_visible=true;
     boolean youtube_view_visible=false;
     public static MediaController mediaController;
@@ -468,7 +470,9 @@ public class iPrepVideoPlayerActivity extends Fragment {
         isFullScreen = getArguments().getBoolean("isFullScreen");
         isLocalFile = getArguments().getBoolean("isLocalFile");
         type = getArguments().getString("type");
+        from = getArguments().getString("from");
 
+        if(from==null) from="";
         start_practice_text=view.findViewById(R.id.start_practice_text);
         next_sec_text=view.findViewById(R.id.next_sec_text);
 
@@ -691,6 +695,8 @@ public class iPrepVideoPlayerActivity extends Fragment {
     boolean isActive=false;
 
     private void saveData() {
+
+        if(from.equals("practice")) return;
 
         innerplayedDuration=PalContentListingActivity.playedDuration;
         PalContentListingActivity.playedDuration=0;

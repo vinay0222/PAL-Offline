@@ -274,6 +274,12 @@ public class VideoView_Activity extends AppCompatActivity{
         isLocalFile = bundle.getBoolean("isLocalFile");
         type = bundle.getString("type");
         innerplayedDuration=PalContentListingActivity.playedDuration;
+
+
+        from = bundle.getString("from");
+
+        if(from==null) from="";
+
         boolean from_smallScreen = bundle.getBoolean("from_smallScreen");
 
         System.out.println("______ previous  "+innerplayedDuration);
@@ -483,9 +489,11 @@ public class VideoView_Activity extends AppCompatActivity{
 
     boolean videoisLoaded=false;
     boolean isActive=false;
+    String from;
 
     private void saveData() {
 
+        if(from.equals("practice")) return;
 //        if(type.equals("level_practice_videos")) return;
         if(!videoisLoaded) return;
 

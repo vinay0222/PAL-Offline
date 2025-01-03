@@ -743,7 +743,7 @@ public class UserActivities {
 
             for(String name:dd) {
                 PracticeDataModel videoDataModel = (PracticeDataModel) getPracticeDataFromName(contentType,name,videoDataModelHashMap);
-                aa.add(videoDataModel);
+                if(!aa.contains(videoDataModel)) aa.add(videoDataModel);
             }
         }
         return aa;
