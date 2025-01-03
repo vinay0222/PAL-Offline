@@ -32,7 +32,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -97,6 +99,7 @@ import com.idreameducation.ipreppal.model.ChatModel;
 import com.idreameducation.ipreppal.model.ContentErrorModel;
 import com.idreameducation.ipreppal.model.LevelVideoModel;
 import com.idreameducation.ipreppal.model.MasteryNodeModel;
+import com.idreameducation.ipreppal.model.SubjectInfoModel;
 import com.idreameducation.ipreppal.pal.adapter.VideoLevelAdapter;
 import com.idreameducation.ipreppal.roomdatabase.model.FoundationalTopicModel;
 import com.idreameducation.ipreppal.roomdatabase.model.ReportsCountModel;
@@ -143,6 +146,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -633,7 +637,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         super.onActivityResult(requestCode, resultCode, data);
 
 
-        Intent aa = new Intent(android.provider.Settings.ACTION_DATE_SETTINGS);
+        Intent aa = new Intent(Settings.ACTION_DATE_SETTINGS);
         startActivityForResult(aa, 123);
 
         // checking request code and result code
@@ -7840,7 +7844,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         if (type.equals("practiceCountTask")) {
             getList(userId, board, sClass, subject, date, testType, type).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new io.reactivex.Observer<Object>() {
+                    .subscribe(new Observer<Object>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                             practiceCountTaskDisposable = d;
@@ -7871,7 +7875,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         else if (type.equals("timeTask")) {
             getList(userId, board, sClass, subject, date, testType, type).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new io.reactivex.Observer<Object>() {
+                    .subscribe(new Observer<Object>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                             timeTaskDisposable = d;
@@ -7901,7 +7905,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         } else if (type.equals("countTask")) {
             getList(userId, board, sClass, subject, date, testType, type).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new io.reactivex.Observer<Object>() {
+                    .subscribe(new Observer<Object>() {
                         @Override
                         public void onSubscribe(Disposable d) {
                             countTaskDisposable = d;
@@ -8353,6 +8357,19 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         intent = new Intent(context, PalContentListingActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         PracticeTopicActivity.autoplayLevelVideo=true;
+
+                        SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                        String studentClass = PalContentListingActivity.sClass;
+                        String subjectName = PalContentListingActivity.subjectName;
+
+                        if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                        if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                        if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                        if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                        if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
+
                         Util.setVideoLevel(context, (level - 1));
                         Util.setLevel(context, (level - 1));
                         if(Util.getUnlockVideoLevel(context,topicId)<level)
@@ -8361,7 +8378,8 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         intent.putExtra("sClass", Util.getSelectedClass(context));
                         intent.putExtra("board", Util.getSelectedBoard(context));
                         intent.putExtra("subjectName", subject);
-                        intent.putExtra("icon", "");
+                        intent.putExtra("icon", subjectModel.getIcon());
+                        intent.putExtra("color", subjectModel.getColor());
 //                        intent.putExtra("lastTopicId", Util.getTopicID(context));
                         intent.putExtra("lastTopicId", seniorTopicID);
 
@@ -8427,12 +8445,25 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         PracticeTopicActivity.autoplayLevelVideo=true;
                         Util.setVideoLevel(context, (level - 1));
                         Util.setLevel(context, (level - 1));
+
+                        SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                        String studentClass = PalContentListingActivity.sClass;
+                        String subjectName = PalContentListingActivity.subjectName;
+
+                        if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                        if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                        if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                        if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                        if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                         if(Util.getUnlockVideoLevel(context,topicId)<level) Util.setUnlockVideoLevel(context,topicId,level);
                         intent.putExtra("subject", subject);
                         intent.putExtra("sClass", Util.getSelectedClass(context));
                         intent.putExtra("board", Util.getSelectedBoard(context));
                         intent.putExtra("subjectName", subject);
-                        intent.putExtra("icon", "");
+                        intent.putExtra("icon", subjectModel.getIcon());
+                        intent.putExtra("color", subjectModel.getColor());
 //                        intent.putExtra("lastTopicId", Util.getTopicID(context));
                         intent.putExtra("lastTopicId", seniorTopicID);
 
@@ -8505,13 +8536,26 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     String subject = Util.getSubject(context);
                     String subjectName = Util.getSubjectName(context);
                     String color = PalContentListingActivity.color;
+                    String icon = PalContentListingActivity.icon;
+
+                    SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                    String studentClass = PalContentListingActivity.sClass;
+
+                    if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                    if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                    if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                    if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                    if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                    if(studentClass==null|| studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                     global.setColor(color);
-                    intent.putExtra("sClass", sClass);
+                    intent.putExtra("sClass", studentClass);
                     intent.putExtra("board", board);
                     intent.putExtra("subject", subject);
                     intent.putExtra("subjectName", subjectName);
-                    intent.putExtra("icon", PalContentListingActivity.icon);
-                    intent.putExtra("color", color);
+                    intent.putExtra("icon", subjectModel.getIcon());
+                    intent.putExtra("color", subjectModel.getColor());
                     intent.putExtra("backToScreen", false);
 
                     try {
@@ -8756,12 +8800,27 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                             String subjectName = Util.getSubjectName(context);
                             String icon = PalContentListingActivity.icon;
                             Intent intent = new Intent(context, PalContentListingActivity.class);
+
+                            SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                            String studentClass = PalContentListingActivity.sClass;
+                            String color = PalContentListingActivity.color;
+
+                            if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                            if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                            if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                            if(color==null || color.equals("")) color = subjectModel.getColor();
+                            if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                            if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                            if(studentClass==null|| studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.putExtra("subject", subject);
-                            intent.putExtra("sClass", sClass);
+                            intent.putExtra("sClass", studentClass);
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
-                            intent.putExtra("icon", icon);
+                            intent.putExtra("icon", subjectModel.getIcon());
+                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("getPath", "yes");
 //                            intent.putExtra("lastTopicId", Util.getTopicID(context));
                             intent.putExtra("lastTopicId", seniorTopicID);
@@ -8822,7 +8881,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
             public void run() {
                 while (progressStatus < percentage) {
                     progressStatus ++;
-                    android.os.SystemClock.sleep(30);
+                    SystemClock.sleep(30);
                     handler.post(new Runnable() {
                         @SuppressLint("UseCompatLoadingForDrawables")
                         @Override

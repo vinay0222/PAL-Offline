@@ -909,7 +909,7 @@
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:padding="10dp"
-            android:src="@mipmap/cross_icon"></ImageView>
+            android:src="@mipmap/cross_icon"/>
 
         <com.idreameducation.ipreppal.util.TextViewHeadingFont
             android:id="@+id/textViewdMessaeg"
@@ -920,7 +920,7 @@
             android:gravity="center"
             android:text="बहुत अच्छा।"
             android:textColor="#212121"
-            android:textAppearance="?android:textAppearanceLarge"></com.idreameducation.ipreppal.util.TextViewHeadingFont>
+            android:textAppearance="?android:textAppearanceLarge"/>
 
         <com.idreameducation.ipreppal.util.TextViewHeadingFont
             android:id="@+id/textViewdUserName"

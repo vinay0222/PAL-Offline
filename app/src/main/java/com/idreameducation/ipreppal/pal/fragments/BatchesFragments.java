@@ -422,6 +422,7 @@ public class BatchesFragments extends Fragment {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     try {
+                        batchesList.clear();
                         contentArrayList = new ArrayList<>();
                         keyArrayList = new ArrayList<>();
                         if (dataSnapshot.getValue() != null) {

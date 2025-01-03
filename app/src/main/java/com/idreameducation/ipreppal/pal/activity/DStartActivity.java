@@ -64,11 +64,15 @@ public class DStartActivity extends AppCompatActivity {
                     intent.putExtra("batchId", batchId);
                     intent.putExtra("isAssigned", isAssigned);
                     intent.putExtra("topicPosition", topicPosition);
+//                    intent.putExtra("assignmentName", getIntent().getStringExtra("assignmentName"));
+//                    intent.putExtra("assignmentKey", getIntent().getStringExtra("assignmentKey"));
 
                     if(assignedDate!=null){
                         intent.putExtra("sClass", sClass);
                         intent.putExtra("assignedDate",assignedDate);
                         intent.putExtra("assignedKey",assignedKey);
+                        intent.putExtra("assignmentName", getIntent().getStringExtra("assignmentName"));
+                        intent.putExtra("assignmentKey", getIntent().getStringExtra("assignmentKey"));
                     }
 
                     startActivity(intent);
@@ -88,6 +92,8 @@ public class DStartActivity extends AppCompatActivity {
                             intent.putExtra("sClass", sClass);
                             intent.putExtra("assignedDate",assignedDate);
                             intent.putExtra("assignedKey",assignedKey);
+                            intent.putExtra("assignmentName", getIntent().getStringExtra("assignmentName"));
+                            intent.putExtra("assignmentKey", getIntent().getStringExtra("assignmentKey"));
                         }
 
                         intent.putExtra("sClass", studentClass);

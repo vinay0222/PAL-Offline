@@ -1,6 +1,7 @@
 package com.idreameducation.ipreppal.pal.activity;
 
 import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.practiceScoreModelArrayList;
+import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.subject;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.button1Text;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.button2Text;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.button3Text;
@@ -73,6 +74,7 @@ import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.model.PracticeScoreModel;
 import com.idreameducation.ipreppal.model.ScoreModel;
 import com.idreameducation.ipreppal.model.StudentInfoModel;
+import com.idreameducation.ipreppal.model.SubjectInfoModel;
 import com.idreameducation.ipreppal.model.UserInfoModel;
 import com.idreameducation.ipreppal.pal.adapter.NormalTestAdapter;
 import com.idreameducation.ipreppal.pal.adapter.TrackTestAdapter;
@@ -4384,17 +4386,31 @@ public class NormalTestActivity extends AppCompatActivity {
                 String subject = Util.getSubject(context);
                 String subjectName = Util.getSubjectName(context);
                 String icon = PalContentListingActivity.icon;
+                String color = PalContentListingActivity.color;
                 Intent intent = new Intent(context, PalContentListingActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                String studentClass = PalContentListingActivity.sClass;
+
+                if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                if(color==null || color.equals("")) color = subjectModel.getColor();
+                if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
 
                 PracticeTopicActivity.autoplayLevelVideo=true;
                 Util.setVideoLevel(context, 0);
                 Util.setLevel(context, 0);
                 intent.putExtra("subject", subject);
-                intent.putExtra("sClass", sClass);
+                intent.putExtra("sClass", studentClass);
                 intent.putExtra("board", board);
                 intent.putExtra("subjectName", subjectName);
-                intent.putExtra("icon", icon);
+                intent.putExtra("icon", subjectModel.getIcon());
+                intent.putExtra("color", subjectModel.getColor());
                 intent.putExtra("getPath","yes");
                 Util.setTopicID(context, topicId);
                 startActivity(intent);
@@ -5329,6 +5345,17 @@ public class NormalTestActivity extends AppCompatActivity {
                     Intent intent = new Intent(context, PalContentListingActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
+                    SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                    String studentClass = PalContentListingActivity.sClass;
+
+                    if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                    if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                    if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                    if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                    if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                    if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                     PracticeTopicActivity.autoplayLevelVideo=true;
                     Util.setVideoLevel(context, (finalLevel1 - 1));
                     Util.setLevel(context, (finalLevel1 - 1));
@@ -5336,7 +5363,8 @@ public class NormalTestActivity extends AppCompatActivity {
                     intent.putExtra("sClass", sClass);
                     intent.putExtra("board", board);
                     intent.putExtra("subjectName", subjectName);
-                    intent.putExtra("icon", icon);
+                    intent.putExtra("icon", subjectModel.getIcon());
+                    intent.putExtra("color", subjectModel.getColor());
                     intent.putExtra("getPath","yes");
                     Util.setTopicID(context, topicId);
                     startActivity(intent);
@@ -5358,8 +5386,12 @@ public class NormalTestActivity extends AppCompatActivity {
             level=4;
             badge_image.setVisibility(View.VISIBLE);
             level_text.setText(result_text.get(16)+ level);
-            PalContentListingActivity.instance.setTopicIdList(topicId);
-            PalContentListingActivity.instance.setNextTopicPosition(topicId);
+try {
+    PalContentListingActivity.instance.setTopicIdList(topicId);
+    PalContentListingActivity.instance.setNextTopicPosition(topicId);
+}catch (Exception r) {
+    r.printStackTrace();
+}
             point_text32.setVisibility(View.GONE);
             point_text2.setVisibility(View.VISIBLE);
             if(finalTestCompleteRepository.isDataExist(Util.getUserId(context), board, sClass, Util.getSubject(context), topicId,Util.getSelectedLanguage(context))){
@@ -5390,23 +5422,40 @@ public class NormalTestActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     // get Data for next chapter
 //                    getNextChapterDetails();
+
+                    SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+
                     Util.preventTwoClick(v);
                     Intent intent = new Intent(context, PalContentListingActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     String icon = PalContentListingActivity.icon;
+                    String color = PalContentListingActivity.color;
                     String subject = PalContentListingActivity.subject;
                     String subjectName = PalContentListingActivity.subjectName;
                     String studentClass = PalContentListingActivity.sClass;
+
+                    if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                    if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                    if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                    if(color==null || color.equals("")) icon = subjectModel.getColor();
+                    if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                    if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                    if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
+
                     intent.putExtra("sClass", studentClass);
                     intent.putExtra("board", board);
-                    intent.putExtra("subject", subject);
+                    intent.putExtra("subject", subjectModel.getId());
                     intent.putExtra("subjectName", subjectName);
-                    intent.putExtra("icon", icon);
+                    intent.putExtra("icon", subjectModel.getIcon());
+                    intent.putExtra("color",subjectModel.getColor());
                     intent.putExtra("getPath","yes");
                     Util.setTopicID(context, topicId);
 //                    PalContentListingActivity.instance.setLastTopicId(GetTopicLevelsDetails.getNextTopicId());
                     Util.setSubject(context, subject);
                     startActivity(intent);
+                    finish();
                     
                 }
             });

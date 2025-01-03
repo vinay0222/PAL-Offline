@@ -976,7 +976,7 @@ public class PalContactUsNew extends AppCompatActivity {
     public void onCallAlternate() {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         if (number == null) {
-            number = "9877023696";
+            number = "18008899710";
         }
         callIntent.setData(Uri.parse("tel:" + number));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -996,7 +996,7 @@ public class PalContactUsNew extends AppCompatActivity {
     public void onCall() {
         Intent callIntent = new Intent(Intent.ACTION_CALL); //use ACTION_CALL class
         if (number == null) {
-            number = "9877023696";
+            number = "18008899710";
         }
         callIntent.setData(Uri.parse("tel:" + number));
         //the system asks the user to grant approval.

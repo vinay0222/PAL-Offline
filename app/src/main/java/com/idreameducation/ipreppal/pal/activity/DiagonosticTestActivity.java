@@ -72,6 +72,7 @@ import com.google.firebase.storage.UploadTask;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.model.ScoreModel;
+import com.idreameducation.ipreppal.model.SubjectInfoModel;
 import com.idreameducation.ipreppal.pal.adapter.DiagonosticTestAdapter;
 import com.idreameducation.ipreppal.pal.adapter.TrackTestAdapter;
 import com.idreameducation.ipreppal.roomdatabase.model.FoundationalTopicModel;
@@ -1838,6 +1839,8 @@ public class DiagonosticTestActivity extends AppCompatActivity{
 
     private void showExitDialog() {
 
+
+
         String texViewMsgText,countinueText,exitTextButton;
         if(Util.isOfflineMode(context))
         {
@@ -2107,17 +2110,32 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                     String subject = Util.getSubject(context);
                     String subjectName = Util.getSubjectName(context);
                     String icon = PalContentListingActivity.icon;
+                    String color = PalContentListingActivity.color;
                     Intent intent = new Intent(context, PalContentListingActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                    SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                    String studentClass = PalContentListingActivity.sClass;
+
+                    if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                    if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                    if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                    if(color==null || color.equals("")) icon = subjectModel.getColor();
+                    if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                    if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                    if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                     Util.setVideoLevel(context, (level - 1));
                     Util.setLevel(context, (level));
                     PracticeTopicActivity.autoplayLevelVideo=true;
                     intent.putExtra("subject", subject);
-                    intent.putExtra("sClass", sClass);
+                    intent.putExtra("sClass", studentClass);
                     intent.putExtra("board", board);
                     intent.putExtra("subjectName", subjectName);
-                    intent.putExtra("icon", icon);
+                    intent.putExtra("icon", subjectModel.getIcon());
                     intent.putExtra("lastTopicId", topicId);
+                    intent.putExtra("color", subjectModel.getColor());
                     intent.putExtra("getPath", "yes");
                     Util.setTopicID(context, topicId);
                     Util.setSubject(context, subject);
@@ -4296,21 +4314,37 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                 String subject = Util.getSubject(context);
                 String subjectName = Util.getSubjectName(context);
                 String icon = PalContentListingActivity.icon;
+                String color = PalContentListingActivity.color;
                 Intent intent = new Intent(context, PalContentListingActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Util.setVideoLevel(context, 0);
                 Util.setLevel(context, 0);
+
+
+                    SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                    String studentClass = PalContentListingActivity.sClass;
+
+                    if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                    if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                    if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                    if(color==null || color.equals("")) icon = subjectModel.getColor();
+                    if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                    if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                    if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                 PracticeTopicActivity.autoplayLevelVideo=true;
                 intent.putExtra("subject", subject);
-                intent.putExtra("sClass", sClass);
+                intent.putExtra("sClass", studentClass);
                 intent.putExtra("board", board);
                 intent.putExtra("subjectName", subjectName);
-                intent.putExtra("icon", icon);
+                intent.putExtra("icon", subjectModel.getIcon());
                 intent.putExtra("getPath", "yes");
-                    intent.putExtra("lastTopicId", topicId);
+                intent.putExtra("color", subjectModel.getColor());
+                intent.putExtra("lastTopicId", topicId);
                 Util.setTopicID(context, topicId);
-                    Util.setSubject(context, subject);
-                    Util.setSubjectName(context, subjectName);
+                Util.setSubject(context, subject);
+                Util.setSubjectName(context, subjectName);
                 startActivity(intent);
                 
                 finish();
@@ -5152,17 +5186,32 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                         String subject = Util.getSubject(context);
                         String subjectName = Util.getSubjectName(context);
                         String icon = PalContentListingActivity.icon;
+                        String color = PalContentListingActivity.color;
                         Intent intent = new Intent(context, PalContentListingActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         Util.setVideoLevel(context, (finalLevel - 1));
                         Util.setLevel(context, (finalLevel));
                         Util.setUnlockVideoLevel(context,topicId,finalLevel);
+
+                        SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                        String studentClass = PalContentListingActivity.sClass;
+
+                        if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                        if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                        if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                        if(color==null || color.equals("")) icon = subjectModel.getColor();
+                        if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                        if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                        if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                         PracticeTopicActivity.autoplayLevelVideo=true;
                         intent.putExtra("subject", subject);
                         intent.putExtra("sClass", sClass);
                         intent.putExtra("board", board);
                         intent.putExtra("subjectName", subjectName);
-                        intent.putExtra("icon", icon);
+                        intent.putExtra("icon", subjectModel.getIcon());
+                        intent.putExtra("color", subjectModel.getColor());
                         intent.putExtra("getPath", "yes");
                         intent.putExtra("lastTopicId", topicId);
                         Util.setTopicID(context, topicId);
@@ -5213,16 +5262,31 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                             String subject = Util.getSubject(context);
                             String subjectName = Util.getSubjectName(context);
                             String icon = PalContentListingActivity.icon;
+                            String color = PalContentListingActivity.color;
                             Intent intent = new Intent(context, PalContentListingActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             Util.setVideoLevel(context, 0);
                             Util.setLevel(context, 0);
+
+                            SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                            String studentClass = PalContentListingActivity.sClass;
+
+                            if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                            if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                            if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                            if(color==null || color.equals("")) icon = subjectModel.getColor();
+                            if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                            if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                            if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                             PracticeTopicActivity.autoplayLevelVideo=true;
                             intent.putExtra("subject", subject);
                             intent.putExtra("sClass", sClass);
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
-                            intent.putExtra("icon", icon);
+                            intent.putExtra("icon", subjectModel.getIcon());
+                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("getPath", "yes");
                             intent.putExtra("lastTopicId", topicId);
                             Util.setTopicID(context, topicId);
@@ -5269,17 +5333,32 @@ public class DiagonosticTestActivity extends AppCompatActivity{
                             String subject = Util.getSubject(context);
                             String subjectName = Util.getSubjectName(context);
                             String icon = PalContentListingActivity.icon;
+                            String color = PalContentListingActivity.color;
                             Intent intent = new Intent(context, PalContentListingActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             Util.setVideoLevel(context, (finalLevel - 1));
                             Util.setLevel(context, (finalLevel));
                             Util.setUnlockVideoLevel(context,topicId,finalLevel);
+
+                            SubjectInfoModel subjectModel = Util.getSubjectInfo(Util.getSubject(context));
+
+                            String studentClass = PalContentListingActivity.sClass;
+
+                            if(subject==null || subject.equals("")) subject = Util.getSubjectId(context);
+                            if(subjectName==null || subjectName.equals("")) subjectName = Util.getSubjectName(context);
+                            if(icon==null || icon.equals("")) icon = subjectModel.getIcon();
+                            if(color==null || color.equals("")) icon = subjectModel.getColor();
+                            if(subject==null || subject.equals("")) subject = subjectModel.getId();
+                            if(subjectName==null || subjectName.equals("")) subjectName = subjectModel.getName();
+                            if(studentClass==null || studentClass.equals("")) studentClass = Util.getSelectedClass(context);
+
                             PracticeTopicActivity.autoplayLevelVideo=true;
                             intent.putExtra("subject", subject);
                             intent.putExtra("sClass", sClass);
                             intent.putExtra("board", board);
                             intent.putExtra("subjectName", subjectName);
-                            intent.putExtra("icon", icon);
+                            intent.putExtra("icon", subjectModel.getIcon());
+                            intent.putExtra("color", subjectModel.getColor());
                             intent.putExtra("lastTopicId", topicId);
                             intent.putExtra("getPath", "yes");
                             Util.setTopicID(context, topicId);
@@ -5389,30 +5468,75 @@ public class DiagonosticTestActivity extends AppCompatActivity{
         teacherID = getIntent().getStringExtra("teacherID");
 
         batchID=global.getBatchID();
+        ArrayList<HashMap<String,Object>> recentAssignment=UserActivities.getLocalAssignment();
 
         try {
             /** check content is assigned or not in local if assigned key is null */
 
-            HashMap<String,String> report=new HashMap<>();
-            report.put("mastery", diagonosticTestAdapter.scoreArrayList.size() + "/" + questionsArrayList.size());
-            report.put("time",String.valueOf(endTime - startTime));
-            report.put("userName",Util.getUsername(context));
+            if(assignedKey==null) {
 
-            if(batchID==null) return;
+                if(recentAssignment==null) return;
 
-            global.getDatabaseReference().child("content_assignment_batch_student").child(Util.getUserId(context)).child(batchID)
-                    .child(assignedData).child(assignedKey).child("report").setValue(report);
+                for(int i=0;i<=recentAssignment.size()-1;i++) {
+                    HashMap<String,Object> map=recentAssignment.get(i);
+                    if(map.get("type").equals("diagnostic")) {
+                        if(map.get("topicID").equals(topicId)) {
+                            assignedData = map.get("startDate").toString();
+                            assignedKey = map.get("assignedKey").toString();
+                            assignmentKey = map.get("assignmentKey").toString();
+                            assignmentName = map.get("assignmentName").toString();
+                            teacherID = map.get("teacherID").toString();
+                            batchID=map.get("batchID").toString();
 
-            /** add reports in teacher recent assignments */
-            global.getDatabaseReference().child("content_assignment_batch_student").child(teacherID)
-                    .child("assignments").child(assignedKey).child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+                            HashMap<String,String> report=new HashMap<>();
+                            report.put("mastery", diagonosticTestAdapter.scoreArrayList.size() + "/" + questionsArrayList.size());
+                            report.put("time",String.valueOf(endTime - startTime));
+                            report.put("userName",Util.getUsername(context));
 
-            /** add reports in assigned content info in batch node */
-//        if(assignmentKey ==null) global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignedKey)
-//                .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+                            if(batchID==null) return;
 
-            global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignmentKey).child(assignmentName).child(assignedKey)
-                    .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+                            global.getDatabaseReference().child("content_assignment_batch_student").child(Util.getUserId(context)).child(batchID)
+                                    .child(assignedData).child(assignedKey).child("report").setValue(report);
+
+                            /** add reports in teacher recent assignments */
+                            global.getDatabaseReference().child("content_assignment_batch_student").child(teacherID)
+                                    .child("assignments").child(assignedKey).child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+                            /** add reports in assigned content info in batch node */
+                            if(assignmentKey ==null) global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignedKey)
+                                    .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+                            global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignmentKey).child(assignmentName).child(assignedKey)
+                                    .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+                        }
+                    }
+                }
+                return;
+            }
+            else {
+                HashMap<String,String> report=new HashMap<>();
+                report.put("mastery", diagonosticTestAdapter.scoreArrayList.size() + "/" + questionsArrayList.size());
+                report.put("time",String.valueOf(endTime - startTime));
+                report.put("userName",Util.getUsername(context));
+
+                if(batchID==null) return;
+
+                global.getDatabaseReference().child("content_assignment_batch_student").child(Util.getUserId(context)).child(batchID)
+                        .child(assignedData).child(assignedKey).child("report").setValue(report);
+
+                /** add reports in teacher recent assignments */
+                global.getDatabaseReference().child("content_assignment_batch_student").child(teacherID)
+                        .child("assignments").child(assignedKey).child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+                /** add reports in assigned content info in batch node */
+                if(assignmentKey ==null) global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignedKey)
+                        .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+                global.getDatabaseReference().child("batches").child(batchID).child("assigned_content").child(assignmentKey).child(assignmentName).child(assignedKey)
+                        .child("info").child("st_list").child(Util.getUserId(context)).child("report").setValue(report);
+
+            }
 
         }catch (Exception r) {
             r.printStackTrace();

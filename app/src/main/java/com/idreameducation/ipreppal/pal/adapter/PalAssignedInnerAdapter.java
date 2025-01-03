@@ -450,7 +450,7 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
                                         if (Util.getSelectedLanguage(context).equalsIgnoreCase("hindi"))
                                         {
                                             Util.openGifDialogue(context,"इंटरनेट कनेक्शन काम नहीं कर रहा");
-                                        }else {
+                                        } else {
                                             Util.openGifDialogue(context,"Internet Connection is not working");
                                         }
                                     }
@@ -655,7 +655,7 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
                     if(subjectID==null) subjectID=subject;
 
                     if(Util.getSelectedLanguage(context).equals("hindi")) viewHolder.textViewInfo.setText(Util.capitalStringFirstLetter(subjectID) + " | देय-दिनांक " + endDate);
-                    else viewHolder.textViewInfo.setText(Util.capitalStringFirstLetter(subjectID) + " | due " + endDate);
+                    else viewHolder.textViewInfo.setText(Util.capitalStringFirstLetter(subjectID).replace("_"," ") + " | due " + endDate);
 
                     ArrayList<String> keyArrayList = new ArrayList<>();
                     for (String key : data1.keySet()) keyArrayList.add(key);
@@ -725,7 +725,7 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
 
         if(type.equals("diagnostic")) {
 
-            messageText.setText(BatchesFragments.textArrayList.get(11));
+            messageText.setText("First, take the diagnostic test of this chapter.");
             button.setText(BatchesFragments.textArrayList.get(13));
 
 

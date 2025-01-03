@@ -52,7 +52,7 @@ public class Notification_Adapter extends RecyclerView.Adapter<Notification_Adap
     public void onBindViewHolder(@NonNull Notification_Adapter.notification_holder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.notification_title.setText(notification_modelArrayList.get(position).getMessage());
-        holder.notification_body.setText(notification_modelArrayList.get(position).getNotificationMessage());
+        holder.notification_body.setText(notification_modelArrayList.get(position).getNotificationMessage().replace("_"," "));
 
         if(notification_modelArrayList.get(position).isRead()) {
             holder.notification_title.setTextColor(context.getResources().getColor(R.color.notifidatibgrey));

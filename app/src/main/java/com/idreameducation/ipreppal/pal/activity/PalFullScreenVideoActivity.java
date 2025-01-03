@@ -1,6 +1,7 @@
 package com.idreameducation.ipreppal.pal.activity;
 
 import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.current_duration;
+import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.currentvideo_url;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -396,6 +397,8 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         requestQueue = Volley.newRequestQueue(context);
 
+        vid_id=vid_id.replace("https://vimeo.com/","");
+
         String url = "https://learn.iprep.in/api/video?videoid=" + vid_id + "&origin=vimeo.com";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -555,6 +558,8 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
         TextView textViewOkay = dialog.findViewById(R.id.textViewOkay);
         TextView textViewPractice = dialog.findViewById(R.id.textViewPractice);
         TextView understandMasteryText = dialog.findViewById(R.id.understandMasteryText);
+
+        if(assignedKey!=null) textViewPractice.setVisibility(View.GONE);
 
         if(from.equals("search")) textViewPractice.setVisibility(View.GONE);
         textViewPractice.setOnClickListener(new View.OnClickListener() {

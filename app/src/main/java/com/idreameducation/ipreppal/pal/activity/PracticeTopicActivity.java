@@ -227,7 +227,6 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         setContentView(R.layout.pal_activity_topics);
         mContentView=findViewById(R.id.drawer_layout);
 
-
         networkStateReceiver = new NetworkStateReceiver();
         networkStateReceiver.addListener(this);
 
@@ -1062,12 +1061,12 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         bottomNavigationView.setItemIconTintList(null);
         if(type.equals("HomePage")) {
             openFragment(homeFragment);
+            bottomNavigationView.setSelectedItemId(R.id.home);
             bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_active_home);
             bottomNavigationView.getMenu().getItem(1).setIcon(R.drawable.ic_inactive_batch);
         }
         else if(type.contains("notification")) {
             openFragment(new BatchesFragments());
-
             bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.inactive_home);
             bottomNavigationView.getMenu().getItem(1).setIcon(R.drawable.ic_active_batch);
         }

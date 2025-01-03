@@ -112,17 +112,17 @@
             app:elevation="2dp"
             app:pressedTranslationZ="0dp" />
 
-        <com.idreameducation.ipreppal.util.TextViewHeadingFont
-            android:id="@+id/supportText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:text="Support"
-            android:visibility="invisible"
-            android:textColor="@color/black">
+<!--        <com.idreameducation.ipreppal.util.TextViewHeadingFont-->
+<!--            android:id="@+id/supportText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:text="Support"-->
+<!--            android:visibility="invisible"-->
+<!--            android:textColor="@color/black">-->
 
-        </com.idreameducation.ipreppal.util.TextViewHeadingFont>
+<!--        </com.idreameducation.ipreppal.util.TextViewHeadingFont>-->
 
 
     </LinearLayout>

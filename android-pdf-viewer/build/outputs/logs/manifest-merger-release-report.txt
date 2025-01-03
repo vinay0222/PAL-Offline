@@ -1,0 +1,20 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml:2:1-6:12
+	package
+		INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml:4:5-47
+	xmlns:tools
+		ADDED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml
+INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\shiva\OneDrive\Pictures\Local Disk D\ipreppal\android-pdf-viewer\src\main\AndroidManifest.xml

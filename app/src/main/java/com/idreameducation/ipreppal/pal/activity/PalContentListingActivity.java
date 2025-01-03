@@ -1840,10 +1840,10 @@ public class PalContentListingActivity extends AppCompatActivity  {
             subject = Util.getSubjectId(context);
 
             String filePath = ".iDream_content/offlinetab_PAL/" + "Class" + sClass + "_topics.txt"; // path
-            JSONObject jsonObject = Util.readJsonFile(context, filePath);                       // read file
-            JSONObject object__ = jsonObject.getJSONObject(language);                           // filter by language
-            JSONObject object___ = object__.getJSONObject(subject.toLowerCase());               // filter by subject
-            JSONArray array = object___.getJSONArray("topics");                           // getting topics
+            JSONObject jsonObject = Util.readJsonFile(context, filePath);                           // read file
+            JSONObject object__ = jsonObject.getJSONObject(language);                               // filter by language
+            JSONObject object___ = object__.getJSONObject(subject.toLowerCase());                   // filter by subject
+            JSONArray array = object___.getJSONArray("topics");                         // getting topics
 
             /** topicsArrayList => contain all topics info */
             topicsArrayList = new ArrayList<>();
@@ -4197,7 +4197,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
                 }
 
             }
-        }, 500 );//time in milisecond
+        }, 1500 );//time in milisecond
 
 
     }
@@ -5048,7 +5048,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
 
     }
 
-    public static int autoPlayDelay=2000;
+    public static int autoPlayDelay=5000;
     public static int connectionLayoutDelay=500;
     private void playLevelVideo() {
         new Handler().postDelayed(new Runnable() {
