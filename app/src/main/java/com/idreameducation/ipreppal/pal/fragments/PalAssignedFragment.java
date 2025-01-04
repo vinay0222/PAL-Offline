@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fasterxml.jackson.databind.ObjectReader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -780,32 +781,40 @@ public class PalAssignedFragment extends Fragment implements View.OnClickListene
     ArrayList<String> diagnosticCompletedList=new ArrayList<>();
 
     private void getDiagnosticReport() {
-        global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("d_completed").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(Util.getSelectedClass(context)).child(Util.getSubject(context)).addValueEventListener(new ValueEventListener() {
+        global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("d_completed").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(Util.getSelectedClass(context)).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
                     diagnosticCompletedList=new ArrayList<>();
-                    HashMap<String, String> topicIDs = (HashMap<String, String>) snapshot.getValue();
+                    HashMap<String, Object> subjectID = (HashMap<String, Object>) snapshot.getValue();
 
-                    for (String topicID : topicIDs.keySet()) {
+                    for (String subjectIDD : subjectID.keySet()) {
 
-                        diagnosticCompletedList.add(topicID);
+                        HashMap<String, String> topicIDs = (HashMap<String, String>) subjectID.get(subjectIDD);
 
-                        boolean isCompleted = true;
-                        if (reportsDiagnosticTestCompleteRepository.isDataExist(Util.getUserId(context), board, sClass, Util.getSubject(context), topicID, Util.getSelectedLanguage(context)))
-                            reportsDiagnosticTestCompleteRepository.updateField(Util.getUserId(context), board, sClass, Util.getSubject(context), topicID, isCompleted, Util.getSelectedLanguage(context));
-                        else {
-                            ReportsDiagnosticCompleteModel reportsDiagnosticCompleteModel = new ReportsDiagnosticCompleteModel();
-                            reportsDiagnosticCompleteModel.setUserId(Util.getUserId(context));
-                            reportsDiagnosticCompleteModel.setBoard(board);
-                            reportsDiagnosticCompleteModel.setSClass(sClass);
-                            reportsDiagnosticCompleteModel.setSubject(Util.getSubject(context));
-                            reportsDiagnosticCompleteModel.setTopicId(topicID);
-                            reportsDiagnosticCompleteModel.setComplete(isCompleted);
-                            reportsDiagnosticCompleteModel.setLang(Util.getSelectedLanguage(context));
-                            reportsDiagnosticTestCompleteRepository.insertTestDetails(reportsDiagnosticCompleteModel);
+                        for (String topicID : topicIDs.keySet()) {
+
+                            diagnosticCompletedList.add(topicID);
+
+                            boolean isCompleted = true;
+                            if (reportsDiagnosticTestCompleteRepository.isDataExist(Util.getUserId(context), board, sClass, subjectIDD, topicID, Util.getSelectedLanguage(context)))
+                                reportsDiagnosticTestCompleteRepository.updateField(Util.getUserId(context), board, sClass, subjectIDD, topicID, isCompleted, Util.getSelectedLanguage(context));
+                            else {
+                                ReportsDiagnosticCompleteModel reportsDiagnosticCompleteModel = new ReportsDiagnosticCompleteModel();
+                                reportsDiagnosticCompleteModel.setUserId(Util.getUserId(context));
+                                reportsDiagnosticCompleteModel.setBoard(board);
+                                reportsDiagnosticCompleteModel.setSClass(sClass);
+                                reportsDiagnosticCompleteModel.setSubject(subjectIDD);
+                                reportsDiagnosticCompleteModel.setTopicId(topicID);
+                                reportsDiagnosticCompleteModel.setComplete(isCompleted);
+                                reportsDiagnosticCompleteModel.setLang(Util.getSelectedLanguage(context));
+                                reportsDiagnosticTestCompleteRepository.insertTestDetails(reportsDiagnosticCompleteModel);
+                            }
                         }
+
+
                     }
+                    System.out.println(diagnosticCompletedList);
 
                 } catch (Exception r) {
                     r.printStackTrace();
