@@ -2326,6 +2326,7 @@ public class PalContentListingActivity extends AppCompatActivity  {
             runBackgroundTask(Util.getUserId(context), board, sClass, subject, topicId, value, "pathTask");
             runBackgroundTask(Util.getUserId(context), board, sClass, Util.getSubject(context), topicId, value, "testScore");
         } else {
+
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("topic_path").child(Util.getUserId(context)).child(board).child(sClass).child(subject).child(topicId).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {

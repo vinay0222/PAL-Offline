@@ -343,6 +343,11 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
 
                                     if(Util.isPortraitMode(context)) intent=new Intent(context, com.idreameducation.ipreppal.PalMobile.activity.QuizActivity.class);
 
+
+                                    if(seniorClass.isEmpty()) seniorClass = Util.getSelectedClass(context);
+                                    if(seniorTopicID.isEmpty()) seniorTopicID =stopicID;
+                                    if(seniorTopicName.isEmpty()) seniorTopicName =finalData.get("topicName").toString();
+
                                     intent.putExtra("assignedDate",date)
                                             .putExtra("assignedKey",key)
                                             .putExtra("assignmentName", finalAssignmentName1)
@@ -350,8 +355,10 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
                                             .putExtra("teacherID", teacherID)
                                             .putExtra("sClass", studentClass).putExtra("streakProgress", streakProgress)
                                             .putExtra("streak", streak).putExtra("incorrectStreak", incorrectStreak)
-                                            .putExtra("practiceType", "same").putExtra("seniorClass", seniorClass)
-                                            .putExtra("seniorTopicID", seniorTopicID).putExtra("seniorTopicName", seniorTopicName)
+                                            .putExtra("practiceType", "same")
+                                            .putExtra("seniorClass", seniorClass)
+                                            .putExtra("seniorTopicID", seniorTopicID)
+                                            .putExtra("seniorTopicName", seniorTopicName)
                                             .putExtra("testPercentageAchieved", "0");
 
                                     context.startActivity(intent);
@@ -413,13 +420,18 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
                                 }
                                 else if(completeType.equals("practice")){
 
+                                    if(seniorClass==null) seniorClass = Util.getSelectedClass(context);
+                                    if(seniorTopicID==null) seniorTopicID =topicID;
+                                    if(seniorTopicName==null) seniorTopicName =finalData.get("topicName").toString();
+
+
                                     stopicID=topicID;
                                     sstudentClass=studentClass;
                                     sstreak=streak;
                                     sincorrectStreak=incorrectStreak;
-                                    sseniorClass=seniorClass;
-                                    sseniorTopicID=seniorTopicID;
-                                    sseniorTopicName=seniorTopicName;
+                                    sseniorClass=seniorClass.isEmpty()?Util.getSelectedClass(context):seniorClass;
+                                    sseniorTopicID=seniorTopicID.isEmpty()?stopicID:seniorTopicID;
+                                    sseniorTopicName=seniorTopicName.isEmpty()?finalData.get("topicName").toString():seniorTopicName;
                                     sstartDate=startDate;
                                     sposition=position;
                                     showDialogue(context,"practice");
@@ -833,7 +845,9 @@ public class PalAssignedInnerAdapter extends RecyclerView.Adapter {
 
                     if(Util.isPortraitMode(context)) intent=new Intent(context, com.idreameducation.ipreppal.PalMobile.activity.QuizActivity.class);
 
-                    intent.putExtra("sClass", sstudentClass).putExtra("streakProgress", streakProgress).putExtra("streak", sstreak).putExtra("incorrectStreak", sincorrectStreak).putExtra("practiceType", "same").putExtra("seniorClass", sseniorClass).putExtra("seniorTopicID", sseniorTopicID).putExtra("seniorTopicName", sseniorTopicName).putExtra("testPercentageAchieved", "0");
+                    intent.putExtra("sClass", sstudentClass).putExtra("streakProgress", streakProgress).putExtra("streak", sstreak).putExtra("incorrectStreak", sincorrectStreak).putExtra("practiceType", "same")
+                            .putExtra("seniorClass", sseniorClass).putExtra("seniorTopicID", sseniorTopicID).putExtra("seniorTopicName", sseniorTopicName)
+                            .putExtra("testPercentageAchieved", "0");
 
                     context.startActivity(intent);
                     global.getDatabaseReference().child("content_assignment_batch_student").child(Util.getUserId(context)).child(batchID).child(sstartDate).child(keyArrayList.get(sposition)).child("status").setValue("completed");
