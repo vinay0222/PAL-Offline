@@ -1269,13 +1269,13 @@ public class PalActivationDetailActivity extends AppCompatActivity {
 
     private void checkOfflineMode() {
 
-//        if (Build.VERSION.SDK_INT >= 30){
-//            if (!Environment.isExternalStorageManager()) {
-//                Intent getpermission = new Intent();
-//                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//                startActivity(getpermission);
-//            }
-//        }
+        if (Build.VERSION.SDK_INT >= 30){
+            if (!Environment.isExternalStorageManager()) {
+                Intent getpermission = new Intent();
+                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                startActivity(getpermission);
+            }
+        }
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //            if (!Settings.canDrawOverlays(this)) {

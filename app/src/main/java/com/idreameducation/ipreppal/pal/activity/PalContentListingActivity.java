@@ -1360,10 +1360,10 @@ public class PalContentListingActivity extends AppCompatActivity  {
                         newHashMap_.put("topicID", currentTopicid);
                         newHashMap_.put("isSelected", "false");
                         newHashMap_.put("key", key+"");
-                        if(onlineLink.contains("vimeo")) {
+//                        if(onlineLink.contains("vimeo")) {
                             videoHashMap.put(i + "-" + j, newHashMap_);
                             newHashMap.put(key, newHashMap_);
-                        }
+//                        }
 
                     }
                     contentArrayList_.add(newHashMap);

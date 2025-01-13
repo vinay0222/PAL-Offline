@@ -1649,7 +1649,8 @@ public class PalProfileActivity extends AppCompatActivity implements DatePickerD
         checkConnection(false);
         firebaseAuth = FirebaseAuth.getInstance();
 
-
+        textViewBoard.setVisibility(View.GONE);
+        findViewById(R.id.textViewBoardHint).setVisibility(View.GONE);
         if(Util.isOfflineMode(context))
         {
             Util.getAge(context);
