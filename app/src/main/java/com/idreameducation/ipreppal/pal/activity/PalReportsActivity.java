@@ -33,7 +33,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -106,6 +105,7 @@ public class PalReportsActivity extends AppCompatActivity  {
     ViewGroup progressView;
     protected boolean isProgressShowing = false;
     private ProgressDialog progressDialog;
+
 
     private Boolean isFabOpen = false;
     private FloatingActionButton fab, fab1, fab2;
