@@ -5,10 +5,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
 import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
 import static com.idreameducation.ipreppal.util.Util.isPortraitMode;
-import static com.idreameducation.ipreppal.util.Util.isTablet;
-import static com.idreameducation.ipreppal.util.Util.setLandscapeView;
 import static com.idreameducation.ipreppal.util.Util.setPageType;
-import static com.idreameducation.ipreppal.util.Util.setPortraitView;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -65,6 +62,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.os.EnvironmentCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -95,6 +93,7 @@ import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.deeplink.DeepLinkManager;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.model.Notification_model;
+import com.idreameducation.ipreppal.pal.activity.loginPages.PalActivationDetailActivity;
 import com.idreameducation.ipreppal.pal.activity.loginPages.PalAnonymousLoginActivity;
 import com.idreameducation.ipreppal.pal.adapter.AssignedContentAdapter;
 import com.idreameducation.ipreppal.pal.adapter.Notification_Adapter;
@@ -118,6 +117,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -253,7 +253,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
 //        }
         assignIds();
 
-
+        checkOfflineMode();
         updateLastNetConnection();
         notNetConnection();
     }
@@ -271,20 +271,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == 22) {
-            if (grantResults.length > 0)
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                } else {
-
-                }
-        }
-
-    }
 
 
     @SuppressLint("NewApi")
@@ -871,7 +858,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
             @Override
             public void onClick(View v) {
                 Util.preventTwoClick(v);
-                drawer_layout.closeDrawer(Gravity.LEFT);
+                drawer_layout.closeDrawer(Gravity.RIGHT);
             }
         });
 
@@ -3074,7 +3061,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
                                 findViewById(R.id.textViewclose).setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        PracticeTopicActivity.super.onBackPressed();
+                                        startActivity(new Intent(PracticeTopicActivity.this, PalActivationDetailActivity.class));
                                         finish();
                                     }
                                 });
@@ -3257,5 +3244,179 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         planExpireDialog.show();
         planExpireDialog.getWindow().setBackgroundDrawable(new ColorDrawable(context.getResources().getColor(android.R.color.transparent)));
     }
+
+
+    private void detectiDreamSDCardNeww(Context context) throws Exception {
+        List<String> results = new ArrayList<>();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //Method 1 for KitKat & above
+            File[] externalDirs = context.getExternalFilesDirs(null);
+
+            for (File file : externalDirs) {
+                String path = "";
+
+                if (file != null) {
+
+                    path = file.getPath().split("/Android")[0];
+
+                    boolean addPath = false;
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        addPath = Environment.isExternalStorageRemovable(file);
+                    } else {
+                        addPath = Environment.MEDIA_MOUNTED.equals(EnvironmentCompat.getStorageState(file));
+                    }
+                    //  if (addPath) {
+                    results.add(path);
+                    //}
+                }
+            }
+        }
+
+        if (results.isEmpty()) { //Method 2 for all versions
+            // better variation of: http://stackoverflow.com/a/40123073/5002496
+            String output = "";
+            final Process process = new ProcessBuilder().command("mount | grep /dev/block/vold")
+                    .redirectErrorStream(true).start();
+            process.waitFor();
+            final InputStream is = process.getInputStream();
+            final byte[] buffer = new byte[1024];
+            while (is.read(buffer) != -1) {
+                output = output + new String(buffer);
+            }
+            is.close();
+            if (!output.trim().isEmpty()) {
+                String[] devicePoints = output.split("\n");
+                for (String voldPoint : devicePoints) {
+                    results.add(voldPoint.split(" ")[2]);
+                }
+            }
+        }
+
+//        //Below few lines is to remove paths which may not be external memory card, like OTG (feel free to comment them out)
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            for (int i = 0; i < results.size(); i++) {
+//                if (!results.get(i).toLowerCase().matches(".*[0-9a-f]{4}[-][0-9a-f]{4}")) {
+//                    Log.d("Tag", results.get(i) + " might not be extSDcard");
+//                    results.remove(i--);
+//                }
+//            }
+//        } else {
+//            for (int i = 0; i < results.size(); i++) {
+//                if (!results.get(i).toLowerCase().contains("ext") && !results.get(i).toLowerCase().contains("sdcard")) {
+//                    Log.d("Tag", results.get(i) + " might not be extSDcard");
+//                    results.remove(i--);
+//                }
+//            }
+//        }
+
+        String[] storageDirectories = new String[results.size()];
+        for (int i = 0; i < results.size(); i++) {
+            storageDirectories[i] = results.get(i);
+        }
+
+//        String path;
+        String path = storageDirectories[0];
+        for (int i=0;i<storageDirectories.length;i++){
+            path = storageDirectories[i];
+            File file = new File(path + "/.iDream_content/offlinetab_PAL/PALiDream.txt");
+            if (file.exists()){
+                Util.setSDCardPath(context, path+"/");
+                Util.setOfflineMode(context, file.exists());
+
+                assignIds();
+                break;
+            }
+        }
+
+
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 100) { // Same request code used in requestPermissions
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+                assignIds();
+                // You can now access storage safely
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private void checkOfflineMode() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    intent.addCategory("android.intent.category.DEFAULT");
+                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+                    startActivityForResult(intent,100);
+                } catch (Exception e) {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivity(intent);
+                }
+            }
+        } else {
+            // For Android 10 and below, request READ/WRITE permission normally
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                    100
+            );
+        }
+
+//        if (Build.VERSION.SDK_INT >= 30){
+//            if (!Environment.isExternalStorageManager()) {
+////                Intent getpermission = new Intent();
+////                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+////                startActivity(getpermission);
+//
+//
+//
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                    // Android 11 and above
+//                    if (!Environment.isExternalStorageManager()) {
+//                        try {
+//                            Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                            intent.addCategory("android.intent.category.DEFAULT");
+//                            intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+//                            startActivity(intent);
+//                        } catch (Exception e) {
+//                            Intent intent = new Intent();
+//                            intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                            startActivity(intent);
+//                        }
+//                    }
+//                } else {
+//                    // For Android 10 and below, request READ/WRITE permission normally
+//                    ActivityCompat.requestPermissions(
+//                            this,
+//                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+//                            100
+//                    );
+//                }
+//            }
+//            else {
+//                try {
+//                    detectiDreamSDCardNeww(context);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+
+    }
+
 
 }

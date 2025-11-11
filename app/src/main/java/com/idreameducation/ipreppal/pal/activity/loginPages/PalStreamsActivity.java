@@ -1,20 +1,28 @@
 package com.idreameducation.ipreppal.pal.activity.loginPages;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -140,6 +148,8 @@ public class PalStreamsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        checkOfflineMode();
     }
 
     private void getStreams() {
@@ -390,6 +400,53 @@ public class PalStreamsActivity extends AppCompatActivity {
         super.onPause();
 
         Util.preventPause(context,getTaskId());
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 100) { // Same request code used in requestPermissions
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+                assignIds();
+                checkOfflineMode();
+                // You can now access storage safely
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private void checkOfflineMode() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    intent.addCategory("android.intent.category.DEFAULT");
+                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+                    startActivityForResult(intent,100);
+                } catch (Exception e) {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivityForResult(intent,100);
+                }
+            }
+        } else {
+            // For Android 10 and below, request READ/WRITE permission normally
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                    100
+            );
+        }
+
     }
 
 

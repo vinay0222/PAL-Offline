@@ -1109,8 +1109,10 @@
                 android:background="@drawable/gray_iprep"
                 android:cursorVisible="true"
                 android:hint=""
+                android:inputType="text"
+                android:digits="0123456789qwertzuiopasdfghjklyxcvbnm ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
                 android:imeOptions="actionNext"
-                android:inputType="textVisiblePassword"
                 android:maxLength="30"
                 android:nextFocusDown="@id/textViewtitlePassword"
                 android:paddingLeft="10dp"

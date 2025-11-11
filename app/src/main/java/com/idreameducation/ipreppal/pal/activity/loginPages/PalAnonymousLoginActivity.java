@@ -2,6 +2,7 @@ package com.idreameducation.ipreppal.pal.activity.loginPages;
 
 import static com.idreameducation.ipreppal.util.Util.openGifDialogueSuccess;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,9 +10,13 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -32,6 +37,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.os.EnvironmentCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,6 +75,8 @@ import com.idreameducation.ipreppal.util.Util;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -215,6 +224,8 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         Util.setToolTipContentScreen(context, true);
         Util.setToolTipDiagnosticScreen(context, true);
         Util.setToolTipHomeScreen(context, true);
+
+
 
         studentDetailsRepository = new StudentDetailsRepository(context);
 
@@ -416,6 +427,9 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                 showStudentProfiles();
             }
         });
+
+
+        checkOfflineMode();
     }
 
     private void showStudentProfiles() {
@@ -479,14 +493,14 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
 
                         Pattern regex = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]");
 
-                        boolean isOnlyNumber;
+                        boolean isOnlyNumber = false;
 
-                        try {
-                            int a = Integer.parseInt(studentName);
-                            isOnlyNumber=true;
-                        }catch (Exception e ){
-                            isOnlyNumber=false;
-                        }
+//                        try {
+//                            int a = Integer.parseInt(studentName);
+//                            isOnlyNumber=true;
+//                        }catch (Exception e ){
+//                            isOnlyNumber=false;
+//                        }
 
                         if (regex.matcher(studentName).find() || isOnlyNumber) {
 
@@ -761,6 +775,13 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
     @Override
     protected void onResume() {
         super.onResume();
+        try{
+            setStaticText();
+            setStaticTextlanguage();
+        }catch (Exception r){
+
+        }
+//        assignIds();
     }
 
 
@@ -993,9 +1014,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                     textArrayList.add(message);
                 }
                 if (textArrayList.size() > 0) {
+
                     textViewtitle.setText(textArrayList.get(0));
-                    nameStudent.setHint(textArrayList.get(1));
-                    textViewtitleName.setText(textArrayList.get(2)+"*");
+                    nameStudent.setHint("EX. ABCD1234");
+                    textViewtitleName.setText("Enter your Name"+"*");
                     rollnoStudent.setHint(textArrayList.get(3));
                     textViewtitlePassword.setText(textArrayList.get(4));
                     buttonSignInStudent.setText(textArrayList.get(5));
@@ -1012,21 +1034,64 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                 }
 
             } catch (Exception e) {
+                global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child("english").child("loginScreen").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        try {
+                            if (dataSnapshot != null) {
+                                ArrayList<String> textArrayList = (ArrayList<String>) dataSnapshot.getValue();
+                                if (textArrayList.size() > 0) {
+//                                        textViewtitle.setText(textArrayList.get(0));
+//                                        nameStudent.setHint(textArrayList.get(1));
+
+                                    textViewtitle.setText(textArrayList.get(0));
+                                    nameStudent.setHint("EX. ABCD1234");
+                                    textViewtitleName.setText("Enter your Name"+"*");
+                                    rollnoStudent.setHint(textArrayList.get(3));
+                                    textViewtitlePassword.setText(textArrayList.get(4));
+                                    buttonSignInStudent.setText(textArrayList.get(5));
+                                    errorMessage = textArrayList.get(6);
+                                    mobilenoStudent.setHint(textArrayList.get(7));
+                                    textViewtitlemobileNo.setText(textArrayList.get(8)+"*");
+                                    textViewtitleRollNo.setText(textArrayList.get(9)+"*");
+                                    nameError = textArrayList.get(10);
+                                    nameDialogueText = textArrayList.get(11);
+                                    rollNoDialogueText = textArrayList.get(12);
+                                    rollNoError = textArrayList.get(13);
+                                    phoneNoerror = textArrayList.get(14);
+                                    mobileDialogueText = textArrayList.get(15);
+
+
+                                }
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
                 e.printStackTrace();
             }
         } else {
             if (Util.getSelectedLanguage(context) != null) {
                 try {
-                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child(Util.getSelectedLanguage(context)).child("loginScreen").addValueEventListener(new ValueEventListener() {
+                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child("english").child("loginScreen").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             try {
                                 if (dataSnapshot != null) {
                                     ArrayList<String> textArrayList = (ArrayList<String>) dataSnapshot.getValue();
                                     if (textArrayList.size() > 0) {
+//                                        textViewtitle.setText(textArrayList.get(0));
+//                                        nameStudent.setHint(textArrayList.get(1));
+
                                         textViewtitle.setText(textArrayList.get(0));
-                                        nameStudent.setHint(textArrayList.get(1));
-                                        textViewtitleName.setText(textArrayList.get(2)+"*");
+                                        nameStudent.setHint("EX. ABCD1234");
+                                        textViewtitleName.setText("Enter your Name"+"*");
                                         rollnoStudent.setHint(textArrayList.get(3));
                                         textViewtitlePassword.setText(textArrayList.get(4));
                                         buttonSignInStudent.setText(textArrayList.get(5));
@@ -1067,9 +1132,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                                 if (dataSnapshot != null) {
                                     ArrayList<String> textArrayList = (ArrayList<String>) dataSnapshot.getValue();
                                     if (textArrayList.size() > 0) {
+
                                         textViewtitle.setText(textArrayList.get(0));
-                                        nameStudent.setHint(textArrayList.get(1));
-                                        textViewtitleName.setText(textArrayList.get(2)+"*");
+                                        nameStudent.setHint("EX. ABCD1234");
+                                        textViewtitleName.setText("Enter your Name"+"*");
                                         rollnoStudent.setHint(textArrayList.get(3));
                                         textViewtitlePassword.setText(textArrayList.get(4));
                                         buttonSignInStudent.setText(textArrayList.get(5));
@@ -1687,11 +1753,150 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         Util.preventPause(context, getTaskId());
     }
 
+
+
+
     private void updateLastNetConnection() {
         if(Util.checkInternetConnection(context)){
             //Updating the last internet connected  to show the 30 or more Day without internet dialog
             Util.setLastNetConnected(context);
         }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 100) { // Same request code used in requestPermissions
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+                assignIds();
+                checkOfflineMode();
+                // You can now access storage safely
+            } else {
+                // Permission denied
+                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private void checkOfflineMode() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    intent.addCategory("android.intent.category.DEFAULT");
+                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+                    startActivityForResult(intent,100);
+                } catch (Exception e) {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivityForResult(intent,100);
+                }
+            }
+        } else {
+            // For Android 10 and below, request READ/WRITE permission normally
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                    100
+            );
+        }
+
+    }
+
+    private void detectiDreamSDCardNeww(Context context) throws Exception {
+        List<String> results = new ArrayList<>();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { //Method 1 for KitKat & above
+            File[] externalDirs = context.getExternalFilesDirs(null);
+
+            for (File file : externalDirs) {
+                String path = "";
+
+                if (file != null) {
+
+                    path = file.getPath().split("/Android")[0];
+
+                    boolean addPath = false;
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        addPath = Environment.isExternalStorageRemovable(file);
+                    } else {
+                        addPath = Environment.MEDIA_MOUNTED.equals(EnvironmentCompat.getStorageState(file));
+                    }
+                    //  if (addPath) {
+                    results.add(path);
+                    //}
+                }
+            }
+        }
+
+        if (results.isEmpty()) { //Method 2 for all versions
+            // better variation of: http://stackoverflow.com/a/40123073/5002496
+            String output = "";
+            final Process process = new ProcessBuilder().command("mount | grep /dev/block/vold")
+                    .redirectErrorStream(true).start();
+            process.waitFor();
+            final InputStream is = process.getInputStream();
+            final byte[] buffer = new byte[1024];
+            while (is.read(buffer) != -1) {
+                output = output + new String(buffer);
+            }
+            is.close();
+            if (!output.trim().isEmpty()) {
+                String[] devicePoints = output.split("\n");
+                for (String voldPoint : devicePoints) {
+                    results.add(voldPoint.split(" ")[2]);
+                }
+            }
+        }
+
+//        //Below few lines is to remove paths which may not be external memory card, like OTG (feel free to comment them out)
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            for (int i = 0; i < results.size(); i++) {
+//                if (!results.get(i).toLowerCase().matches(".*[0-9a-f]{4}[-][0-9a-f]{4}")) {
+//                    Log.d("Tag", results.get(i) + " might not be extSDcard");
+//                    results.remove(i--);
+//                }
+//            }
+//        } else {
+//            for (int i = 0; i < results.size(); i++) {
+//                if (!results.get(i).toLowerCase().contains("ext") && !results.get(i).toLowerCase().contains("sdcard")) {
+//                    Log.d("Tag", results.get(i) + " might not be extSDcard");
+//                    results.remove(i--);
+//                }
+//            }
+//        }
+
+        String[] storageDirectories = new String[results.size()];
+        for (int i = 0; i < results.size(); i++) {
+            storageDirectories[i] = results.get(i);
+        }
+
+//        String path;
+        String path = storageDirectories[0];
+        for (int i=0;i<storageDirectories.length;i++){
+            path = storageDirectories[i];
+            File file = new File(path + "/.iDream_content/offlinetab_PAL/PALiDream.txt");
+            if (file.exists()){
+                Util.setSDCardPath(context, path+"/");
+                Util.setOfflineMode(context, file.exists());
+
+                assignIds();
+                setStaticText();
+                setStaticTextlanguage();
+                break;
+            }
+        }
+
+
+
     }
 
 //    /** add User info in Firestore

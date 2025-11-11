@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="android.permission.REORDER_TASKS" />
+<!--    <uses-permission android:name="android.permission.REORDER_TASKS" />-->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.REORDER_TASKS" />
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.REORDER_TASKS" />-->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
@@ -60,7 +60,7 @@
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="false"
         android:roundIcon="@mipmap/logo"
-        android:screenOrientation="landscape"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false"
@@ -111,15 +111,15 @@
                 android:value="" />
         </activity>
 
-        <receiver
-            android:name="com.idreameducation.ipreppal.services.MyActivitiesReceiver"
-            android:enabled="true"
-            android:exported="false"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name="com.idreameducation.ipreppal.services.MyActivitiesReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false"-->
+<!--            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
         <activity
             android:name="com.idreameducation.ipreppal.pal.activity.TestReviewActivity"
@@ -142,7 +142,7 @@
             android:name="com.idreameducation.ipreppal.pal.activity.PalSplashActivity"
             android:exported="true"
             android:launchMode="singleTop"
-            android:screenOrientation="sensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -211,7 +211,7 @@
             android:name="com.idreameducation.ipreppal.pal.activity.loginPages.PalActivationDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
-            android:screenOrientation="sensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.idreameducation.ipreppal.pal.activity.loginPages.PalClassesActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

@@ -1,7 +1,5 @@
 package com.idreameducation.ipreppal.pal.activity.loginPages;
 
-import static com.idreameducation.ipreppal.util.Util.isTablet;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -105,43 +103,55 @@ public class PalActivationDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        System.out.println("======= count " + count);
+//        System.out.println("======= count " + count);
+//
+//        if (count >= 2) {
+//            Util.setPortraitMode(this, false);
+//            Util.setLandscapeView(this);
+//
+//            Util.setWindowSettings(this);
+//            Util.setKeyboardWindowSettings(this);
+//
+//            setContentView(R.layout.activity_activation_detail);
+//
+//            assignIds();
+//            listners();
+//        } else {
+//            count++;
+//            if (!isTablet(this)) {
+//                Util.setPortraitMode(this, true);
+//                Util.setPortraitView(this);
+//
+//            } else {
+//                Util.setPortraitMode(this, false);
+//                Util.setLandscapeView(this);
+//            }
+//            Util.setWindowSettings(this);
+//            Util.setKeyboardWindowSettings(this);
+//            if (Util.isPortraitMode(this)) Util.setPortraitView(this);
+//
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    setContentView(R.layout.activity_activation_detail);
+//
+//                    assignIds();
+//                    listners();
+//                }
+//            }, 1000);
+//        }
 
-        if (count >= 2) {
-            Util.setPortraitMode(this, false);
-            Util.setLandscapeView(this);
+        Util.setPortraitMode(this, true);
+        Util.setPortraitView(this);
 
-            Util.setWindowSettings(this);
-            Util.setKeyboardWindowSettings(this);
+        Util.setWindowSettings(this);
+        Util.setKeyboardWindowSettings(this);
+        if (Util.isPortraitMode(this)) Util.setPortraitView(this);
 
-            setContentView(R.layout.activity_activation_detail);
+        setContentView(R.layout.activity_activation_detail);
 
-            assignIds();
-            listners();
-        } else {
-            count++;
-            if (!isTablet(this)) {
-                Util.setPortraitMode(this, true);
-                Util.setPortraitView(this);
-
-            } else {
-                Util.setPortraitMode(this, false);
-                Util.setLandscapeView(this);
-            }
-            Util.setWindowSettings(this);
-            Util.setKeyboardWindowSettings(this);
-            if (Util.isPortraitMode(this)) Util.setPortraitView(this);
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    setContentView(R.layout.activity_activation_detail);
-
-                    assignIds();
-                    listners();
-                }
-            }, 1000);
-        }
+        assignIds();
+        listners();
     }
 
 
@@ -562,6 +572,21 @@ public class PalActivationDetailActivity extends AppCompatActivity {
                                     if (dataSnapshot.getValue() != null) {
                                         HashMap<String, Object> hash = (HashMap<String, Object>) dataSnapshot.getValue();
                                         String tID = (String) hash.get("tabID");
+                                        String appLicenseFreeze ="false";
+
+                                        try{
+                                            appLicenseFreeze = (String) hash.get("appLicenseFreeze");
+                                        }
+                                        catch (Exception r) {
+
+                                        }
+
+
+                                        if(appLicenseFreeze.equals("true")) {
+
+                                            Util.openGifDialogue(context,"Hi! The app subscription has expired. Please contact the iDream Support team for extending your license.");
+                                            return;
+                                        }
                                         if (tID.equals(tabID)) {
                                             Util.setActivation(context, true);
                                             long serverTime = (long) hash.get("serverTime");
@@ -868,6 +893,9 @@ public class PalActivationDetailActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
     private void detectiDreamSDCardNeww(Context context) throws Exception {
         List<String> results = new ArrayList<>();

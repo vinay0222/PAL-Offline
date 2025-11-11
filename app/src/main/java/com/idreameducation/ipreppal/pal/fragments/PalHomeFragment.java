@@ -46,7 +46,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.idreameducation.ipreppal.PalMobile.activity.PalContentListingActivity_Mobile;
-import com.idreameducation.ipreppal.PalMobile.activity.ProjectVideos_topic_Activity;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.model.SubjectInfoModel;
@@ -54,7 +53,6 @@ import com.idreameducation.ipreppal.model.SubjectsModel;
 import com.idreameducation.ipreppal.model.simulationModel.SimulationChaptersModel;
 import com.idreameducation.ipreppal.model.simulationModel.SimulationSubjectModel;
 import com.idreameducation.ipreppal.model.simulationModel.SimulationTopicsModel;
-import com.idreameducation.ipreppal.pal.activity.ActivityVideosListingActivity;
 import com.idreameducation.ipreppal.pal.activity.ExtraContentListingActivity;
 import com.idreameducation.ipreppal.pal.activity.PalContentListingActivity;
 import com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity;
@@ -918,8 +916,9 @@ public class PalHomeFragment extends Fragment {
 
     /** get Project videos */
     private void getStemProjects() {
+        textViewStem.setVisibility(View.GONE);
         if (Util.isOfflineMode(context)) try {
-
+            textViewStem.setVisibility(View.VISIBLE);
             sClass=Util.getSelectedClass(context);
             String filePath = ".iDream_content/offlinetab_PAL/stemsubjects.txt";                // path
             JSONObject jsonObject = Util.readJsonFile(context, filePath);                   // read file
@@ -996,56 +995,56 @@ public class PalHomeFragment extends Fragment {
             recyclerViewStem.setVisibility(View.GONE);
             textViewStem.setVisibility(View.GONE);
         }
-        else global.getDatabaseReference().child(ApplicationConstants.SUBJECTS_STEM).child(board).child(language).child(studentClass).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                try {
-                    if (snapshot.getValue() != null) {
-                        /** getting subject from firebase */
-                        ArrayList<HashMap<String, String>>  List = (ArrayList<HashMap<String, String>>) snapshot.getValue();
-
-                        /** filter subjects & show only visible subjects */
-                        ArrayList<HashMap<String, String>> stemArrayList=new ArrayList<>();
-                        for(int i=0;i<=List.size()-1;i++)  if(Boolean.parseBoolean(String.valueOf(List.get(i).get("visibility")))) stemArrayList.add(List.get(i));
-
-                        if (stemArrayList.size() > 0) {
-                            /** set filtered Subject list in adapter */
-                            ExtraContentAdapter extraContentAdapter = new ExtraContentAdapter(context, stemArrayList, null, null, "Videos");
-                            extraContentAdapter.SetOnItemClickListener(new ExtraContentAdapter.OnItemClickListener() {
-                                @Override
-                                public void onItemClick(View view, int position) {
-                                    Util.preventTwoClick(view);
-
-                                    /** getting data of subject & send to next activity */
-                                    Util.setSubject(context,stemArrayList.get(position).get("id"));
-                                    Util.setSubjectName(context,stemArrayList.get(position).get("subjectName"));
-                                    Util.setSubjectId(context,stemArrayList.get(position).get("id"));
-
-                                    /** check is portrait mode or not & start next activity accordingly */
-                                    if(Util.isPortraitMode(context)) startActivity(new Intent(context, ProjectVideos_topic_Activity.class).putExtra("color", stemArrayList.get(position).get("color")).putExtra("board", board).putExtra("sClass", studentClass).putExtra("categoryName", "activity_videos").putExtra("position", position).putExtra("subject", stemArrayList.get(position).get("id")).putExtra("subjectName", stemArrayList.get(position).get("name")).putExtra("subjects", subjectArrayList).putExtra("icon",stemArrayList.get(position).get("icon")));
-                                    else startActivity(new Intent(context, ActivityVideosListingActivity.class).putExtra("color", stemArrayList.get(position).get("color")).putExtra("board", board).putExtra("sClass", studentClass).putExtra("categoryName", "activity_videos").putExtra("position", position).putExtra("subject", stemArrayList.get(position).get("id")).putExtra("subjectName", stemArrayList.get(position).get("name")).putExtra("subjects", subjectArrayList));
-
-
-                                }
-                            });
-                            recyclerViewStem.setAdapter(extraContentAdapter);
-                        }
-                        else {
-                            recyclerViewStem.setVisibility(View.GONE);
-                            textViewBooks.setVisibility(View.GONE);
-                        }
-
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        else global.getDatabaseReference().child(ApplicationConstants.SUBJECTS_STEM).child(board).child(language).child(studentClass).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                try {
+//                    if (snapshot.getValue() != null) {
+//                        /** getting subject from firebase */
+//                        ArrayList<HashMap<String, String>>  List = (ArrayList<HashMap<String, String>>) snapshot.getValue();
+//
+//                        /** filter subjects & show only visible subjects */
+//                        ArrayList<HashMap<String, String>> stemArrayList=new ArrayList<>();
+//                        for(int i=0;i<=List.size()-1;i++)  if(Boolean.parseBoolean(String.valueOf(List.get(i).get("visibility")))) stemArrayList.add(List.get(i));
+//
+//                        if (stemArrayList.size() > 0) {
+//                            /** set filtered Subject list in adapter */
+//                            ExtraContentAdapter extraContentAdapter = new ExtraContentAdapter(context, stemArrayList, null, null, "Videos");
+//                            extraContentAdapter.SetOnItemClickListener(new ExtraContentAdapter.OnItemClickListener() {
+//                                @Override
+//                                public void onItemClick(View view, int position) {
+//                                    Util.preventTwoClick(view);
+//
+//                                    /** getting data of subject & send to next activity */
+//                                    Util.setSubject(context,stemArrayList.get(position).get("id"));
+//                                    Util.setSubjectName(context,stemArrayList.get(position).get("subjectName"));
+//                                    Util.setSubjectId(context,stemArrayList.get(position).get("id"));
+//
+//                                    /** check is portrait mode or not & start next activity accordingly */
+//                                    if(Util.isPortraitMode(context)) startActivity(new Intent(context, ProjectVideos_topic_Activity.class).putExtra("color", stemArrayList.get(position).get("color")).putExtra("board", board).putExtra("sClass", studentClass).putExtra("categoryName", "activity_videos").putExtra("position", position).putExtra("subject", stemArrayList.get(position).get("id")).putExtra("subjectName", stemArrayList.get(position).get("name")).putExtra("subjects", subjectArrayList).putExtra("icon",stemArrayList.get(position).get("icon")));
+//                                    else startActivity(new Intent(context, ActivityVideosListingActivity.class).putExtra("color", stemArrayList.get(position).get("color")).putExtra("board", board).putExtra("sClass", studentClass).putExtra("categoryName", "activity_videos").putExtra("position", position).putExtra("subject", stemArrayList.get(position).get("id")).putExtra("subjectName", stemArrayList.get(position).get("name")).putExtra("subjects", subjectArrayList));
+//
+//
+//                                }
+//                            });
+//                            recyclerViewStem.setAdapter(extraContentAdapter);
+//                        }
+//                        else {
+//                            recyclerViewStem.setVisibility(View.GONE);
+//                            textViewBooks.setVisibility(View.GONE);
+//                        }
+//
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
         getBooks();
     }
 

@@ -3067,7 +3067,7 @@ public class Util {
 
     public static void setPortraitMode(Context context, boolean data) {
         SharedPreferences.Editor editor = context.getSharedPreferences("Portrait_MODE", MODE_PRIVATE).edit();
-        editor.putBoolean("Portrait_MODE", false);
+        editor.putBoolean("Portrait_MODE", data);
         editor.commit();
     }
 
@@ -3547,7 +3547,7 @@ public class Util {
     }
 
     public static void setPortraitView(Activity activity) {
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     }
 

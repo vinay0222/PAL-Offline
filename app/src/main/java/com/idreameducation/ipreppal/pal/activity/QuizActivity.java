@@ -6527,6 +6527,10 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 {
                                     if(!Foundational_Topic_ID.contains("pol")) subject="science";
                                 }
+                                else if(Foundational_Topic_ID.contains("evs"))
+                                {
+                                    subject="evs";
+                                }
 
                                 // getting lower topic Name
                                 String finalSubject = subject;
@@ -7564,6 +7568,15 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 try {
                                     classs--;
                                     getlower_foundational_topic(Foundational_Topic_ID,String.valueOf(classs),"history",streakProgress,streak,incorrectStreak,seniorClass,seniorTopicID,seniorTopicName,testPercentageAchieved);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            else if (Foundational_Topic_ID.contains("evs"))
+                            {
+                                try {
+                                    classs--;
+                                    getlower_foundational_topic(Foundational_Topic_ID,String.valueOf(classs),"evs",streakProgress,streak,incorrectStreak,seniorClass,seniorTopicID,seniorTopicName,testPercentageAchieved);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

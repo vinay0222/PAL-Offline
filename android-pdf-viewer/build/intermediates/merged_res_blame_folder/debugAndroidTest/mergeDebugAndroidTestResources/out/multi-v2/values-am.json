@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "iprep_pal.test.android-pdf-viewer-mergeDebugAndroidTestResources-12:/values-am/values-am.xml",
+            "map": [
+                {
+                    "source": "/Users/vinayji/.gradle/caches/8.10/transforms/f55d7b7acf186cdd39029c5c11620599/transformed/core-1.13.1/res/values-am/values-am.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,148,248,345,444,540,642,742",
+                        "endColumns": "92,99,96,98,95,101,99,100",
+                        "endOffsets": "143,243,340,439,535,637,737,838"
+                    }
+                }
+            ]
+        }
+    ]
+}

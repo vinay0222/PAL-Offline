@@ -6236,7 +6236,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 
 //                    updateFoundationTopicData();
 
-                    if(PalContentListingActivity_Mobile.instance!=null) PalContentListingActivity_Mobile.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+                    if(PalContentListingActivity.instance!=null) PalContentListingActivity.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
                     else if(PalGlobalSearchActivity.palGlobalSearchActivity!=null) PalGlobalSearchActivity.palGlobalSearchActivity.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
                     global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("path").child(Util.getUserId(context)).child(board).child(seniorClass).child(Util.getSubject(context)).child(seniorTopicID).child("FoundationalPractice").setValue("F");
 
@@ -6308,8 +6308,8 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 }else {
                                     Util.openGifDialogue(context,"Other foundational topics are not available in this topic.");
                                 }
-//                                PalContentListingActivity_Mobile.instance.setTopicIdList(topicId);
-//                                PalContentListingActivity_Mobile.instance.setNextTopicPosition(topicId);
+//                                PalContentListingActivity.instance.setTopicIdList(topicId);
+//                                PalContentListingActivity.instance.setNextTopicPosition(topicId);
                             } else {
 //                                String seniorTopicID = topicId;
 //                                String seniorClass = sClass;
@@ -6323,6 +6323,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 if(Foundational_Topic_ID.contains("sci"))
                                 {
                                     if(!Foundational_Topic_ID.contains("pol")) subject="science";
+                                }
+                                else if (Foundational_Topic_ID.contains("evs")) {
+                                    subject="evs";
                                 }
 
                                 // getting lower topic Name
@@ -6358,9 +6361,10 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                                 }
                                                 System.out.println("--========== seniorTopicID "+seniorTopicID);
                                                 getJuniorLevelPractice(false);
-//                                                PalContentListingActivity_Mobile.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
-                                                if(PalContentListingActivity_Mobile.instance!=null) PalContentListingActivity_Mobile.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+//                                                PalContentListingActivity.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+                                                if(PalContentListingActivity.instance!=null) PalContentListingActivity.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
                                                 else if(PalGlobalSearchActivity.palGlobalSearchActivity!=null) PalGlobalSearchActivity.palGlobalSearchActivity.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+                                                if(PalContentListingActivity_Mobile.instance!=null) PalContentListingActivity_Mobile.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
                                                 global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("path").child(Util.getUserId(context)).child(board).child(seniorClass).child(Util.getSubject(context)).child(seniorTopicID).child("FoundationalPractice").setValue("F");
 
                                                 String date = Util.getCurrentDateWithDifferentFormat();
@@ -6495,11 +6499,13 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                         foundationalTopicModel.setShow(true);
                         foundationalTopicModel.setVideoLevel(0);
                         foundationalTopicModel.setTestPercentageAchieved(testPercentageAchieved);
+                        foundationalTopicModel.setLang(Util.getSelectedLanguage(context));
                         foundationalTopicRepository.insertFoundationalTopicDetails(foundationalTopicModel);
                     } else {
                         foundationalTopicRepository.updateFields(Util.getUserId(context), Util.getSubject(context), seniorTopicID, seniorClass, seniorTopicName, trackTopic, TName, trackClass, "0", StreakCount, incorrectStreak, "junior", true, 0, testPercentageAchieved,Util.getSelectedLanguage(context));
                     }
-                    PalContentListingActivity_Mobile.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+                    if(PalContentListingActivity.instance!=null) PalContentListingActivity.instance.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
+                    else if(PalGlobalSearchActivity.palGlobalSearchActivity!=null) PalGlobalSearchActivity.palGlobalSearchActivity.setPath(board, seniorClass, Util.getSubject(context), seniorTopicID, "F");
                     global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("path").child(Util.getUserId(context)).child(board).child(seniorClass).child(Util.getSubject(context)).child(seniorTopicID).child("FoundationalPractice").setValue("F");
                 }
             } catch (Exception e) {
@@ -7702,6 +7708,15 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                                 try {
                                     classs--;
                                     getlower_foundational_topic(Foundational_Topic_ID,String.valueOf(classs),"history",streakProgress,streak,incorrectStreak,seniorClass,seniorTopicID,seniorTopicName,testPercentageAchieved);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            else if (Foundational_Topic_ID.contains("evs"))
+                            {
+                                try {
+                                    classs--;
+                                    getlower_foundational_topic(Foundational_Topic_ID,String.valueOf(classs),"evs",streakProgress,streak,incorrectStreak,seniorClass,seniorTopicID,seniorTopicName,testPercentageAchieved);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

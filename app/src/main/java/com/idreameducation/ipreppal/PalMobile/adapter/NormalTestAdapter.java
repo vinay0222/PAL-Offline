@@ -30,6 +30,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.idreameducation.ipreppal.PalMobile.activity.DiagonosticTestActivity_Mobile;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.pal.activity.FullProfileImageActivity;
@@ -948,7 +949,37 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                 viewHolder.imageViewOption1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        optionOneClick(position, "Image");
+                        Util.preventTwoClick(view);
+                        boolean exists = true;
+                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                            optionOneClick(position, "Image");
+                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            exists = false;
+                        }
+                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                            String key = entry.getKey();
+                            boolean value = entry.getValue();
+                            if(key.equals(position+"-"+1)){
+                                if(exists){
+                                    if(value){
+                                        restoreToOriginalQuestion(position, "Option1");
+                                        entry.setValue(false);
+                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
+                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        }
+                                    }else{
+                                        optionOneClick(position, "Image");
+                                        entry.setValue(true);
+                                    }
+                                }
+                            }else{
+                                String[] separated = key.split("-");
+                                if(Integer.parseInt(separated[0]) == position){
+                                    entry.setValue(false);
+                                }
+                            }
+                        }
+//                        optionOneClick(position, "Image");
                     }
                 });
 
@@ -989,7 +1020,36 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                 viewHolder.imageViewOption2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        optionTwoClick(position, "Image");
+                        Util.preventTwoClick(view);
+                        boolean exists = true;
+                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                            optionTwoClick(position, "Image");
+                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            exists = false;
+                        }
+                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                            String key = entry.getKey();
+                            boolean value = entry.getValue();
+                            if(key.equals(position+"-"+1)){
+                                if(exists){
+                                    if(value){
+                                        restoreToOriginalQuestion(position, "Option2");
+                                        entry.setValue(false);
+                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
+                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        }
+                                    }else{
+                                        optionTwoClick(position, "Image");
+                                        entry.setValue(true);
+                                    }
+                                }
+                            }else{
+                                String[] separated = key.split("-");
+                                if(Integer.parseInt(separated[0]) == position){
+                                    entry.setValue(false);
+                                }
+                            }
+                        }
                     }
                 });
                 viewHolder.textViewOption3.setOnClickListener(new View.OnClickListener() {
@@ -1029,7 +1089,36 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                 viewHolder.imageViewOption3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        optionThirdClick(position, "Image");
+                        Util.preventTwoClick(view);
+                        boolean exists = true;
+                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                            optionThirdClick(position, "Image");
+                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            exists = false;
+                        }
+                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                            String key = entry.getKey();
+                            boolean value = entry.getValue();
+                            if(key.equals(position+"-"+1)){
+                                if(exists){
+                                    if(value){
+                                        restoreToOriginalQuestion(position, "Option3");
+                                        entry.setValue(false);
+                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
+                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        }
+                                    }else{
+                                        optionThirdClick(position, "Image");
+                                        entry.setValue(true);
+                                    }
+                                }
+                            }else{
+                                String[] separated = key.split("-");
+                                if(Integer.parseInt(separated[0]) == position){
+                                    entry.setValue(false);
+                                }
+                            }
+                        }
                     }
                 });
                 viewHolder.textViewOption4.setOnClickListener(new View.OnClickListener() {
@@ -1069,7 +1158,36 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                 viewHolder.imageViewOption4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        optionFourthClick(position, "Image");
+                        Util.preventTwoClick(view);
+                        boolean exists = true;
+                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                            optionFourthClick(position, "Image");
+                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            exists = false;
+                        }
+                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                            String key = entry.getKey();
+                            boolean value = entry.getValue();
+                            if(key.equals(position+"-"+1)){
+                                if(exists){
+                                    if(value){
+                                        restoreToOriginalQuestion(position, "Option4");
+                                        entry.setValue(false);
+                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
+                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        }
+                                    }else{
+                                        optionFourthClick(position, "Image");
+                                        entry.setValue(true);
+                                    }
+                                }
+                            }else{
+                                String[] separated = key.split("-");
+                                if(Integer.parseInt(separated[0]) == position){
+                                    entry.setValue(false);
+                                }
+                            }
+                        }
                     }
                 });
                 String[] options = optionsHashmap.get(position);

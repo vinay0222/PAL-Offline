@@ -11,8 +11,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -56,6 +58,73 @@ public class PalSplashActivity extends Activity {
     ImageView logo;
 
     private FirebaseAnalytics mFirebaseAnalytics;
+
+    private void checkOfflineMode() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    intent.addCategory("android.intent.category.DEFAULT");
+                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivity(intent);
+                }
+            }
+        } else {
+            // For Android 10 and below, request READ/WRITE permission normally
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                    100
+            );
+        }
+
+//        if (Build.VERSION.SDK_INT >= 30){
+//            if (!Environment.isExternalStorageManager()) {
+////                Intent getpermission = new Intent();
+////                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+////                startActivity(getpermission);
+//
+//
+//
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                    // Android 11 and above
+//                    if (!Environment.isExternalStorageManager()) {
+//                        try {
+//                            Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                            intent.addCategory("android.intent.category.DEFAULT");
+//                            intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+//                            startActivity(intent);
+//                        } catch (Exception e) {
+//                            Intent intent = new Intent();
+//                            intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                            startActivity(intent);
+//                        }
+//                    }
+//                } else {
+//                    // For Android 10 and below, request READ/WRITE permission normally
+//                    ActivityCompat.requestPermissions(
+//                            this,
+//                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+//                            100
+//                    );
+//                }
+//            }
+//            else {
+//                try {
+//                    detectiDreamSDCardNeww(context);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,12 +171,12 @@ public class PalSplashActivity extends Activity {
 
     public void hideStatusBar() {
         if (SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) getWindow().getDecorView()
-                    .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
     }
 
@@ -209,6 +278,8 @@ public class PalSplashActivity extends Activity {
 
         System.out.println("---type "+type);
 
+
+
         if (firebaseAuth.getCurrentUser() != null) {
             if (Util.isActivationDone(context))
                 if (Util.getForPal(context).equalsIgnoreCase("true")) {
@@ -227,10 +298,10 @@ public class PalSplashActivity extends Activity {
         } else {
 //            if (!Util.isActivationDone(context)) startActivity(new Intent(context, PalSRNLogin.class));
             if (!Util.isActivationDone(context)) startActivity(new Intent(context, PalActivationDetailActivity.class));
-             else {
+            else {
                 String uID = Util.getUserId(context);
                 if (uID == null) startActivity(new Intent(context, PalAnonymousLoginActivity.class).putExtra("flow", "no"));
-                 else {
+                else {
                     if (Util.getSelectedClass(context) != null) startActivity(new Intent(context, PracticeTopicActivity.class).putExtra("goto",type));
                     else {
                         if (Util.getUsername(context)==null) startActivity(new Intent(context, PalAnonymousLoginActivity.class).putExtra("flow", "no"));
@@ -356,15 +427,15 @@ public class PalSplashActivity extends Activity {
     public String getIMEIDeviceId(Context context) {
 
         if (SDK_INT >= Build.VERSION_CODES.Q) deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
-         else {
+        else {
             final TelephonyManager mTelephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (SDK_INT >= Build.VERSION_CODES.M)
                 if (context.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) return "";
-                    assert mTelephony != null;
+            assert mTelephony != null;
             if (mTelephony.getDeviceId() != null)
                 if (SDK_INT >= Build.VERSION_CODES.O) deviceId = mTelephony.getImei();
                 else deviceId = mTelephony.getDeviceId();
-             else deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+            else deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
         }
         Log.d("deviceId", deviceId);
         return deviceId;

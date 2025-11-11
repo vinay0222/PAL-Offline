@@ -31,7 +31,7 @@ import com.idreameducation.ipreppal.model.CoreContent.PracticeDataModel;
 import com.idreameducation.ipreppal.model.CoreContent.VideoDataModel;
 import com.idreameducation.ipreppal.model.StudentInfoModel;
 import com.idreameducation.ipreppal.pal.activity.PalSplashActivity;
-import com.idreameducation.ipreppal.services.MyActivitiesReceiver;
+//import com.idreameducation.ipreppal.services.MyActivitiesReceiver;
 import com.idreameducation.ipreppal.util.Util;
 
 import org.json.JSONException;
@@ -163,15 +163,15 @@ public class UserActivities {
         int timeInterval = AlarmManager.RTC;
         try {
             /**  MyActivitiesReceiver => BroadcastReceiver */
-            Intent someIntent = new Intent(context, MyActivitiesReceiver.class);
-            someIntent.setFlags(FLAG_INCLUDE_STOPPED_PACKAGES);
-            AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, someIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-            someIntent.putExtra("requestCode",requestCode);
-//            timeInterval= (int) 2 * 1000;
-            timeInterval= 12 * (int)  AlarmManager.INTERVAL_HOUR;
-            alarms.setRepeating(AlarmManager.RTC_WAKEUP, when.getTime(),timeInterval,pendingIntent);
+//            Intent someIntent = new Intent(context, MyActivitiesReceiver.class);
+//            someIntent.setFlags(FLAG_INCLUDE_STOPPED_PACKAGES);
+//            AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, someIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+//
+//            someIntent.putExtra("requestCode",requestCode);
+////            timeInterval= (int) 2 * 1000;
+//            timeInterval= 12 * (int)  AlarmManager.INTERVAL_HOUR;
+//            alarms.setRepeating(AlarmManager.RTC_WAKEUP, when.getTime(),timeInterval,pendingIntent);
 
         } catch(Exception e) {
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.idreameducation.ipreppal.videoPlayer;
 
+import static com.idreameducation.ipreppal.PalMobile.activity.PalTopicListingActivity.palTopicListingActivity;
 import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.current_duration;
 import static com.idreameducation.ipreppal.pal.activity.VideoView_Activity.goto_smallscreen;
 import static com.idreameducation.ipreppal.pal.activity.VideoView_Activity.videoView_activity;
@@ -319,7 +320,12 @@ public class IPrepFullScreenMediaController extends MediaController {
                     videoView_activity.onBackPressed();
                     PalContentListingActivity.backToNormalView();
                 } catch (Exception e) {
-                    PalContentListingActivity.backToNormalView();
+                    if(Util.isPortraitMode(context)) {
+                        palTopicListingActivity.rotate_screen();
+                    }
+                    else {
+                        PalContentListingActivity.backToNormalView();
+                    }
                 }
             }else {
                 actionButton.setTag("cross");
@@ -327,7 +333,13 @@ public class IPrepFullScreenMediaController extends MediaController {
                 actionButton.setImageResource(R.mipmap.video_zoom_out);
 
                 Util.setIsFullScreen(context,true);
-                PalContentListingActivity.openVimeoVideoFullScreenFragment();
+                if(Util.isPortraitMode(context)){
+                    palTopicListingActivity.rotate_screen();
+                }
+                else {
+                    PalContentListingActivity.openVimeoVideoFullScreenFragment();
+                }
+
             }
 
         }

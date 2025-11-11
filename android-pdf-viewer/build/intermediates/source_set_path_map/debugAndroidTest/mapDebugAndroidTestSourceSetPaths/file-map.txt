@@ -1,0 +1,16 @@
+iprep_pal.test.android-pdf-viewer-coordinatorlayout-1.0.0-0 /Users/vinayji/.gradle/caches/8.10/transforms/2e3b95305a64a292d176fdf4d69c87f4/transformed/coordinatorlayout-1.0.0/res
+iprep_pal.test.android-pdf-viewer-lifecycle-viewmodel-2.6.2-1 /Users/vinayji/.gradle/caches/8.10/transforms/36eed85ad4c58cce59ead16ae808d9ad/transformed/lifecycle-viewmodel-2.6.2/res
+iprep_pal.test.android-pdf-viewer-jetified-profileinstaller-1.3.0-2 /Users/vinayji/.gradle/caches/8.10/transforms/37f2cd0ee44829cb22f9a90068de0f9c/transformed/jetified-profileinstaller-1.3.0/res
+iprep_pal.test.android-pdf-viewer-lifecycle-livedata-core-2.6.2-3 /Users/vinayji/.gradle/caches/8.10/transforms/9a9d0625618f1fb0bf99837b0733f9ee/transformed/lifecycle-livedata-core-2.6.2/res
+iprep_pal.test.android-pdf-viewer-media-1.0.0-4 /Users/vinayji/.gradle/caches/8.10/transforms/b4c54143fa987dac129a9cce438bbed1/transformed/media-1.0.0/res
+iprep_pal.test.android-pdf-viewer-lifecycle-runtime-2.6.2-5 /Users/vinayji/.gradle/caches/8.10/transforms/bfbe580179bae5969bcf6fdaf2001823/transformed/lifecycle-runtime-2.6.2/res
+iprep_pal.test.android-pdf-viewer-jetified-startup-runtime-1.1.1-6 /Users/vinayji/.gradle/caches/8.10/transforms/c4b2e1a7d28e2b458e77690ce83ae94b/transformed/jetified-startup-runtime-1.1.1/res
+iprep_pal.test.android-pdf-viewer-core-runtime-2.2.0-7 /Users/vinayji/.gradle/caches/8.10/transforms/ca5273ebad429b6869f37fead043028c/transformed/core-runtime-2.2.0/res
+iprep_pal.test.android-pdf-viewer-lifecycle-livedata-2.6.2-8 /Users/vinayji/.gradle/caches/8.10/transforms/d642ce948c4b84521679141036fafe33/transformed/lifecycle-livedata-2.6.2/res
+iprep_pal.test.android-pdf-viewer-core-1.13.1-9 /Users/vinayji/.gradle/caches/8.10/transforms/f55d7b7acf186cdd39029c5c11620599/transformed/core-1.13.1/res
+iprep_pal.test.android-pdf-viewer-jetified-annotation-experimental-1.4.0-10 /Users/vinayji/.gradle/caches/8.10/transforms/ff83547bb7bf1b96b2df158ac0b13ec1/transformed/jetified-annotation-experimental-1.4.0/res
+iprep_pal.test.android-pdf-viewer-androidTest-11 /Users/vinayji/Documents/iDream/Code - Android/iPrep PAL 3-12/iPrep PAL 3 to 13/android-pdf-viewer/build/generated/res/resValues/androidTest/debug
+iprep_pal.test.android-pdf-viewer-mergeDebugAndroidTestResources-12 /Users/vinayji/Documents/iDream/Code - Android/iPrep PAL 3-12/iPrep PAL 3 to 13/android-pdf-viewer/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+iprep_pal.test.android-pdf-viewer-mergeDebugAndroidTestResources-13 /Users/vinayji/Documents/iDream/Code - Android/iPrep PAL 3-12/iPrep PAL 3 to 13/android-pdf-viewer/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+iprep_pal.test.android-pdf-viewer-debugAndroidTest-14 /Users/vinayji/Documents/iDream/Code - Android/iPrep PAL 3-12/iPrep PAL 3 to 13/android-pdf-viewer/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+iprep_pal.test.android-pdf-viewer-debug-15 /Users/vinayji/Documents/iDream/Code - Android/iPrep PAL 3-12/iPrep PAL 3 to 13/android-pdf-viewer/build/intermediates/packaged_res/debug/packageDebugResources

@@ -3923,9 +3923,32 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
 //                                Util.setClassNameSelectionDummy(context, foundational_class);
 //                                Util.setClassSelectionDummy(context, foundational_class);
                                         String streakProgress = "0";
+                                        String foundation_subject = "";
+                                        if (Foundational_Topic_ID.contains("pol_sci")) {
+                                                foundation_subject = "political_science";
+
+                                        }
+                                        else if (Foundational_Topic_ID.contains("sci")) {
+                                            foundation_subject = "science";
+                                        }
+                                        else if (Foundational_Topic_ID.contains("gra")) {
+                                            foundation_subject = "geography";
+                                        }
+                                        else if (Foundational_Topic_ID.contains("eco")) {
+                                            foundation_subject ="economics";
+                                        }
+                                        else if (Foundational_Topic_ID.contains("eng_gr")) {
+                                            foundation_subject = "english_grammar";
+                                        }
+                                        else if (Foundational_Topic_ID.contains("his")) {
+                                            foundation_subject = "history";
+                                        }
+                                        else if (Foundational_Topic_ID.contains("evs")) {
+                                            foundation_subject = "evs";
+                                        }
 
                                         // getting lower topic Name
-                                        global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(Util.getSubject(context)).child("topics").child(Foundational_Topic_ID).child("TName").addValueEventListener(new ValueEventListener() {
+                                        global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(foundation_subject).child("topics").child(Foundational_Topic_ID).child("TName").addValueEventListener(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                 try {
@@ -4230,7 +4253,36 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
         System.out.println("-------- Util.getSubject(context) "+Util.getSubject(context));
         System.out.println("-------- topicId "+topicId);
 
-        global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(subject).child("topics").child(topicId).addValueEventListener(new ValueEventListener() {
+        String foundation_subject = subject;
+        if (topicId.contains("pol_sci"))
+        {
+            foundation_subject = "political_science";
+
+        }else if (topicId.contains("sci")) {
+            foundation_subject = "science";
+        }
+        else if (topicId.contains("gra")) {
+            foundation_subject = "geography";
+        }
+        else if (topicId.contains("eco"))
+        {
+            foundation_subject ="economics";
+        }
+        else if (topicId.contains("eng_gr"))
+        {
+            foundation_subject = "english_grammar";
+        }
+        else if (topicId.contains("his"))
+        {
+            foundation_subject = "history";
+        }
+        else if (topicId.contains("evs"))
+        {
+            foundation_subject = "evs";
+        }
+
+
+        global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(foundation_subject).child("topics").child(topicId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
@@ -4259,6 +4311,34 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
                             String streakProgress = "0";
                             global.setProgress(0);
 
+                            String foundation_subject = subject;
+                            if (Foundational_Topic_ID.contains("pol_sci"))
+                            {
+                                foundation_subject = "political_science";
+
+                            }else if (Foundational_Topic_ID.contains("sci")) {
+                                foundation_subject = "science";
+                            }
+                            else if (Foundational_Topic_ID.contains("gra")) {
+                                foundation_subject = "geography";
+                            }
+                            else if (Foundational_Topic_ID.contains("eco"))
+                            {
+                                foundation_subject ="economics";
+                            }
+                            else if (Foundational_Topic_ID.contains("eng_gr"))
+                            {
+                                foundation_subject = "english_grammar";
+                            }
+                            else if (Foundational_Topic_ID.contains("his"))
+                            {
+                                foundation_subject = "history";
+                            }
+                            else if (Foundational_Topic_ID.contains("evs"))
+                            {
+                                foundation_subject = "evs";
+                            }
+
                             HashMap<String, String> map = new HashMap<>();
                             map.put("sClass", seniorClass);
                             map.put("seniorTopicID", seniorTopicID);
@@ -4286,7 +4366,7 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
 
 
                             // getting lower topic Name
-                            global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(subject).child("topics").child(topicId).child("TName").addValueEventListener(new ValueEventListener() {
+                            global.getDatabaseReference().child(ApplicationConstants.CORE_CONTENT).child(board).child(sClass).child(Util.getSelectedLanguagePackage(context)).child("practice").child("content").child(foundation_subject).child("topics").child(topicId).child("TName").addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     try {
@@ -4295,7 +4375,6 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
                                             Util.setTopicNameAlt(context, name);
                                             if (Util.isNetworkAvailable(context) || Util.isOfflineMode(context)) {
                                                 startActivity(new Intent(context, QuizActivity.class).putExtra("sClass", sClass).putExtra("streakProgress", streakProgress).putExtra("streak", streak).putExtra("incorrectStreak", incorrectStreak).putExtra("practiceType", "junior").putExtra("seniorClass", seniorClass).putExtra("seniorTopicID", seniorTopicID).putExtra("seniorTopicName", seniorTopicName).putExtra("testPercentageAchieved", testPercentageAchieved));
-
                                                 finish();
                                             }else {
                                                 if (Util.getSelectedLanguage(context).equalsIgnoreCase("hindi"))

@@ -1,9 +1,7 @@
 package com.idreameducation.ipreppal.services;
 
 
-import static android.content.Context.MODE_PRIVATE;
 import static com.idreameducation.ipreppal.userActivities.UserActivities.LASTOPENED_KEY;
-import static com.idreameducation.ipreppal.userActivities.UserActivities.SHAREDPREF_KEY;
 import static com.idreameducation.ipreppal.userActivities.UserActivities.WEEKLY_NOTIFICATION_KEY;
 import static com.idreameducation.ipreppal.userActivities.UserActivities.clearWeeklyReport;
 import static com.idreameducation.ipreppal.userActivities.UserActivities.clearWeeklyTestReport;
@@ -20,7 +18,6 @@ import com.idreameducation.ipreppal.userActivities.UserActivities;
 import com.idreameducation.ipreppal.util.Util;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -36,32 +33,32 @@ public class MyActivitiesReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         this.context=context;
         System.out.println("MyReceiver: here! "+ new Date());
-        userActivities = new UserActivities(context,false);
-        sharedPreferences = context.getSharedPreferences(SHAREDPREF_KEY, MODE_PRIVATE).edit();
-        preferences = context.getSharedPreferences(SHAREDPREF_KEY, MODE_PRIVATE);
-
-        UserActivities.syncDataToFirebase();
-
-        checkLastOpened();
-        checkSubjectWeeklyUsage();
-
-//        Util.showNotification(context,"checking","checking",new Intent(context,PalSplashActivity.class),0);
-
-
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-
-        boolean weeklyNotificationDone= preferences.getBoolean(WEEKLY_NOTIFICATION_KEY,false);
-        if(day==Calendar.SATURDAY) {
-            if (!weeklyNotificationDone) checkTestUsage();
-        }
-        else if(weeklyNotificationDone){
-            if (weeklyNotificationDone){
-                sharedPreferences.putBoolean(WEEKLY_NOTIFICATION_KEY,false);
-                sharedPreferences.commit();
-            }
-
-        }
+//        userActivities = new UserActivities(context,false);
+//        sharedPreferences = context.getSharedPreferences(SHAREDPREF_KEY, MODE_PRIVATE).edit();
+//        preferences = context.getSharedPreferences(SHAREDPREF_KEY, MODE_PRIVATE);
+//
+//        UserActivities.syncDataToFirebase();
+//
+//        checkLastOpened();
+//        checkSubjectWeeklyUsage();
+//
+////        Util.showNotification(context,"checking","checking",new Intent(context,PalSplashActivity.class),0);
+//
+//
+//        Calendar calendar = Calendar.getInstance();
+//        int day = calendar.get(Calendar.DAY_OF_WEEK);
+//
+//        boolean weeklyNotificationDone= preferences.getBoolean(WEEKLY_NOTIFICATION_KEY,false);
+//        if(day==Calendar.SATURDAY) {
+//            if (!weeklyNotificationDone) checkTestUsage();
+//        }
+//        else if(weeklyNotificationDone){
+//            if (weeklyNotificationDone){
+//                sharedPreferences.putBoolean(WEEKLY_NOTIFICATION_KEY,false);
+//                sharedPreferences.commit();
+//            }
+//
+//        }
     }
 
     private void checkLastOpened() {
