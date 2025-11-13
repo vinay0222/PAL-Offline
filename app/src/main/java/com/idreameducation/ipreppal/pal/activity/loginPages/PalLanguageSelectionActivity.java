@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -153,7 +152,7 @@ public class PalLanguageSelectionActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }else{
-            global.getDatabaseReference().child("boards").child("Boards").addValueEventListener(new ValueEventListener() {
+            global.getDatabaseReference().child("boards").child("Boards").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                     try{
@@ -364,13 +363,13 @@ public class PalLanguageSelectionActivity extends AppCompatActivity {
         if (requestCode == 100) { // Same request code used in requestPermissions
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted
-                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
                 assignIds();
                 checkOfflineMode();
                 // You can now access storage safely
             } else {
                 // Permission denied
-                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -23,8 +23,8 @@ android {
         applicationId "com.idreameducation.ipreppal"
         minSdk 21
         targetSdk 34
-        versionCode 40
-        versionName "8.4"
+        versionCode 41
+        versionName "8.5"
         multiDexEnabled true
         android.buildFeatures.buildConfig true
         buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"

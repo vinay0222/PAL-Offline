@@ -1016,8 +1016,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                 if (textArrayList.size() > 0) {
 
                     textViewtitle.setText(textArrayList.get(0));
-                    nameStudent.setHint("EX. ABCD1234");
-                    textViewtitleName.setText("Enter your Name"+"*");
+//                    nameStudent.setHint("EX. ABCD1234");
+//                    textViewtitleName.setText("Enter your Name"+"*");
+                    nameStudent.setHint(textArrayList.get(0));
+                    textViewtitleName.setText(textArrayList.get(1));
                     rollnoStudent.setHint(textArrayList.get(3));
                     textViewtitlePassword.setText(textArrayList.get(4));
                     buttonSignInStudent.setText(textArrayList.get(5));
@@ -1034,7 +1036,7 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                 }
 
             } catch (Exception e) {
-                global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child("english").child("loginScreen").addValueEventListener(new ValueEventListener() {
+                global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child(Util.getSelectedLanguage(context)).child("loginScreen").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         try {
@@ -1045,8 +1047,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
 //                                        nameStudent.setHint(textArrayList.get(1));
 
                                     textViewtitle.setText(textArrayList.get(0));
-                                    nameStudent.setHint("EX. ABCD1234");
-                                    textViewtitleName.setText("Enter your Name"+"*");
+//                                    nameStudent.setHint("EX. ABCD1234");
+//                                    textViewtitleName.setText("Enter your Name"+"*");
+                                    nameStudent.setHint(textArrayList.get(0));
+                                    textViewtitleName.setText(textArrayList.get(1));
                                     rollnoStudent.setHint(textArrayList.get(3));
                                     textViewtitlePassword.setText(textArrayList.get(4));
                                     buttonSignInStudent.setText(textArrayList.get(5));
@@ -1079,7 +1083,7 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
         } else {
             if (Util.getSelectedLanguage(context) != null) {
                 try {
-                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child("english").child("loginScreen").addValueEventListener(new ValueEventListener() {
+                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child(Util.getSelectedLanguage(context)).child("loginScreen").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             try {
@@ -1090,8 +1094,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
 //                                        nameStudent.setHint(textArrayList.get(1));
 
                                         textViewtitle.setText(textArrayList.get(0));
-                                        nameStudent.setHint("EX. ABCD1234");
-                                        textViewtitleName.setText("Enter your Name"+"*");
+//                                        nameStudent.setHint("EX. ABCD1234");
+//                                        textViewtitleName.setText("Enter your Name"+"*");
+                                        nameStudent.setHint(textArrayList.get(0));
+                                        textViewtitleName.setText(textArrayList.get(1));
                                         rollnoStudent.setHint(textArrayList.get(3));
                                         textViewtitlePassword.setText(textArrayList.get(4));
                                         buttonSignInStudent.setText(textArrayList.get(5));
@@ -1125,7 +1131,7 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
             } else {
 
                 try {
-                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child("english").child("loginScreen").addValueEventListener(new ValueEventListener() {
+                    global.getDatabaseReference().child("screen_text").child(Util.getSelectedBoard(context)).child("student").child("1").child(Util.getSelectedLanguage(context)).child("loginScreen").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             try {
@@ -1134,8 +1140,10 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
                                     if (textArrayList.size() > 0) {
 
                                         textViewtitle.setText(textArrayList.get(0));
-                                        nameStudent.setHint("EX. ABCD1234");
-                                        textViewtitleName.setText("Enter your Name"+"*");
+//                                        nameStudent.setHint("EX. ABCD1234");
+//                                        textViewtitleName.setText("Enter your Name"+"*");
+                                        nameStudent.setHint(textArrayList.get(0));
+                                        textViewtitleName.setText(textArrayList.get(1));
                                         rollnoStudent.setHint(textArrayList.get(3));
                                         textViewtitlePassword.setText(textArrayList.get(4));
                                         buttonSignInStudent.setText(textArrayList.get(5));

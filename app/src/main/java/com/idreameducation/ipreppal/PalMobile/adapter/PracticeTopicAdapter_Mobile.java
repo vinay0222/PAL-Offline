@@ -174,7 +174,7 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     viewHolder.reletiveParent.setElevation(2);
 
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
-                    viewHolder.timeLayout.setVisibility(View.VISIBLE);
+                    viewHolder.timeLayout.setVisibility(View.GONE);
                     viewHolder.diagnosticTestLayout.setVisibility(View.VISIBLE);
                     viewHolder.textViewdTest.setVisibility(View.VISIBLE);
                     viewHolder.practiceLayout.setVisibility(View.VISIBLE);
@@ -190,9 +190,9 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     viewHolder.linearPath.startAnimation(animation);
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
-                    viewHolder.timeLayout.setVisibility(View.VISIBLE);
+                    viewHolder.timeLayout.setVisibility(View.GONE);
                     viewHolder.actions_layout.startAnimation(animation);
-                    viewHolder.timeLayout.startAnimation(animation);
+//                    viewHolder.timeLayout.startAnimation(animation);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
 
                     viewHolder.topicListLayout.setEnabled(false);
@@ -240,7 +240,7 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     viewHolder.reletiveParent.setElevation(2F);
                     viewHolder.downward_arrow.setImageResource(R.mipmap.up_arrow_new);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
-                    viewHolder.timeLayout.setVisibility(View.VISIBLE);
+                    viewHolder.timeLayout.setVisibility(View.GONE);
                     viewHolder.diagnosticTestLayout.setVisibility(View.VISIBLE);
                     viewHolder.practiceLayout.setVisibility(View.VISIBLE);
                     viewHolder.textViewdTest.setVisibility(View.VISIBLE);
@@ -261,9 +261,9 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
 
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
-                    viewHolder.timeLayout.setVisibility(View.VISIBLE);
+                    viewHolder.timeLayout.setVisibility(View.GONE);
                     viewHolder.actions_layout.startAnimation(animation);
-                    viewHolder.timeLayout.startAnimation(animation);
+//                    viewHolder.timeLayout.startAnimation(animation);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
 
                     viewHolder.topicListLayout.setEnabled(false);

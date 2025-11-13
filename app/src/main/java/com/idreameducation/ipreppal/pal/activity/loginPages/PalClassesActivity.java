@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -298,7 +297,7 @@ public class PalClassesActivity extends AppCompatActivity  {
                     Util.showInternetConnectioError(context);
                 }
             };
-            global.getDatabaseReference().child(ApplicationConstants.CLASSES).child(board).child(language).addValueEventListener(valueEventListener);
+            global.getDatabaseReference().child(ApplicationConstants.CLASSES).child(board).child(language).addListenerForSingleValueEvent(valueEventListener);
         }
 
     }
@@ -378,13 +377,13 @@ public class PalClassesActivity extends AppCompatActivity  {
         if (requestCode == 100) { // Same request code used in requestPermissions
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted
-                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
                 assignIds();
                 checkOfflineMode();
                 // You can now access storage safely
             } else {
                 // Permission denied
-                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Storage Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
