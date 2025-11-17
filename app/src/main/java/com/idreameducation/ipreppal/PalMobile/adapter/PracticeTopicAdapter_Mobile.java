@@ -187,11 +187,11 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     PalContentListingActivity_Mobile.palContentListingActivityMobile.topicID=topicsArrayList.get(viewHolder.getAdapterPosition()).get("TopicID");
 
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
-                    viewHolder.linearPath.startAnimation(animation);
+//                    viewHolder.linearPath.startAnimation(animation);
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
                     viewHolder.timeLayout.setVisibility(View.GONE);
-                    viewHolder.actions_layout.startAnimation(animation);
+//                    viewHolder.actions_layout.startAnimation(animation);
 //                    viewHolder.timeLayout.startAnimation(animation);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
 
@@ -257,12 +257,12 @@ public class PracticeTopicAdapter_Mobile extends RecyclerView.Adapter {
                     PalContentListingActivity_Mobile.palContentListingActivityMobile.subjec=Util.getSubject(context);
 
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
-                    viewHolder.linearPath.startAnimation(animation);
+//                    viewHolder.linearPath.startAnimation(animation);
                     viewHolder.linearPath.setVisibility(View.VISIBLE);
 
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
                     viewHolder.timeLayout.setVisibility(View.GONE);
-                    viewHolder.actions_layout.startAnimation(animation);
+//                    viewHolder.actions_layout.startAnimation(animation);
 //                    viewHolder.timeLayout.startAnimation(animation);
                     viewHolder.actions_layout.setVisibility(View.VISIBLE);
 

@@ -17,7 +17,7 @@
             android:layout_height="400dp"
             android:padding="120dp"
             android:layout_alignParentTop="true"
-            android:src="@mipmap/iprep_logo" />
+            android:src="@drawable/ic_logo_pal" />
 
 
         <com.idreameducation.ipreppal.util.TextViewHeadingFont

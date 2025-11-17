@@ -973,6 +973,10 @@ public class PalTopicListingActivity extends AppCompatActivity {
                         r.printStackTrace();
                     }
                 }
+                else {
+                    PalContentListingActivity.duration=0;
+                    PalContentListingActivity.current_duration=0;
+                }
 
             }
         }
