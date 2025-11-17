@@ -734,6 +734,9 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
             faqText.setText("FAQ");
         }
 
+
+
+
         if(Util.isOfflineMode(context)) try {
 
             String image=Util.getUserProfileUrl(context);
@@ -807,6 +810,9 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
 
         if(Util.getSelectedLanguage(context).equals("hindi")) sclassText="कक्षा";
         else sclassText="Class";
+
+        if (textViewClass_Board != null)
+            textViewClass_Board.setText(sclassText + " " + Util.getSelectedClass(context).replace("nonmedical medical", "Non-med").replace("arts", "Arts and Humanities"));
 
         classTextView.setText(sclassText+" " +Util.getSelectedClass(context).replace("nonmedical medical","Non-med").replace("arts","Arts and Humanities"));
 

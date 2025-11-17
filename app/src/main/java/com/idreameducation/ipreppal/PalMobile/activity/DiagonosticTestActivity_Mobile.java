@@ -3923,7 +3923,7 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
 //                                Util.setClassNameSelectionDummy(context, foundational_class);
 //                                Util.setClassSelectionDummy(context, foundational_class);
                                         String streakProgress = "0";
-                                        String foundation_subject = "";
+                                        String foundation_subject = Util.getSubject(context);
                                         if (Foundational_Topic_ID.contains("pol_sci")) {
                                                 foundation_subject = "political_science";
 

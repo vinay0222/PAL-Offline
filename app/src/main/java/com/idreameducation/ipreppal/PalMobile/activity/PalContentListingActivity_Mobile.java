@@ -908,9 +908,6 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
         catch (Exception f){}
     }
 
-
-
-
     private void showDialog() {
         if (progressDialog != null) {
             try {
