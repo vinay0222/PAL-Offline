@@ -1785,7 +1785,7 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         try {
-                            HashMap<String, HashMap<String, String>> innerHashMap = null;
+                                HashMap<String, HashMap<String, String>> innerHashMap = null;
                             HashMap<String, HashMap<String, HashMap<String, String>>> outerHashMap = null;
                             HashMap<String, HashMap<String, HashMap<String, String>>> outerHashMap_ = null;
                             HashMap<String, HashMap<String, HashMap<String, HashMap<String, String>>>> coreOuterHashMap = null;

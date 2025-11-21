@@ -635,7 +635,28 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
         if(currentTopicid.contains("sci")) {
             if(!subjec.contains("pol")) subjec = "science";
         }
+        else if (currentTopicid.contains("pol_sci")) {
+            subjec = "political_science";
 
+        }
+        else if (currentTopicid.contains("sci")) {
+            subjec = "science";
+        }
+        else if (currentTopicid.contains("gra")) {
+            subjec = "geography";
+        }
+        else if (currentTopicid.contains("eco")) {
+            subjec ="economics";
+        }
+        else if (currentTopicid.contains("eng_gr")) {
+            subjec = "english_grammar";
+        }
+        else if (currentTopicid.contains("his")) {
+            subjec = "history";
+        }
+        else if (currentTopicid.contains("evs")) {
+            subjec = "evs";
+        }
         System.out.println("========= video topic id "+topicID);
 
         if(videoTopicID.equals(currentTopicid)) {

@@ -30,11 +30,10 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.idreameducation.ipreppal.PalMobile.activity.DiagonosticTestActivity_Mobile;
+import com.idreameducation.ipreppal.PalMobile.activity.NormalTestActivity;
 import com.idreameducation.ipreppal.R;
 import com.idreameducation.ipreppal.educationApplication.Global;
 import com.idreameducation.ipreppal.pal.activity.FullProfileImageActivity;
-import com.idreameducation.ipreppal.PalMobile.activity.NormalTestActivity;
 import com.idreameducation.ipreppal.util.Util;
 
 import java.io.File;
@@ -951,12 +950,12 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     public void onClick(View view) {
                         Util.preventTwoClick(view);
                         boolean exists = true;
-                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                        if(!((NormalTestActivity)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
                             optionOneClick(position, "Image");
-                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            ((NormalTestActivity)context).restoreQuestionHashMap.put(position+"-"+1, true);
                             exists = false;
                         }
-                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                        for (Map.Entry<String, Boolean> entry :((NormalTestActivity)context).restoreQuestionHashMap.entrySet()) {
                             String key = entry.getKey();
                             boolean value = entry.getValue();
                             if(key.equals(position+"-"+1)){
@@ -964,8 +963,8 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                                     if(value){
                                         restoreToOriginalQuestion(position, "Option1");
                                         entry.setValue(false);
-                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
-                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        if(((NormalTestActivity)context).pos == questionsArrayList.size()){
+                                            ((NormalTestActivity)context).pos = ((NormalTestActivity)context).pos - 1;
                                         }
                                     }else{
                                         optionOneClick(position, "Image");
@@ -1022,12 +1021,12 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     public void onClick(View view) {
                         Util.preventTwoClick(view);
                         boolean exists = true;
-                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                        if(!((NormalTestActivity)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
                             optionTwoClick(position, "Image");
-                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            ((NormalTestActivity)context).restoreQuestionHashMap.put(position+"-"+1, true);
                             exists = false;
                         }
-                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                        for (Map.Entry<String, Boolean> entry :((NormalTestActivity)context).restoreQuestionHashMap.entrySet()) {
                             String key = entry.getKey();
                             boolean value = entry.getValue();
                             if(key.equals(position+"-"+1)){
@@ -1035,8 +1034,8 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                                     if(value){
                                         restoreToOriginalQuestion(position, "Option2");
                                         entry.setValue(false);
-                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
-                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        if(((NormalTestActivity)context).pos == questionsArrayList.size()){
+                                            ((NormalTestActivity)context).pos = ((NormalTestActivity)context).pos - 1;
                                         }
                                     }else{
                                         optionTwoClick(position, "Image");
@@ -1091,12 +1090,12 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     public void onClick(View view) {
                         Util.preventTwoClick(view);
                         boolean exists = true;
-                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                        if(!((NormalTestActivity)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
                             optionThirdClick(position, "Image");
-                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            ((NormalTestActivity)context).restoreQuestionHashMap.put(position+"-"+1, true);
                             exists = false;
                         }
-                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                        for (Map.Entry<String, Boolean> entry :((NormalTestActivity)context).restoreQuestionHashMap.entrySet()) {
                             String key = entry.getKey();
                             boolean value = entry.getValue();
                             if(key.equals(position+"-"+1)){
@@ -1104,8 +1103,8 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                                     if(value){
                                         restoreToOriginalQuestion(position, "Option3");
                                         entry.setValue(false);
-                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
-                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        if(((NormalTestActivity)context).pos == questionsArrayList.size()){
+                                            ((NormalTestActivity)context).pos = ((NormalTestActivity)context).pos - 1;
                                         }
                                     }else{
                                         optionThirdClick(position, "Image");
@@ -1160,12 +1159,12 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                     public void onClick(View view) {
                         Util.preventTwoClick(view);
                         boolean exists = true;
-                        if(!((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
+                        if(!((NormalTestActivity)context).restoreQuestionHashMap.containsKey(position+"-"+1)){
                             optionFourthClick(position, "Image");
-                            ((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.put(position+"-"+1, true);
+                            ((NormalTestActivity)context).restoreQuestionHashMap.put(position+"-"+1, true);
                             exists = false;
                         }
-                        for (Map.Entry<String, Boolean> entry :((DiagonosticTestActivity_Mobile)context).restoreQuestionHashMap.entrySet()) {
+                        for (Map.Entry<String, Boolean> entry :((NormalTestActivity)context).restoreQuestionHashMap.entrySet()) {
                             String key = entry.getKey();
                             boolean value = entry.getValue();
                             if(key.equals(position+"-"+1)){
@@ -1173,8 +1172,8 @@ public class NormalTestAdapter extends RecyclerView.Adapter {
                                     if(value){
                                         restoreToOriginalQuestion(position, "Option4");
                                         entry.setValue(false);
-                                        if(((DiagonosticTestActivity_Mobile)context).pos == questionsArrayList.size()){
-                                            ((DiagonosticTestActivity_Mobile)context).pos = ((DiagonosticTestActivity_Mobile)context).pos - 1;
+                                        if(((NormalTestActivity)context).pos == questionsArrayList.size()){
+                                            ((NormalTestActivity)context).pos = ((NormalTestActivity)context).pos - 1;
                                         }
                                     }else{
                                         optionFourthClick(position, "Image");

@@ -696,7 +696,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         new UserActivities(this);
 
 
-        checkAppId();
+
 
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
@@ -1236,6 +1236,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         updateInfo();
         listners();
         getLanguages();
+        checkAppId();
     }
 
     private void getLanguages() {
