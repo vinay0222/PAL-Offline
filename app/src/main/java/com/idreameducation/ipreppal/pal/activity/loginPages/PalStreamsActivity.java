@@ -149,7 +149,7 @@ public class PalStreamsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        checkOfflineMode();
+//        checkOfflineMode();
     }
 
     private void getStreams() {
@@ -414,7 +414,7 @@ public class PalStreamsActivity extends AppCompatActivity {
                 // Permission granted
                 Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
                 assignIds();
-                checkOfflineMode();
+//                checkOfflineMode();
                 // You can now access storage safely
             } else {
                 // Permission denied

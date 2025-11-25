@@ -5357,14 +5357,17 @@ public class NormalTestActivity extends AppCompatActivity {
         mainText1.setText(Html.fromHtml(Util.getUsernameShowable(context)+result_text.get(0)+ "<font color='#0077FF'>" + Util.getTopicNameAlt(context) + "</font>"+result_text.get(1)));
 
         /** Checking Correct Answers */
-        for(int i=0;i<normalTestAdapter.trackArrayList.size();i++) {
-            if(normalTestAdapter.trackArrayList.get(i).get("Status").equals("Correct"))
-            {
-                correctAns++;
-            }
-        }
+//        for(int i=0;i<normalTestAdapter.trackArrayList.size();i++) {
+//            if(normalTestAdapter.trackArrayList.get(i).get("Status").equals("Correct"))
+//            {
+//                correctAns++;
+//            }
+//        }
 
-        correct_questions_Text.setText(correctAns+""+result_text.get(14)+"12"+result_text.get(15));
+        if(Util.getSelectedLanguage(context).equals("hindi")) correct_questions_Text.setText(" 12 "+result_text.get(14)+""+ normalTestAdapter.scoreArrayList.size()+" "+result_text.get(15)); else
+            correct_questions_Text.setText(normalTestAdapter.scoreArrayList.size()+" "+result_text.get(14)+" 12 "+result_text.get(15));
+
+//        correct_questions_Text.setText(correctAns+""+result_text.get(14)+"12"+result_text.get(15));
         score_percentage_text=findViewById(R.id.score_percentage_text2);
         score_card_Text.setText(result_text.get(9));
         level_text.setText(result_text.get(16));
@@ -5384,7 +5387,7 @@ public class NormalTestActivity extends AppCompatActivity {
             int two = 0;
             int three = 0;
             int four = 0;
-            for (int i = 0; i < normalTestAdapter.trackArrayList.size(); i++) {
+            for (int i = 0; i < normalTestAdapter.scoreArrayList.size(); i++) {
                 if (i >= 0 && i < 3) {
                     if (normalTestAdapter.trackArrayList.get(i).get("Status").equalsIgnoreCase("Correct")) {
                         one++;

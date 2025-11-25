@@ -7119,8 +7119,14 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         reletiveLayoutAnimate.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    protected void onDestroy() {
+    boolean reportSaved = false;
+
+    void saveReport() {
+
+        if(reportSaved) {
+            return;
+        }
+        reportSaved = true;
         try {
             if(attemptingtest)
             {
@@ -7307,11 +7313,16 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     global.getDatabaseReference().child("content_assignement_batch_wise").child(teacherID).child(batchId).child(datetostore).child(keyTo).child("student").child(Util.getUserId(context)).child("progress").setValue(String.valueOf(masteryTobeSynced));
                 }
 
-
+                reportSaved = true;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        saveReport();
         super.onDestroy();
 //        destroyService();
     }
@@ -8342,6 +8353,9 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
 
     @SuppressLint("SetTextI18n")
     private void showResult(boolean isfailed) {
+
+        saveReport();
+
         LinearLayout result_layout;
         TextView mainText1,result_text2,nextStep_text;
         TextView practice_text,or_text,watch_video_text;
@@ -8451,6 +8465,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
                     @Override
                     public void onClick(View v) {
                         Util.preventTwoClick(v);
+                        saveFoundationalDetails();
                         getJuniorLevelPractice(true);
                     }
                 });

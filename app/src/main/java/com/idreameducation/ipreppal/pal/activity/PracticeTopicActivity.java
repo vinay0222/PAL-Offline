@@ -253,7 +253,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
 //        }
         assignIds();
 
-        checkOfflineMode();
+//        checkOfflineMode();
         updateLastNetConnection();
         notNetConnection();
     }

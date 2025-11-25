@@ -172,7 +172,8 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
         setContentView(R.layout.activity_pal_content_listing);
         reloadLayout=false;
         palContentListingActivityMobile =this;
-
+        practiceScoreModelArrayList = new ArrayList<>();
+        testScoreModelArrayList = new ArrayList<>();
         assignID();
 //        hideStatusBar();
     }
@@ -1467,8 +1468,7 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } else
-        {
+        } else {
             getFoundationTopicDetails(Util.getTopicID(context));
         }
 
@@ -3720,6 +3720,12 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
                             if (list != null && list.size() > 0) {
                                 foundationalTopicData = list;
                             }
+
+                            Messagetype=null;
+                            Messagemodel=null;
+                            Messageposition=0;
+                            PalVideoListFragment.refreshMessage=true;
+
                             if (foundationalTopicData != null && foundationalTopicData.size() > 0) {
 
                                 for (FoundationalTopicModel item : foundationalTopicData) {
@@ -3739,15 +3745,18 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
                                             try {
                                                 PalVideoListFragment.palVideoListFragment.showTestLayout(completeType, item, position);
                                             } catch (Exception e) {
-                                                Messagetype=completeType;
-                                                Messagemodel=item;
-                                                Messageposition=position;
-                                                PalVideoListFragment.refreshMessage=true;
                                                 e.printStackTrace();
                                             }
+
+                                            Messagetype=completeType;
+                                            Messagemodel=item;
+                                            Messageposition=position;
+                                            PalVideoListFragment.refreshMessage=true;
 //                                            break;
                                         }
+
                                     }
+
                                 }
                             }
 //                        practiceTopicAdapter.notifyDataSetChanged();

@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -222,7 +221,7 @@ public class PalActivationDetailActivity extends AppCompatActivity {
 
         String androidID = Util.getAndroidId(context);
 
-        checkOfflineMode();
+//        checkOfflineMode();
 
         Intent serviceIntent = new Intent(this, ServiceCloseBar.class);
 //        startService(serviceIntent);
@@ -1213,6 +1212,7 @@ public class PalActivationDetailActivity extends AppCompatActivity {
                 .load(R.raw.no_internet)
                 .into(imageViewGif);
         textViewRetry.setText("Try Again");
+        textViewRetry.setVisibility(View.GONE);
         textViewRetry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1297,26 +1297,20 @@ public class PalActivationDetailActivity extends AppCompatActivity {
 
     private void checkOfflineMode() {
 
-        if (Build.VERSION.SDK_INT >= 30){
-            if (!Environment.isExternalStorageManager()) {
-                Intent getpermission = new Intent();
-                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                startActivity(getpermission);
-            }
-        }
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            if (!Settings.canDrawOverlays(this)) {
-//                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
-//                startActivityForResult(intent, 0);
+//        if (Build.VERSION.SDK_INT >= 30){
+//            if (!Environment.isExternalStorageManager()) {
+//                Intent getpermission = new Intent();
+//                getpermission.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                startActivity(getpermission);
 //            }
 //        }
-
-        try {
-            detectiDreamSDCardNeww(context);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//
+//
+//        try {
+//            detectiDreamSDCardNeww(context);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }
 

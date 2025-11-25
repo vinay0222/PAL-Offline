@@ -1928,8 +1928,12 @@ public class iPrepVideoPlayerActivity extends Fragment {
                 videoView.pause();
                 videopos=videoView.getCurrentPosition();
                 PalContentListingActivity.current_duration=videopos;
-                if(Util.isPortraitMode(context)) PalTopicListingActivity.palTopicListingActivity.checkAndStartPractice();
-                    else ((PalContentListingActivity) PalContentListingActivity.context).checkAndStartPractice();
+                if(Util.isPortraitMode(context)) try {
+                    PalTopicListingActivity.palTopicListingActivity.checkAndStartPractice();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                else ((PalContentListingActivity) PalContentListingActivity.context).checkAndStartPractice();
             }
         });
 

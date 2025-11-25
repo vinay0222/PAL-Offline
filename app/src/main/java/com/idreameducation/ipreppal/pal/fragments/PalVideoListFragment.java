@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -221,12 +222,15 @@ public class PalVideoListFragment extends Fragment {
                 type="final";ttype="final";foundationalTopicModel=null;pposition=0;
             }
             else {
-                ttype=type;foundationalTopicModel=model;pposition=position;
-                try {
-                    PalContentListingActivity_Mobile.palContentListingActivityMobile.getVideos(foundationalTopicModel.getTopicId());
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if(type!=null) {
+                    ttype=type;foundationalTopicModel=model;pposition=position;
+                    try {
+                        PalContentListingActivity_Mobile.palContentListingActivityMobile.getVideos(foundationalTopicModel.getTopicId());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
+
             }
         }
         else {
@@ -376,9 +380,19 @@ public class PalVideoListFragment extends Fragment {
     public void getVideosMobile() {
 
         try {
+            try {
+                PalContentListingActivity_Mobile.palContentListingActivityMobile.getFoundationTopicDetails(topicID);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             videoListAdapter = new VideoListAdapter(context, PalContentListingActivity_Mobile.palContentListingActivityMobile.contentArrayList_, sClass, subject, language, board, icon, PalVideoListFragment.this, dataMap, categoryID);
             videoListAdapter.notifyDataSetChanged();
+
+
+            if(refreshMessage && messageLayout1.getVisibility()==View.GONE) showTestLayout(PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagetype,PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagemodel,PalContentListingActivity_Mobile.palContentListingActivityMobile.Messageposition);
+
+
             recyclerView.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(context));
             recyclerView.scheduleLayoutAnimation();
             recyclerView.setAdapter(videoListAdapter);
@@ -389,6 +403,22 @@ public class PalVideoListFragment extends Fragment {
                 recyclerView.smoothScrollToPosition(Util.getVideoLevel(context));
             }
             ((PalTopicListingActivity)context).hide_connectionlayout();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    if(PalVideoListFragment.refreshMessage) {
+                        try {
+                            PalVideoListFragment.palVideoListFragment.showTestLayout(PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagetype, PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagemodel, PalContentListingActivity_Mobile.palContentListingActivityMobile.Messageposition);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
+            },2000);
+
         }catch (Exception d){
             d.printStackTrace();
         }

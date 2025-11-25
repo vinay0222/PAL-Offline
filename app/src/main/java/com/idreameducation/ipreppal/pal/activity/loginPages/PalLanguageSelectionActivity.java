@@ -129,7 +129,7 @@ public class PalLanguageSelectionActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        checkOfflineMode();
+//        checkOfflineMode();
     }
 
     private void getBoard() {
@@ -365,7 +365,7 @@ public class PalLanguageSelectionActivity extends AppCompatActivity {
                 // Permission granted
 //                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
                 assignIds();
-                checkOfflineMode();
+//                checkOfflineMode();
                 // You can now access storage safely
             } else {
                 // Permission denied

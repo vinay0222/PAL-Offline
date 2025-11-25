@@ -249,6 +249,9 @@ public class PalTopicListingActivity extends AppCompatActivity {
                 PalContentListingActivity_Mobile.palContentListingActivityMobile.getVideoss(PalContentListingActivity_Mobile.palContentListingActivityMobile.lastTopicId,Util.getSelectedClass(context),PalContentListingActivity_Mobile.palContentListingActivityMobile.subject);
                 completeType = "practice";
                 PalVideoListFragment.palVideoListFragment.showTestLayout(completeType, null, position);
+                PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagetype = null;
+                PalContentListingActivity_Mobile.palContentListingActivityMobile.Messagemodel = null;
+                PalContentListingActivity_Mobile.palContentListingActivityMobile.Messageposition = 0;
                 Messagetype=completeType;
                 Messagemodel=null;
                 Messageposition=position;

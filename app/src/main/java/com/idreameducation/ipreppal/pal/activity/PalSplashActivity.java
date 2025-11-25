@@ -11,10 +11,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -61,28 +59,28 @@ public class PalSplashActivity extends Activity {
 
     private void checkOfflineMode() {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11 and above
-            if (!Environment.isExternalStorageManager()) {
-                try {
-                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Intent intent = new Intent();
-                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    startActivity(intent);
-                }
-            }
-        } else {
-            // For Android 10 and below, request READ/WRITE permission normally
-            ActivityCompat.requestPermissions(
-                    this,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
-                    100
-            );
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            // Android 11 and above
+//            if (!Environment.isExternalStorageManager()) {
+//                try {
+//                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                    intent.addCategory("android.intent.category.DEFAULT");
+//                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+//                    startActivity(intent);
+//                } catch (Exception e) {
+//                    Intent intent = new Intent();
+//                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                    startActivity(intent);
+//                }
+//            }
+//        } else {
+//            // For Android 10 and below, request READ/WRITE permission normally
+//            ActivityCompat.requestPermissions(
+//                    this,
+//                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+//                    100
+//            );
+//        }
 
 //        if (Build.VERSION.SDK_INT >= 30){
 //            if (!Environment.isExternalStorageManager()) {

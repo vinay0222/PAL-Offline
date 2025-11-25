@@ -153,7 +153,7 @@ public class PalClassesActivity extends AppCompatActivity  {
             e.printStackTrace();
         }
 
-        checkOfflineMode();
+//        checkOfflineMode();
     }
 
     public void setStaticText() {
@@ -379,7 +379,7 @@ public class PalClassesActivity extends AppCompatActivity  {
                 // Permission granted
 //                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_SHORT).show();
                 assignIds();
-                checkOfflineMode();
+//                checkOfflineMode();
                 // You can now access storage safely
             } else {
                 // Permission denied
