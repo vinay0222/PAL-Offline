@@ -228,7 +228,7 @@ public class PalPdfViewerActivity extends AppCompatActivity implements OnPageCha
         Util.setContext(context);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_pdf_viewer_new);
-
+        Util.handleNotch(this);
         context = this;
 
         extStorageDirectory = Environment.getExternalStorageDirectory().toString() + "/Download";
@@ -1046,11 +1046,15 @@ public class PalPdfViewerActivity extends AppCompatActivity implements OnPageCha
         }
         else
         {
+            String name="Books";
+            if(Util.getSelectedLanguage(context).equals("hindi")) {
+                name="पुस्तकें";
+            }
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context))
                     .child(Util.getSelectedBoard(context))
                     .child(Util.getSelectedClass(context)).child("time_spent")
                     .child(date)
-                    .child("Books")
+                    .child(name)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -1164,9 +1168,13 @@ public class PalPdfViewerActivity extends AppCompatActivity implements OnPageCha
                     .setValue(timeTosync);
         }
         else {
+            String name="Books";
+            if(Util.getSelectedLanguage(context).equals("hindi")) {
+                name="पुस्तकें";
+            }
             global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(Util.getSelectedClass(context)).child("time_spent")
                     .child(date)
-                    .child("Books")
+                    .child(name)
                     .setValue(timeTosync);
         }
 

@@ -44,6 +44,7 @@ public class DStartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_dstart);
+        Util.handleNotch(this);
         assignIds();
         listners();
 

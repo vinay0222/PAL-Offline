@@ -24,13 +24,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.database.DataSnapshot;
@@ -50,13 +48,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -650,7 +646,7 @@ public class ReportsActivity extends Fragment implements View.OnClickListener {
 
             /** calculate subject usage */
             for (int i = 0; i < subjectArrayList.size(); i++) {
-                String subject_ = subjectArrayList.get(i).get("id").toLowerCase().replace(" ","_");
+                String subject_ = subjectArrayList.get(i).get("name").toLowerCase().replace(" ","_");
 
                 if (subject.equalsIgnoreCase(subject_)) {
 
@@ -812,6 +808,7 @@ public class ReportsActivity extends Fragment implements View.OnClickListener {
                             Books.put("icon","https://firebasestorage.googleapis.com/v0/b/iprep-7f10a.appspot.com/o/icons%2FBooks.png?alt=media&token=f3214417-7e8b-41d5-88ca-64c9d92e0867");
                             Books.put("id","Books");
                             Books.put("name","Books");
+                            if(Util.getSelectedLanguage(context).equals("english")) Books.put("name","Books"); else Books.put("name","पुस्तकें");
                             Books.put("short_name","Books");
                             subjectArrayList.add(Books);
 
@@ -819,7 +816,7 @@ public class ReportsActivity extends Fragment implements View.OnClickListener {
                             m.put("color","#A2A3DF");
                             m.put("icon","https://firebasestorage.googleapis.com/v0/b/iprep-7f10a.appspot.com/o/icons%2FProjects.png?alt=media&token=68487c73-67c7-4fc3-b962-016da270900b");
                             m.put("id","Project Videos");
-                            m.put("name","Activity videos");
+                            if(Util.getSelectedLanguage(context).equals("english")) m.put("name","Activity videos"); else m.put("name","Activity videos");
                             m.put("short_name","Activity videos");
                             subjectArrayList.add(m);
 
@@ -828,6 +825,7 @@ public class ReportsActivity extends Fragment implements View.OnClickListener {
                             s.put("icon","https://firebasestorage.googleapis.com/v0/b/iprep-7f10a.appspot.com/o/Boardsicon%2Fscience.png?alt=media&token=46d6460a-7428-49fa-8ef4-09d96ec908b5");
                             s.put("id","Simulation_project");
                             s.put("name","Simulation");
+                            if(Util.getSelectedLanguage(context).equals("english")) s.put("name","Simulation"); else s.put("name","सिमुलेशन");
                             s.put("short_name","Simulation");
                             subjectArrayList.add(s);
 

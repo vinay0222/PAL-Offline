@@ -918,8 +918,8 @@ public class PalContactUsNew extends AppCompatActivity {
                             textViewTitle.setText(textArrayList.get(12));
 
                             mailid_text.setText(email);
+                            contactNumberText2.setText("18008899710");
                             contactNumberText.setText("+91 "+number);
-                            contactNumberText2.setText("+91 "+number);
 
                             hideconnection_layout();
                         }

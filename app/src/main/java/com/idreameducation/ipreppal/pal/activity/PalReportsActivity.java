@@ -128,6 +128,7 @@ public class PalReportsActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.pal_report_activity);
+        Util.handleNotch(this);
         context = this;
         global = (Global) getApplicationContext();
         title = findViewById(R.id.title);

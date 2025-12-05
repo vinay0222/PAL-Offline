@@ -255,6 +255,7 @@ public class NormalTestActivity extends AppCompatActivity {
         Util.setContext(context);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_model_paper);
+        Util.handleNotch(this);
         super.onCreate(savedInstanceState);
         /*Call hookUp function*/
         init();
@@ -5364,8 +5365,9 @@ public class NormalTestActivity extends AppCompatActivity {
 //            }
 //        }
 
-        if(Util.getSelectedLanguage(context).equals("hindi")) correct_questions_Text.setText(" 12 "+result_text.get(14)+""+ normalTestAdapter.scoreArrayList.size()+" "+result_text.get(15)); else
-            correct_questions_Text.setText(normalTestAdapter.scoreArrayList.size()+" "+result_text.get(14)+" 12 "+result_text.get(15));
+        if(Util.getSelectedLanguage(context).equals("hindi")) correct_questions_Text.setText(" 12 "+result_text.get(14)+" "+ normalTestAdapter.scoreArrayList.size()+" "+result_text.get(15));
+        else correct_questions_Text.setText(normalTestAdapter.scoreArrayList.size()+" "+result_text.get(14)+" 12 "+result_text.get(15));
+
 
 //        correct_questions_Text.setText(correctAns+""+result_text.get(14)+"12"+result_text.get(15));
         score_percentage_text=findViewById(R.id.score_percentage_text2);

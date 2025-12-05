@@ -104,6 +104,7 @@ public class ReviewTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_review_modeltestpaper);
+        Util.handleNotch(this);
         assignIds();
         listners();
     }

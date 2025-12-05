@@ -291,6 +291,7 @@ public class PalProfileActivity extends AppCompatActivity implements DatePickerD
         Util.setWindowSettings(this);
         Util.setContext(context);
         setContentView(R.layout.activity_user_profile_screen);
+        Util.handleNotch(this);
         assignIds();
         listners();
         input_Class.setClickable(false);

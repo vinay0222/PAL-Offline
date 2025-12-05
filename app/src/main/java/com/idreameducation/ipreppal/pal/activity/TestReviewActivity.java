@@ -3,12 +3,6 @@ package com.idreameducation.ipreppal.pal.activity;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.button1Text;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.button3Text;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSnapHelper;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -29,6 +23,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -93,7 +93,7 @@ public class TestReviewActivity extends AppCompatActivity {
         Util.setWindowSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_review);
-
+        Util.handleNotch(this);
 
         if(Util.isPortraitMode(this)) initMobile();
         else init();

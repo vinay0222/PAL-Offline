@@ -342,6 +342,7 @@ public class StemProjectsListingActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_stem_listing);
+        Util.handleNotch(this);
         assignIds();
         listners();
         hideNavigationBar(getWindow());
@@ -764,7 +765,6 @@ public class StemProjectsListingActivity extends AppCompatActivity  {
 //        yt_video_container.setLayoutParams(layoutParams);
         frameLayout.setClickable(true);
         frameLayout.setFocusable(true);
-        ViewGroup parentView = findViewById(R.id.stem_listing_layout);
 
         //removeFragment();
    //     onBackPressedpracti();

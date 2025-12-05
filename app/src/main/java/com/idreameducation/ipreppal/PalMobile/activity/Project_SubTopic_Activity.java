@@ -54,7 +54,7 @@ public class Project_SubTopic_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_project_sub_topic);
-
+        Util.handleNotch(this);
         assignIds();
     }
 

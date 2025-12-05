@@ -166,7 +166,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
     private final Handler mHandler = new Handler();
     Uri filePath;
     private Intent serviceIntent;
-    private RelativeLayout yt_video_layout, reletiveVideoView;
+    public static RelativeLayout yt_video_layout, reletiveVideoView;
 
     private YouTubePlayerSupportFragment youtubeFragment;
     private YouTubePlayerTracker tracker;
@@ -506,6 +506,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
         reletiveVideoView = view.findViewById(R.id.reletiveVideoView);
         tracker = new YouTubePlayerTracker();
         fullScreenHelper = new FullScreenHelper(getActivity());
+
 
         isFullScreen = getArguments().getBoolean("isFullScreen");
 
@@ -1536,7 +1537,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
                         public void run() {
 //                                            linearLayoutBottom.setVisibility(View.GONE);
                             mediaController.hide();
-                            setMargins(reletiveVideoView,0,0,0,0);
+//                            setMargins(reletiveVideoView,0,0,0,0);
                         }
                     }, 3000);
 
@@ -1552,9 +1553,9 @@ public class iPrepVideoPlayerActivity extends Fragment {
                     if (mediaController != null) {
 //                                        linearLayoutBottom.setVisibility(View.VISIBLE);
                         mediaController.show();
-                        if(!Util.isPortraitMode(context) &&  Util.getIsFullScreen(context) && !type.equals("level_practice_videos"))
+                        if(  Util.getIsFullScreen(context) && !type.equals("level_practice_videos"))
                         {
-//                            setMargins(reletiveVideoView,0,0,0,60);
+//                            setMargins(reletiveVideoView,0,0,60,0);
                         }
 
                         handler2.postDelayed(new Runnable() {
@@ -1562,7 +1563,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
                             public void run() {
 //                                                linearLayoutBottom.setVisibility(View.GONE);
                                 mediaController.hide();
-                                setMargins(reletiveVideoView,0,0,0,0);
+//                                setMargins(reletiveVideoView,0,0,0,0);
                                 handler2.removeCallbacksAndMessages(null);
                             }
                         }, 3000);
@@ -1756,6 +1757,8 @@ public class iPrepVideoPlayerActivity extends Fragment {
                                     }
 
                                     videoView.start();
+//                                    if( Util.getIsFullScreen(context) && !type.equals("level_practice_videos"))
+//                                        setMargins(reletiveVideoView,0,0,150,0);
                                     showPracticeTimer();
                                 }
                             });
@@ -1793,8 +1796,8 @@ public class iPrepVideoPlayerActivity extends Fragment {
                                     if (mediaController != null) {
 //                                        linearLayoutBottom.setVisibility(View.VISIBLE);
                                         mediaController.show();
-                                        if(!Util.isPortraitMode(context) &&  Util.getIsFullScreen(context) && !type.equals("level_practice_videos"))
-                                            setMargins(reletiveVideoView,0,0,0,60);
+//                                        if( Util.getIsFullScreen(context) && !type.equals("level_practice_videos"))
+//                                            setMargins(reletiveVideoView,0,0,150,0);
 
 
                                         handler2.postDelayed(new Runnable() {
@@ -1802,7 +1805,7 @@ public class iPrepVideoPlayerActivity extends Fragment {
                                             public void run() {
 //                                                linearLayoutBottom.setVisibility(View.GONE);
                                                 mediaController.hide();
-                                                setMargins(reletiveVideoView,0,0,0,0);
+//                                                setMargins(reletiveVideoView,0,0,0,0);
                                                 handler2.removeCallbacksAndMessages(null);
                                             }
                                         }, 3000);
@@ -2150,7 +2153,8 @@ public class iPrepVideoPlayerActivity extends Fragment {
 
         if(Util.isPortraitMode(context))
         {
-            showNextVideoDialogMobile(showNextVideo);
+//            showNextVideoDialogMobile(showNextVideo);
+
             return;
         }
 

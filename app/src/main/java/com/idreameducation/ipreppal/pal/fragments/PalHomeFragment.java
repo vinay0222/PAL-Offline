@@ -133,6 +133,7 @@ public class PalHomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.pal_fragment_home, container, false);
+        Util.handleNotch(getActivity());
         context = getActivity();
         global = (Global) getActivity().getApplicationContext();
         new Handler().postDelayed(new Runnable() {

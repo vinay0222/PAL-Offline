@@ -59,7 +59,7 @@ public class SimulationTopicsListingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_simulation_topics_listing);
-
+        Util.handleNotch(this);
         init();
     }
 

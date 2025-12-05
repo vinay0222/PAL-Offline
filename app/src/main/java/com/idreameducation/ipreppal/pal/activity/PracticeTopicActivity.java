@@ -225,6 +225,7 @@ public class PracticeTopicActivity extends AppCompatActivity implements NetworkS
         Util.setWindowSettings(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pal_activity_topics);
+        Util.handleNotch(this);
         mContentView=findViewById(R.id.drawer_layout);
 
         networkStateReceiver = new NetworkStateReceiver();

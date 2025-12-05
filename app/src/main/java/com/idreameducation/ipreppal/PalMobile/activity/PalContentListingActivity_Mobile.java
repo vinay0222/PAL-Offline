@@ -170,6 +170,7 @@ public class PalContentListingActivity_Mobile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_pal_content_listing);
+        Util.handleNotch(this);
         reloadLayout=false;
         palContentListingActivityMobile =this;
         practiceScoreModelArrayList = new ArrayList<>();

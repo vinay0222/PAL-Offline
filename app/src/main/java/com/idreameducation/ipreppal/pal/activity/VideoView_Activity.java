@@ -986,6 +986,7 @@ public class VideoView_Activity extends AppCompatActivity{
         mediacontroller.setAnchorView(youTubePlayerView);
         yt_video_layout.setVisibility(View.VISIBLE);
         reletiveVideoView.setVisibility(View.GONE);
+        setMargins(reletiveVideoView,0,0,150,0);
         getLifecycle().addObserver(youTubePlayerView);
 //        youTubePlayerView.getPlayerUiController().showYouTubeButton(false);
         youTubePlayerView.setEnableAutomaticInitialization(false);
@@ -1331,7 +1332,7 @@ public class VideoView_Activity extends AppCompatActivity{
 
                                     if(Util.getIsFullScreen(context))
                                     {
-                                        setMargins(reletiveVideoView,0,0,0,60);
+//                                        setMargins(reletiveVideoView,0,0,150,0);
                                     }
 
                                     if(!mediaController.isShowing())
@@ -1344,7 +1345,7 @@ public class VideoView_Activity extends AppCompatActivity{
                                         public void run() {
 //                                                            linearLayoutBottom.setVisibility(View.GONE);
                                             mediaController.hide();
-                                            setMargins(reletiveVideoView,0,0,0,0);
+//                                            setMargins(reletiveVideoView,0,0,0,0);
                                         }
                                     }, 3000);
 
@@ -1400,7 +1401,7 @@ public class VideoView_Activity extends AppCompatActivity{
                                 public void run() {
 //                                                    linearLayoutBottom.setVisibility(View.GONE);
                                     mediaController.hide();
-                                    setMargins(reletiveVideoView,0,0,0,0);
+//                                    setMargins(reletiveVideoView,0,0,0,0);
                                 }
                             }, 3000);
 
@@ -1664,7 +1665,7 @@ public class VideoView_Activity extends AppCompatActivity{
 
                                                     if(Util.getIsFullScreen(context))
                                                     {
-                                                        setMargins(reletiveVideoView,0,0,0,60);
+//                                                        setMargins(reletiveVideoView,0,0,250,0);
                                                     }
 
                                                     if(!mediaController.isShowing())
@@ -1677,7 +1678,7 @@ public class VideoView_Activity extends AppCompatActivity{
                                                         public void run() {
 //                                                            linearLayoutBottom.setVisibility(View.GONE);
                                                             mediaController.hide();
-                                                            setMargins(reletiveVideoView,0,0,0,0);
+//                                                            setMargins(reletiveVideoView,0,0,0,0);
                                                         }
                                                     }, 3000);
 
@@ -1732,7 +1733,7 @@ public class VideoView_Activity extends AppCompatActivity{
                                                 public void run() {
 //                                                    linearLayoutBottom.setVisibility(View.GONE);
                                                     mediaController.hide();
-                                                    setMargins(reletiveVideoView,0,0,0,0);
+//                                                    setMargins(reletiveVideoView,0,0,0,0);
                                                 }
                                             }, 3000);
 

@@ -165,6 +165,7 @@ public class ExtraContentListingActivity extends AppCompatActivity {
         Util.setWindowSettings(this);
         Util.setContext(context);
         setContentView(R.layout.pal_activity_extra_content);
+        Util.handleNotch(this);
         assignIds();
         listners();
 

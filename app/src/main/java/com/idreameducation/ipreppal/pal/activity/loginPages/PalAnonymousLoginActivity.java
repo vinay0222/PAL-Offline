@@ -197,10 +197,11 @@ public class PalAnonymousLoginActivity extends AppCompatActivity implements Goog
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         Util.setWindowSettings(this);
         new UserActivities(this, false);
+        Util.setKeyboardWindowSettings(this);
         setContentView(R.layout.activity_anonymous_login);
+        Util.handleNotch(this);
 //        Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
 //        Uri uri = Uri.fromParts("package", getPackageName(), null);
 //        intent.setData(uri);

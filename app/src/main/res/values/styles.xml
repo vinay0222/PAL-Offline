@@ -12,6 +12,7 @@
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">

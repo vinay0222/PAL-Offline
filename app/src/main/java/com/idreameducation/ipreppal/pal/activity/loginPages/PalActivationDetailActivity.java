@@ -147,8 +147,9 @@ public class PalActivationDetailActivity extends AppCompatActivity {
         Util.setKeyboardWindowSettings(this);
         if (Util.isPortraitMode(this)) Util.setPortraitView(this);
 
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         setContentView(R.layout.activity_activation_detail);
-
+        Util.handleNotch(this);
         assignIds();
         listners();
     }

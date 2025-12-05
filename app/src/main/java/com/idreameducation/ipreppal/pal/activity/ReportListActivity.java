@@ -142,6 +142,7 @@ public class ReportListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.pal_activity_reports_list);
+        Util.handleNotch(this);
 
         assignIds();
         listners();

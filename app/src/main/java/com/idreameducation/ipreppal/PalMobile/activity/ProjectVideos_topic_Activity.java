@@ -51,6 +51,7 @@ public class ProjectVideos_topic_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_project_videos_topic);
+        Util.handleNotch(this);
         assignIds();
     }
 

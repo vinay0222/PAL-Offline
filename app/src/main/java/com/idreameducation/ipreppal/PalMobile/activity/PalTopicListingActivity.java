@@ -16,6 +16,7 @@ import static com.idreameducation.ipreppal.PalMobile.activity.PalContentListingA
 import static com.idreameducation.ipreppal.PalMobile.activity.PalContentListingActivity_Mobile.videoKey;
 import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.practiceScoreModelArrayList;
 import static com.idreameducation.ipreppal.PalMobile.activity.PalContentListingActivity_Mobile.topicsArrayList;
+import static com.idreameducation.ipreppal.videoPlayer.iPrepVideoPlayerActivity.reletiveVideoView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -155,6 +156,7 @@ public class PalTopicListingActivity extends AppCompatActivity {
         Util.setWindowSettings(this);
 
         setContentView(R.layout.activity_pal_topic_listing);
+        Util.handleNotch(this);
 
         init();
     }
@@ -1546,6 +1548,11 @@ public class PalTopicListingActivity extends AppCompatActivity {
     private static int width,height=630;
 
     private void setlayout_forlandscape() {
+        try {
+            setMargins(reletiveVideoView,150,0,150,0);
+        } catch (Exception e) {
+
+        }
 
         height=frameLayout.getHeight();
 
@@ -1560,6 +1567,11 @@ public class PalTopicListingActivity extends AppCompatActivity {
     }
 
     private void setlayout_forportrait() {
+        try {
+            setMargins(reletiveVideoView,0,0,0,0);
+        } catch (Exception e) {
+
+        }
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,height);
         title_Bar.setVisibility(View.VISIBLE);

@@ -7,7 +7,6 @@ import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.ca
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.heading1Text;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.heading3Text;
 import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.heading4Text;
-import static com.idreameducation.ipreppal.pal.activity.PracticeTopicActivity.hideNavigationBar;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -100,6 +99,7 @@ public class Book_ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_book_report);
+        Util.handleNotch(this);
         global = (Global) getApplicationContext();
         init();
 //        hideNavigationBar(getWindow());

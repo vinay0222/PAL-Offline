@@ -304,7 +304,7 @@ public class DiagonosticTestActivity_Mobile extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_model_paper);
-
+        Util.handleNotch(this);
         context = this;
         init();
         get_text_from_backend();

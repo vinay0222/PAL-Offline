@@ -115,6 +115,7 @@ public class SimulationActivity extends AppCompatActivity {
         Util.setWindowSettings(this);
         Util.setLandscapeView(this);
         setContentView(R.layout.activity_simulation);
+        Util.handleNotch(this);
         context = this;
         assignIds(savedInstanceState);
         listener();
@@ -320,7 +321,12 @@ public class SimulationActivity extends AppCompatActivity {
                 .child("Simulation_project")
                 .setValue(timeTosync2);
 
-        global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(sClass).child("time_spent").child(date).child("Simulation_project").setValue(timeTosync2);
+        String name="Simulation";
+        if(Util.getSelectedLanguage(context).equals("hindi")) {
+            name="सिमुलेशन";
+        }
+
+        global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(sClass).child("time_spent").child(date).child(name).setValue(timeTosync2);
         global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(sClass).child("count").child(date).child("activityvideos").setValue(videoNumber);
 
 
@@ -340,7 +346,12 @@ public class SimulationActivity extends AppCompatActivity {
         if(!Util.isNetworkAvailable(context) || Util.isOfflineMode(context)){
 //            runBackgroundTask(Util.getUserId(context), board, sClass, Util.getSubjectName(context), date, "video_lessons", "timeTask");
         }else{
-            global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(sClass).child("time_spent").child(date).child("Simulation_project").addListenerForSingleValueEvent(new ValueEventListener() {
+
+            String name="Simulation";
+            if(Util.getSelectedLanguage(context).equals("hindi")) {
+                name="सिमुलेशन";
+            }
+            global.getDatabaseReference().child(ApplicationConstants.REPORTS).child("user_time_spent").child(Util.getUserId(context)).child(Util.getSelectedBoard(context)).child(sClass).child("time_spent").child(date).child(name).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     try {

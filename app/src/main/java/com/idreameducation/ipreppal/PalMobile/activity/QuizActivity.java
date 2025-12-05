@@ -456,6 +456,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         Util.setContext(context);
         Util.setWindowSettings(this);
         setContentView(R.layout.activity_question);
+        Util.handleNotch(this);
         /* Hookup ids with UI elements */
         assignIds(savedInstanceState);
         /* Add click listners on UI elements */
@@ -1750,6 +1751,7 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
         textViewSkip = findViewById(R.id.textViewSkip);
         hintImageView = findViewById(R.id.hintImageView);
         hint_btn = findViewById(R.id.hint_btn);
+        hint_btn.setVisibility(View.GONE);
         showHintOption();
         sendButton = findViewById(R.id.sendButton);
         imageViewClose = findViewById(R.id.imageViewClose);
@@ -2227,29 +2229,29 @@ public class QuizActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     private void showHintOption() {
-        if (hintHandler != null) {
-            hintHandler.removeCallbacksAndMessages(null);
-        }
-        hint_btn.setVisibility(View.GONE);
-        hintImageView.setVisibility(View.GONE);
-        hintHandler = new Handler();
-
-        hintHandler.postDelayed(() -> {
-//            hintImageView.setVisibility(View.VISIBLE);
-
-            hint_btn.setVisibility(View.VISIBLE);
-            Animation animation=AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bottom_up);
-            hint_btn.startAnimation(animation);
-            hint_btn.setVisibility(View.VISIBLE);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    hint_btn.clearAnimation();
-                }
-            },400);
-
-
-        }, 15000);
+//        if (hintHandler != null) {
+//            hintHandler.removeCallbacksAndMessages(null);
+//        }
+//        hint_btn.setVisibility(View.GONE);
+//        hintImageView.setVisibility(View.GONE);
+//        hintHandler = new Handler();
+//
+//        hintHandler.postDelayed(() -> {
+////            hintImageView.setVisibility(View.VISIBLE);
+//
+//            hint_btn.setVisibility(View.VISIBLE);
+//            Animation animation=AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bottom_up);
+//            hint_btn.startAnimation(animation);
+//            hint_btn.setVisibility(View.VISIBLE);
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    hint_btn.clearAnimation();
+//                }
+//            },400);
+//
+//
+//        }, 15000);
     }
 
     private void showExitDialog() {

@@ -211,6 +211,7 @@
             android:name="com.idreameducation.ipreppal.pal.activity.loginPages.PalActivationDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan|adjustResize|stateHidden"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.idreameducation.ipreppal.pal.activity.loginPages.PalClassesActivity"

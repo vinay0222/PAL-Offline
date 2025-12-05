@@ -1,7 +1,6 @@
 package com.idreameducation.ipreppal.pal.activity;
 
 import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.current_duration;
-import static com.idreameducation.ipreppal.pal.activity.PalContentListingActivity.currentvideo_url;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -446,7 +445,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
 
     private void playVideo(final String stream) {
         reletiveVideoView=findViewById(R.id.reletiveVideoView);
-
+        setMargins(reletiveVideoView,0,0,150,0);
         runOnUiThread(new Runnable() {
             @SuppressLint({"NewApi", "ClickableViewAccessibility"})
             @Override
@@ -476,6 +475,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                             @Override
                             public void onPrepared(MediaPlayer mp) {
                                 videoView.start();
+//                                setMargins(reletiveVideoView,0,0,150,0);
                                 totalDuration=String.valueOf(videoView.getDuration());
 //                                palCustomMediaController.setAnchorView(videoView);
 //                                if(QuizActivity.instance != null){
@@ -515,7 +515,7 @@ public class PalFullScreenVideoActivity extends AppCompatActivity {
                                                 palCustomMediaController.hide();
                                                 setMarginFromBottom(reletiveVideoView , 0);
 //                                                            linearLayoutBottom.setVisibility(View.GONE);
-//                                                setMargins(reletiveVideoView,0,0,0,0);
+//                                                setMargins(reletiveVideoView,0,0,150,0);
                                             }
                                         }, 3000);
 

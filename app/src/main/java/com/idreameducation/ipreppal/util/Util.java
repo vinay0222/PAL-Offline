@@ -3450,6 +3450,7 @@ public class Util {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                     | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         }
         else {
@@ -3473,6 +3474,44 @@ public class Util {
             hideNavigationBar(activity.getWindow());
         }
 
+    }
+
+    public static void handleNotch(Activity activity){
+        // 1. Draw behind system bars
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.getWindow().setDecorFitsSystemWindows(false);
+        } else {
+            View decorView = activity.getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            );
+        }
+
+        // 2. Explicitly allow cutout usage on Android 9+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode =
+                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            activity.getWindow().setAttributes(lp);
+        }
+
+        try{
+            // 3. Add padding so content doesn’t go *under* notch / nav bar
+            final View root = activity.getWindow().findViewById(R.id.root_view); // root view in activity_main.xml
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+                root.setOnApplyWindowInsetsListener((v, insets) -> {
+                    int top = insets.getSystemWindowInsetTop();       // status bar / notch
+                    int bottom = insets.getSystemWindowInsetBottom(); // nav bar / gestures
+                    v.setPadding(v.getPaddingLeft(), top, v.getPaddingRight(), bottom);
+
+                    return insets.consumeSystemWindowInsets();
+                });
+            }
+        }catch (Exception r){
+            r.printStackTrace();
+        }
     }
 
     public static void hideNavigationBar(Window window) {

@@ -34,7 +34,7 @@
                     android:layout_width="140dp"
                     android:scaleType="fitCenter"
                     android:id="@+id/logoIprep"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/ic_iprep_logo"
                     android:layout_height="38dp">
 
